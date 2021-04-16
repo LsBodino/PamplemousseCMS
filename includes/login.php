@@ -1,6 +1,6 @@
 <?php
 if(isset($_SESSION['id'])) {
-    header("Location: profil/".$_SESSION['id']);
+    header("Location: space/".$_SESSION['id']);
 }else{
 if(isset($_POST['connexion'])) {
     $mailconnexion = htmlspecialchars($_POST['mailconnexion']);
@@ -18,12 +18,12 @@ if(isset($_POST['connexion'])) {
           $_SESSION['id'] = $userinfo['id'];
           $_SESSION['pseudo'] = $userinfo['pseudo'];
           $_SESSION['mail'] = $userinfo['mail'];
-          header("Location: profil/".$_SESSION['id']);
+          header("Location: space/".$_SESSION['id']);
        } else {
-          $erreur = "Mauvaise adresse mail ou mauvais mot de passe !";
+          $erreur = "Wrong e-mail address or password!";
        }
     } else {
-       $erreur = "Tous les champs doivent être complétés !";
+       $erreur = "";
     }
  }
 }

@@ -1,12 +1,13 @@
 <?php 
 // Login to database (host, database name, database user, database password).
-$db = new PDO('mysql:host=localhost;dbname=PCMS;charset=utf8', 'root', '');
+$db = new PDO('mysql:host=mysql-plmousse.alwaysdata.net;dbname=plmousse_base;charset=utf8', 'plmousse', 'meilleurfruit');
 // Website name.
 $title = "PamplemousseCMS";
 // Website description.
 $descr = "The Best Fruit of the World";
 // Website Link.
-$link = "http://127.0.0.1";
+$link = "http://plmousse.alwaysdata.net";
 // Theme.
-$theme = "pml-classic"
+$theme = "plm-classic"
+
 ?>

@@ -1,11 +1,11 @@
 <head>
 <?php include 'includes/header.php';?>
-<title><?= $title ?>: Erreur 404</title>
+<title><?= $title ?>: Error 404</title>
 </head>
 <body>
 <center>
-<h2>Erreur 404: Introuvable</h2>
-La page n'existe pas ou plus.
+<h2>Error 404</h2>
+Not found.
 </center>
 <br>
 </body>

@@ -3,14 +3,14 @@ include_once 'includes/inscription.php';
 ?>
 <html>
    <head>
-      <title><?= $title ?>: Inscription</title>
+      <title><?= $title ?>: Register</title>
       <meta charset="utf-8">
    </head>
    <body>
       <center>
       <div class="container">
       <div class="row">
-         <h2>Inscription</h2>
+         <h2>Register</h2>
          <?php
          if(isset($erreur)) {
             echo '<div class="alert alert-danger"><strong>'.$erreur.'</strong><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>';
@@ -22,18 +22,18 @@ include_once 'includes/inscription.php';
          <div class="form-group">
          <form method="POST" action="">
                      <label for="pseudo">Pseudo :</label>
-                     <input type="text" placeholder="LsBodino" class="form-control" id="pseudo" name="pseudo" required value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" />
+                     <input type="text" class="form-control" id="pseudo" name="pseudo" required value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" />
                      <br>
-                     <label for="mail">Adresse Mail :</label>
-                     <input type="email" class="form-control" placeholder="moncompte@worlder.net" id="mail" name="mail" required value="<?php if(isset($mail)) { echo $mail; } ?>" />
+                     <label for="mail">Email address :</label>
+                     <input type="email" class="form-control" id="mail" name="mail" required value="<?php if(isset($mail)) { echo $mail; } ?>" />
                      <br>
-                     <label for="mdp">Mot de passe :</label>
-                     <input type="password" class="form-control" placeholder="Worlder09*" id="mdp" required name="mdp" />
+                     <label for="mdp">Password :</label>
+                     <input type="password" class="form-control" id="mdp" required name="mdp" />
                      <br>
-                     <label for="mdp2">Confirmation du mot de passe :</label>
-                     <input type="password" class="form-control" placeholder="Worlder09*" id="mdp2" required name="mdp2" />
+                     <label for="mdp2">Password confirm :</label>
+                     <input type="password" class="form-control" id="mdp2" required name="mdp2" />
                      <br>
-                     <input type="submit" class="bouton" name="inscription" value="C'est parti!" />
+                     <input type="submit" class="bouton" name="inscription" value="Let's go!" />
          </form>
       </div></div></div>
       </center>

@@ -30,7 +30,11 @@ font-family: "Source Sans Pro", serif;
 <p><?= $descr?></p>
 <ul class="nav nav-pills nav-justified">
 <li class="active"><a href="<?= $link?>/index">House</a></li>
-<li><a href="<?= $link?>/exemple">Example Page</a></li>
+<?php $pages = NULL;
+$pages = $db->query('SELECT * FROM pages ORDER by id DESC');
+while($p = $pages->fetch()) { ?>
+<li><a href="<?= $link?>/page/<?= $p['id'] ?>"><?= $p['titre'] ?></a></li>
+<?php } ?>
 <?php if(!isset($_SESSION['id'])) { ?>
 <li><a href="<?= $link?>/register">Register</a></li>
 <li><a href="<?= $link?>/login">Login</a></li>

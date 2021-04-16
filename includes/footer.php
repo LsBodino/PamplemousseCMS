@@ -9,6 +9,6 @@
 }"</style>
 <br><footer class="fixed-bottom">
 <div class="container">
-<b>Powered by PamplemousseCMS | Theme: Pamplemousse Classic | Version: UP1 - 2021</b><br>
-<a href="../map">Map</a> | <a href="https://github.com/LsBodino/PamplemousseCMS" target="_blank">Github</a></div>
+<b>Powered by PamplemousseCMS | Theme: <?= $theme?> | Version: UP1 - 2021</b><br>
+<a href="<?= $link?>/map">Map</a> | <a href="https://github.com/LsBodino/PamplemousseCMS" target="_blank">Github</a></div>
 <br></footer></center>

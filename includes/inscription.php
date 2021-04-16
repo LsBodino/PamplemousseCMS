@@ -21,21 +21,21 @@ if(isset($_POST['inscription'])) {
                   if($mdp == $mdp2) {
                      $insmembres = $db->prepare("INSERT INTO membres(pseudo, mail, mdp, rank) VALUES(?, ?, ?, ?)");
                      $insmembres->execute(array($pseudo, $mail, $mdp, 0));
-                     $reussi = "Votre compte a bien été créé ! <a href=\"/login\">Me connecter</a>";
+                     $reussi = "Your account has been created. <a href=\"/login\">Login</a>";
                   }else{
-                     $erreur = "Vos mots de passes ne correspondent pas !";
+                     $erreur = "Your passwords don’t match!";
                   }
                }else{
-                  $erreur = "Adresse mail déjà utilisée !";
+                  $erreur = "Email address already used!";
                }
             }else{
-               $erreur = "Votre adresse mail n'est pas valide !";
+               $erreur = "Your email address is not valid!";
             }
          }else{
-            $erreur = "Votre pseudo est déjà utilisé !";
+            $erreur = "Your username is already in use!";
          }
       }else{
-         $erreur = "Votre pseudo ne doit pas dépasser 25 caractères !";
+         $erreur = "Your username must not exceed 25 characters!";
       }
 }
 }?>

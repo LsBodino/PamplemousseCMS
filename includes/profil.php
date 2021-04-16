@@ -7,9 +7,9 @@
        $newmail = htmlspecialchars($_POST['newmail']);
        $insertmail = $db->prepare("UPDATE membres SET mail = ? WHERE id = ?");
        $insertmail->execute(array($newmail, $_SESSION['id']));
-       header('Location: profil/'.$_SESSION['id']);
+       header('Location: space/'.$_SESSION['id']);
     }else{
-       $msg = "Votre adresse mail n'est pas valide.";
+       $msg = "Your email address is not valid.";
     }
    }
     if(isset($_POST['newmdp1']) AND !empty($_POST['newmdp1']) AND isset($_POST['newmdp2']) AND !empty($_POST['newmdp2'])) {
@@ -18,9 +18,9 @@
        if($mdp1 == $mdp2) {
           $insertmdp = $db->prepare("UPDATE membres SET mdp = ? WHERE id = ?");
           $insertmdp->execute(array($mdp1, $_SESSION['id']));
-          header('Location: profil/'.$_SESSION['id']);
+          header('Location: space/'.$_SESSION['id']);
        } else {
-          $msg = "Vos deux mot de passes ne correspondent pas.";
+          $msg = "Your passwords don’t match.";
        }
     }
 } else {

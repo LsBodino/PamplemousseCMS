@@ -8,4 +8,4 @@ The configuration is done on the includes/config.php page and the database is in
 Theme creation is not yet sufficiently developed.
 
 Credits:
-Boostrap, jQuery, Bootflat, @LsBodino.
+Bootstrap, jQuery, Bootflat, @LsBodino, Respond.js

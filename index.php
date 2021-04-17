@@ -7,7 +7,7 @@
 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 <h4><?= $l_notregistered ?></h4>
 <p><?= $l_notregistered2 ?> <?=$title?>. <?= $l_notregistered3 ?>! :)</p><br>
-<a class="btn btn-primary" href="<?=$link?>/register">Register</a>
+<a class="btn btn-primary" href="<?=$link?>/register"><?= $l_register ?></a>
 </div>
 <?php } ?>
 </head>

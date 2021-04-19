@@ -13,7 +13,6 @@
 </head>
 <body>
 <center><h2><?= $l_house ?></h2>
-<!-- Hey ;). -->
 <div class="row">
 <h3><?= $l_mostrecenta ?></h3></center>
 <?php 

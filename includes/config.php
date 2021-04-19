@@ -3,9 +3,11 @@
 $db = new PDO('mysql:host=localhost;dbname=pcms;charset=utf8', 'root', '');
 
 // User call.
+if(isset($_SESSION['id'])) { 
 $requser = $db->prepare("SELECT * FROM membres WHERE id = ?");
 $requser->execute(array($_SESSION['id']));
 $user = $requser->fetch();
+}
 
 // Config call.
 $reqconfig = $db->prepare("SELECT * FROM config WHERE id = ?");

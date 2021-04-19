@@ -55,8 +55,8 @@ $l_pageposted = "Your page has been posted";
 $l_articleposted = "Your article has been posted";
 $l_config = "Configuration";
 $l_linkws = "Link";
-$l_langws = "Langage";
-$l_doclangws = "";
+$l_langws = "Language";
+$l_doclangws = "To add a new language, click here";
 
 // Register
 $l_register = "Register";

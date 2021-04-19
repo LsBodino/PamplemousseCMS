@@ -1,0 +1,14 @@
+RewriteEngine On
+ErrorDocument 401 /403
+ErrorDocument 400 /400
+ErrorDocument 404 /404
+ErrorDocument 403 /403
+ErrorDocument 500 /500
+
+RewriteRule ^article/([0-9]+)$ /article.php?id=$1 [L]
+RewriteRule ^page/([0-9]+)$ /page.php?id=$1 [L]
+RewriteRule ^space/([0-9]+)$ /space.php?id=$1 [L]
+RewriteRule ^panel/article /a-articles.php [L]
+RewriteRule ^panel/page /a-pages.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

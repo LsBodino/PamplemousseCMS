@@ -1,7 +1,4 @@
 <?php if(isset($_SESSION['id'])) {
-    $requser = $db->prepare("SELECT * FROM membres WHERE id = ?");
-    $requser->execute(array($_SESSION['id']));
-    $user = $requser->fetch();
     if(isset($_POST['newmail']) AND !empty($_POST['newmail']) AND $_POST['newmail'] != $user['mail']) {
       if(filter_var($_POST['newmail'], FILTER_VALIDATE_EMAIL)) {
        $newmail = htmlspecialchars($_POST['newmail']);
@@ -9,7 +6,7 @@
        $insertmail->execute(array($newmail, $_SESSION['id']));
        header('Location: space/'.$_SESSION['id']);
     }else{
-       $msg = "Your email address is not valid.";
+       $msg = "$l_emailerror.";
     }
    }
     if(isset($_POST['newmdp1']) AND !empty($_POST['newmdp1']) AND isset($_POST['newmdp2']) AND !empty($_POST['newmdp2'])) {
@@ -20,7 +17,7 @@
           $insertmdp->execute(array($mdp1, $_SESSION['id']));
           header('Location: space/'.$_SESSION['id']);
        } else {
-          $msg = "Your passwords don’t match.";
+          $msg = "$l_pwerror.";
        }
     }
 } else {

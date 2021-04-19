@@ -1,11 +1,11 @@
 <head>
 <?php include 'includes/header.php';?>
-<title><?= $title ?>: Error 404</title>
+<title><?= $title ?>: <?= $l_error ?> 404</title>
 </head>
 <body>
 <center>
-<h2>Error 404</h2>
-Not found.
+<h2><?= $l_error ?> 404</h2>
+<?= $l_notfound ?>
 </center>
 <br>
 </body>

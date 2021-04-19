@@ -1,11 +1,11 @@
 <head>
 <?php include 'includes/header.php';?>
-<title><?= $title ?>: Error 400</title>
+<title><?= $title ?>: <?= $l_error ?> 400</title>
 </head>
 <body>
 <center>
-<h2>Error 400</h2>
-Bad Request.
+<h2><?= $l_error ?> 400</h2>
+<?= $l_badrequest ?>
 <br>
 </center>
 </body>

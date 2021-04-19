@@ -4,14 +4,14 @@ include_once 'includes/login.php';
 ?>
  <html>
     <head>
-       <title><?= $title ?>: Login</title>
+       <title><?= $title ?>: <?= $l_login ?></title>
        <meta charset="utf-8">
     </head>
     <body>
     <div class="container">
       <div class="row">
       <center>
-          <h2>Login</h2>
+          <h2><?= $l_login ?></h2>
           <?php
           if(isset($erreur)) {
              echo '<h3>'.$erreur.'</h3>';
@@ -19,15 +19,15 @@ include_once 'includes/login.php';
           ?>
           <div class="form-group">
           <form method="POST" action="">
-            <label>Email address :</label>
+            <label><?= $l_email ?> :</label>
             <input type="email" name="mailconnexion" class="form-control" required/>
             <br>
-            <label>Password :</label>
+            <label><?= $l_pw ?> :</label>
             <input type="password" name="mdpconnexion" class="form-control" required/>
             <br>
-            <input type="checkbox" name="rememberme" id="remembercheckbox" /> <label for="remembercheckbox">Remember me</label>
+            <input type="checkbox" name="rememberme" id="remembercheckbox" /> <label for="remembercheckbox"><?= $l_rememberme ?></label>
             <br>
-            <input type="submit" class="bouton" name="connexion" value="Login" />
+            <input type="submit" class="bouton" name="connexion" value="<?= $l_login ?>" />
           </form>
           </div>
           </div>

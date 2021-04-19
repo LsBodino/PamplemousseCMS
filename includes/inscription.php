@@ -1,13 +1,13 @@
 <?php
 if(isset($_SESSION['id'])) {
-   header("Location: profil/".$_SESSION['id']);
+   header("Location: space/".$_SESSION['id']);
 }else{
 if(isset($_POST['inscription'])) {
-   $pseudo = htmlspecialchars($_POST['pseudo']); // Recupère le pseudo.
+   $pseudo = htmlspecialchars($_POST['pseudo']);
    $mail = htmlspecialchars($_POST['mail']);
    $mdp = sha1($_POST['mdp']);
    $mdp2 = sha1($_POST['mdp2']);
-   $pseudol = strlen($pseudo); // Recupère le nombre d'octets du pseudo.
+   $pseudol = strlen($pseudo);
       if($pseudol <= 25) {
          $pseudol2 = $db->prepare("SELECT * FROM membres WHERE pseudo = ?");
          $pseudol2->execute(array($pseudo));
@@ -21,21 +21,21 @@ if(isset($_POST['inscription'])) {
                   if($mdp == $mdp2) {
                      $insmembres = $db->prepare("INSERT INTO membres(pseudo, mail, mdp, rank) VALUES(?, ?, ?, ?)");
                      $insmembres->execute(array($pseudo, $mail, $mdp, 0));
-                     $reussi = "Your account has been created. <a href=\"/login\">Login</a>";
+                     $reussi = "$l_ok. <a href=\"/login\">$l_login</a>";
                   }else{
-                     $erreur = "Your passwords don’t match!";
+                     $erreur = "$l_pwerror!";
                   }
                }else{
-                  $erreur = "Email address already used!";
+                  $erreur = "$l_emailused!";
                }
             }else{
-               $erreur = "Your email address is not valid!";
+               $erreur = "$l_emailerror!";
             }
          }else{
-            $erreur = "Your username is already in use!";
+            $erreur = "$l_pseudoused!";
          }
       }else{
-         $erreur = "Your username must not exceed 25 characters!";
+         $erreur = "$l_maxpseudo!";
       }
 }
 }?>

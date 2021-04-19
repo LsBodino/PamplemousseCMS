@@ -1,13 +1,29 @@
 <?php 
 // Login to database (host, database name, database user, database password).
-$db = new PDO('mysql:host=mysql-plmousse.alwaysdata.net;dbname=plmousse_base;charset=utf8', 'plmousse', 'meilleurfruit');
-// Website name.
-$title = "PamplemousseCMS";
-// Website description.
-$descr = "The Best Fruit of the World";
-// Website Link.
-$link = "http://plmousse.alwaysdata.net";
-// Theme.
-$theme = "plm-classic"
+$db = new PDO('mysql:host=localhost;dbname=pcms;charset=utf8', 'root', '');
 
+// User call.
+$requser = $db->prepare("SELECT * FROM membres WHERE id = ?");
+$requser->execute(array($_SESSION['id']));
+$user = $requser->fetch();
+
+// Config call.
+$reqconfig = $db->prepare("SELECT * FROM config WHERE id = ?");
+$reqconfig->execute(array(1));
+$config = $reqconfig->fetch();
+
+// Website name.
+$title = $config['wsname'];
+
+// Website description.
+$descr = $config['wsdescr'];
+
+// Website Link.
+$link = $config['wslink'];
+
+// Theme.
+$theme = $config['wstheme'];
+
+// Langage.
+$lang = $config['wslang'];
 ?>

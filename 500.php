@@ -1,11 +1,11 @@
 <head>
 <?php include 'includes/header.php';?>
-<title><?= $title ?>: Error 500</title>
+<title><?= $title ?>: <?= $l_error ?> 500</title>
 </head>
 <body>
 <center>
-<h2>Error 500</h2>
-Error server.
+<h2><?= $l_error ?> 500</h2>
+<?= $l_errorserver ?>
 <br>
 </center>
 </body>

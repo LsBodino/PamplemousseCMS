@@ -20,7 +20,7 @@ if(isset($_POST['connexion'])) {
           $_SESSION['mail'] = $userinfo['mail'];
           header("Location: space/".$_SESSION['id']);
        } else {
-          $erreur = "Wrong e-mail address or password!";
+          $erreur = "$l_wrongemailpw!";
        }
     } else {
        $erreur = "";

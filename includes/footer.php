@@ -9,6 +9,6 @@
 }"</style>
 <br><footer class="fixed-bottom">
 <div class="container">
-<b>Powered by PamplemousseCMS | Theme: <?= $theme?> | Version: UP1 - 2021</b><br>
-<a href="<?= $link?>/map">Map</a> | <a href="https://github.com/LsBodino/PamplemousseCMS" target="_blank">Github</a></div>
+<b><?= $l_powered?> PamplemousseCMS | <?= $l_theme?>: <?= $theme?> | <?= $l_version?>: UP3 - 2021</b><br>
+<a href="<?= $link?>/map"><?= $l_map?></a> | <a href="https://lsbodino.github.io/PamplemousseCMS/" target="_blank">Github</a></div>
 <br></footer></center>

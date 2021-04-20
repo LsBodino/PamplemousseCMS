@@ -1,17 +1,18 @@
 <head>
-<?php include 'includes/header.php';?>
+<?php include_once 'includes/header.php';
+include_once "includes/menu.php";?>
 <title><?= $title ?>: <?= $l_map ?></title>
 </head>
 <body>
 <center>
 <h2><?= $l_map ?></h2>
-<a href="<?= $link ?>/index"><?= $l_house ?></a><br>
+<a href="<?= $link ?>/index"><?= $l_homepage ?></a><br>
 <a href="<?= $link ?>/map"><?= $l_map ?></a><br><br>
 <?= $l_pages ?><br>
 <?php $pages = NULL;
 $pages = $db->query('SELECT * FROM pages ORDER by id DESC');
 while($p = $pages->fetch()) { ?>
-<?= $l_pages ?> > <a href="<?= $link?>/page/<?= $p['id'] ?>"><?= $p['titre'] ?></a><br>
+<?= $l_pages ?> > <a href="<?= $link?>/page/<?= $p['id'] ?>"><?= $p['title'] ?></a><br>
 <?php } ?><br>
 <?= $l_space ?><br>
 <?php if(isset($_SESSION['id'])) { ?>
@@ -23,4 +24,4 @@ while($p = $pages->fetch()) { ?>
 <?php } ?>
 </center>
 </body>
-<?php include 'includes/footer.php';?>
+<?php include_once 'includes/footer.php';?>

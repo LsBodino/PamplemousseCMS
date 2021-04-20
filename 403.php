@@ -1,5 +1,6 @@
 <head>
-<?php include 'includes/header.php';?>
+<?php include_once 'includes/header.php';
+include_once "includes/menu.php";?>
 <title><?= $title ?>: <?= $l_error ?> 401 / 403</title>
 </head>
 <body>
@@ -9,4 +10,4 @@
 <br>
 </center>
 </body>
-<?php include 'includes/footer.php';?>
+<?php include_once 'includes/footer.php';?>

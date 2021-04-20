@@ -1,0 +1,64 @@
+UP4
+
+Changelog: 
+
+- Default favicon has been changed.
+- The database is now in classification utf8_general_ci.
+- Technical overhaul of connection and registration, please download the new database.
+- It is no longer possible to access a space, page or article with a non-existent id.
+- Adding the "Editor" rank to the id 1, "Administrator" changes to the id 2 of the "rank" column in the "users" table of the database.
+- Editor has access to the creation of pages and articles but not to the configuration page.
+- The spaces no longer display the rank number but its name directly.
+- Addition of the column "id_author" (int) in the table "articles".
+- When creating an article, the author id is now saved in the database in the "id_author" column of the "articles" table.
+- Redesign of the tables "articles" and "pages" on the database.
+- The menu code is no longer in the includes/header.php page but on a new includes/menu.php page.
+- The admin panel has its own menu.
+- Addition of ckeditor (pending the creation of a custom text editor).
+
+Theme update:
+
+- Update the default theme "plm-classic". 
+- Added "assets" folder, which lists all global files, css and js.
+- bootflat-plm.css, global.css and site-plm.css merged to become bootflat.css.
+
+
+Variable language update:
+
+UP3 and above:
+// House
+$l_house = "House";
+
+// Space
+$l_pseudo = "Pseudo";
+
+// Register
+$l_pseudoused = "Pseudo is already in use";
+$l_maxpseudo = "Pseudo must not exceed 25 characters";
+
+New version:
+// Homepage
+$l_homepage = "Homepage";
+
+// Space
+$l_username = "Username";
+
+// Register
+$l_usernameused = "Username is already in use";
+$l_maxusername = "Username must not exceed 25 characters";
+
+
+New variables in languages:
+
+// Space
+$l_member = "Member";
+$l_editor = "Editor";
+$l_admin = "Administrator";
+
+// Articles
+$l_published = "Published on";
+$l_by = "by";
+
+// Panel
+$l_backws = "Back to the website";
+$l_articles = "Articles";

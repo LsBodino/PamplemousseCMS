@@ -1,10 +1,11 @@
 <?php
 include_once 'includes/header.php';
-include_once 'includes/aconfig.php';
+include_once 'includes/a-menu.php';
+include_once 'includes/a-config.php';
 ?>
  <html>
     <head>
-       <title><?= $title ?>: <?= $l_config ?></title>
+       <title><?= $title ?>: <?= $l_panel ?> - <?= $l_config ?></title>
        <meta charset="utf-8">
     </head>
     <body>
@@ -27,7 +28,7 @@ include_once 'includes/aconfig.php';
                 <input type="text" name="wslang" class="form-control" value="<?php echo $config['wslang']; ?>"/><br>
                 <label><?= $l_theme ?> :</label>
                 <input type="text" name="wstheme" class="form-control" value="<?php echo $config['wstheme']; ?>"/><br>
-                <input type="submit" class="bouton" value="<?= $l_edit ?>" />
+                <input type="submit" class="bouton" name="configuration" value="<?= $l_edit ?>" />
              </form>
              </div>
           </div>

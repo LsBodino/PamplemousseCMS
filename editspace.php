@@ -1,6 +1,7 @@
 <?php
 include_once 'includes/header.php';
-include_once 'includes/profil.php';
+include_once 'includes/menu.php';
+include_once 'includes/editspace.php';
 ?>
  <html>
     <head>
@@ -20,9 +21,9 @@ include_once 'includes/profil.php';
                 <label><?= $l_newemail ?> :</label>
                 <input type="text" name="newmail" placeholder="<?= $l_newemail ?>" class="form-control" value="<?php echo $user['mail']; ?>" /><br>
                 <label><?= $l_newpw ?> :</label>
-                <input type="password" name="newmdp1" class="form-control" placeholder="<?= $l_newpw ?>"/><br>
+                <input type="password" name="newpw1" class="form-control" placeholder="<?= $l_newpw ?>"/><br>
                 <label><?= $l_newpwc ?> :</label>
-                <input type="password" name="newmdp2" class="form-control" placeholder="<?= $l_newpwc ?>" /><br>
+                <input type="password" name="newpw2" class="form-control" placeholder="<?= $l_newpwc ?>" /><br>
                 <input type="submit" class="bouton" value="<?= $l_edit ?>" />
              </form>
              </div>

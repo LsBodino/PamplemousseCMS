@@ -1,5 +1,6 @@
 <?php include_once 'includes/header.php';
-include_once 'includes/inscription.php';
+include_once 'includes/menu.php';
+include_once 'includes/register.php';
 ?>
 <html>
    <head>
@@ -12,28 +13,28 @@ include_once 'includes/inscription.php';
       <div class="row">
          <h2><?= $l_register ?></h2>
          <?php
-         if(isset($erreur)) {
-            echo '<div class="alert alert-danger"><strong>'.$erreur.'</strong><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>';
+         if(isset($error)) {
+            echo '<div class="alert alert-danger"><strong>'.$error.'</strong><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>';
          }
-         if(isset($reussi)) {
-            echo '<div class="alert alert-success alert-dismissable"><strong>'.$reussi.'</strong><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>';
+         if(isset($victory)) {
+            echo '<div class="alert alert-success alert-dismissable"><strong>'.$victory.'</strong><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>';
          }
          ?>
          <div class="form-group">
          <form method="POST" action="">
-                     <label for="pseudo"><?= $l_pseudo ?> :</label>
-                     <input type="text" class="form-control" id="pseudo" name="pseudo" required value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" />
+                     <label for="username"><?= $l_username ?> :</label>
+                     <input type="text" class="form-control" id="username" name="username" required value="<?php if(isset($username)) { echo $username; } ?>" />
                      <br>
                      <label for="mail"><?= $l_email ?> :</label>
                      <input type="email" class="form-control" id="mail" name="mail" required value="<?php if(isset($mail)) { echo $mail; } ?>" />
                      <br>
-                     <label for="mdp"><?= $l_pw ?> :</label>
-                     <input type="password" class="form-control" id="mdp" required name="mdp" />
+                     <label for="pw"><?= $l_pw ?> :</label>
+                     <input type="password" class="form-control" id="pw" required name="pw" />
                      <br>
-                     <label for="mdp2"><?= $l_pw2 ?> :</label>
-                     <input type="password" class="form-control" id="mdp2" required name="mdp2" />
+                     <label for="pw2"><?= $l_pw2 ?> :</label>
+                     <input type="password" class="form-control" id="pw2" required name="pw2" />
                      <br>
-                     <input type="submit" class="bouton" name="inscription" value="<?= $l_lg ?>!" />
+                     <input type="submit" class="bouton" name="register" value="<?= $l_lg ?>!" />
          </form>
       </div></div></div>
       </center>

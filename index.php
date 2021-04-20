@@ -1,6 +1,7 @@
 <head>
-<?php include_once 'includes/header.php';?>
-<title><?= $title ?>: <?= $l_house ?></title>
+<?php include_once 'includes/header.php';
+include_once "includes/menu.php";?>
+<title><?= $title ?>: <?= $l_homepage ?></title>
 <div class="container">
 <?php if(!isset($_SESSION['id'])) { ?>
 <div class="alert alert-info">
@@ -12,7 +13,7 @@
 <?php } ?>
 </head>
 <body>
-<center><h2><?= $l_house ?></h2>
+<center><h2><?= $l_homepage ?></h2>
 <div class="row">
 <h3><?= $l_mostrecenta ?></h3></center>
 <?php 
@@ -23,7 +24,7 @@ while($a = $articles->fetch()) { ?>
 <div class="thumbnail">
                 <img class="img-rounded" src="<?= $a['img'] ?>">
                 <div class="caption text-center">
-                  <h3><?= $a['titre'] ?></h3>
+                  <h3><?= $a['title'] ?></h3>
                   <p><?= $a['descr'] ?></p>
                   <p><a href="<?=$link?>/article/<?= $a['id'] ?>" class="btn btn-warning" role="button"><?= $l_read ?> >></a></p>
                 </div></div></div>

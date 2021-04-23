@@ -14,18 +14,18 @@ $reqconfig = $db->prepare("SELECT * FROM config WHERE id = ?");
 $reqconfig->execute(array(1));
 $config = $reqconfig->fetch();
 
-// Website name.
+// Website name call.
 $title = $config['wsname'];
 
-// Website description.
+// Website description call.
 $descr = $config['wsdescr'];
 
-// Website Link.
+// Website Link call.
 $link = $config['wslink'];
 
-// Theme.
+// Theme call.
 $theme = $config['wstheme'];
 
-// Langage.
+// Langage call.
 $lang = $config['wslang'];
 ?>

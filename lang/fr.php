@@ -32,7 +32,7 @@ $l_myspace = "Mon Espace";
 $l_spaceof = "Espace de";
 $l_username = "Nom d'utilisateur";
 $l_rank = "Grade";
-$l_editspace = "Éditer mon Espace";
+$l_settings = "Paramètres";
 $l_email = "Adresse mail";
 $l_newemail = "Nouvelle adresse mail";
 $l_newpw = "Nouveau mot de passe";
@@ -62,6 +62,14 @@ $l_langws = "Langage";
 $l_doclangws = "Pour ajouter une nouvelle langue, cliquez ici";
 $l_backws = "Retour vers le site";
 $l_articles = "Articles";
+$l_articleupdate = "Votre article a été mis à jour";
+$l_create = "Créer";
+$l_listarticles = "Liste des articles";
+$l_list = "Liste";
+$l_delete = "Supprimer";
+$l_editarticle = "Éditer un article";
+$l_listpages = "Liste des pages";
+$l_editpage = "Éditer une page";
 
 // Inscription
 $l_register = "Inscription";

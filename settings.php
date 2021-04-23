@@ -1,18 +1,18 @@
 <?php
 include_once 'includes/header.php';
 include_once 'includes/menu.php';
-include_once 'includes/editspace.php';
+include_once 'includes/settings.php';
 ?>
  <html>
     <head>
-       <title><?= $title ?>: <?= $l_editspace ?></title>
+       <title><?= $title ?>: <?= $l_settings ?></title>
        <meta charset="utf-8">
     </head>
     <body>
     <div class="container">
       <div class="row">
       <center>
-          <h2><?= $l_editspace ?></h2>
+          <h2><?= $l_settings ?></h2>
           <?php if(isset($msg)) {
             echo '<div class="alert alert-danger"><strong>'.$msg.'</strong><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>';
          }?>

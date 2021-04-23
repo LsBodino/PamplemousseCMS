@@ -31,10 +31,10 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
          if(isset($_SESSION['id']) AND $infom['id'] == $_SESSION['id']) {
          ?>
          <br>
-         <a href="<?= $link?>/editspace"><?= $l_editspace ?></a><br>
+         <a href="<?= $link?>/settings"><?= $l_settings ?></a><br>
          <a href="<?= $link?>/logout"><?= $l_logout ?></a><br><br>
 		 <?php if($infom['rank'] >= 1){ ?>
-		 <a href="<?= $link?>/panel/articles"><?= $l_createarticle ?></a><br>
+		 <a href="<?= $link?>/panel/articles"><?= $l_listarticles ?></a><br>
          <a href="<?= $link?>/panel/pages"><?= $l_createpage ?></a><br>
          <?php if($infom['rank'] >= 2){ ?>
 		 <a href="<?= $link?>/panel/configuration"><?= $l_configuration ?></a><br><br>

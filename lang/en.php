@@ -32,7 +32,7 @@ $l_myspace = "My Space";
 $l_spaceof = "Space of";
 $l_username = "Username";
 $l_rank = "Rank";
-$l_editspace = "Edit my Space";
+$l_settings = "Settings";
 $l_email = "Email address";
 $l_newemail = "New email address";
 $l_newpw = "New password";
@@ -62,6 +62,15 @@ $l_langws = "Language";
 $l_doclangws = "To add a new language, click here";
 $l_backws = "Back to the website";
 $l_articles = "Articles";
+$l_articleupdate = "Your article has been updated";
+$l_create = "Create";
+$l_listarticles = "List of articles";
+$l_list = "List";
+$l_delete = "Delete";
+$l_editarticle = "Edit an article";
+$l_listpages = "List of pages";
+$l_editpage = "Edit an page";
+$l_pageupdate = "Your page has been updated";
 
 // Register
 $l_register = "Register";

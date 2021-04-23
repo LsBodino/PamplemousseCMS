@@ -1,34 +1,29 @@
-<head>
-<?php include_once 'includes/header.php';
+<?php 	
+include_once 'includes/header.php';
 include_once 'includes/a-menu.php';
-include_once 'includes/a-pages.php';
-?>
-<script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
- <style> textarea.form-control {
-    height: 50%;
-} </style>
-<title><?= $title ?>: <?= $l_panel ?> - <?= $l_createpage ?></title>
-</head>
-<body>
-<center>
-<div class="container">
-<div class="row">
-<h2><?= $l_createpage ?></h2>
-<?php if(isset($message)) {
-            echo '<div class="alert alert-success alert-dismissable"><strong>'.$message.'</strong><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>';
-         } ?>
-<form method="POST">
-<div class="form-group">
-      <input type="text" name="page_title" id="page_title" class="form-control" placeholder="<?= $l_name ?>" required/>
-      <br>
-      <textarea name="page_section" id="page_section" class="form-control" row="25" cols="100" placeholder="<?= $l_section ?>" required></textarea>
-      <script>
-         CKEDITOR.replace( 'page_section' );
-      </script>
-      </div>
-      <input type="submit" class="bouton" value="<?= $l_publish ?>" />
-   </form>
+if(isset($_SESSION['id'])){
+    if($user['rank'] >= 1){ ?>
+    <title><?= $title ?>: <?= $l_panel?> - <?= $l_listpages?></title>
+    <div class="container">
+    <center><h2><?= $l_listpages?></h2></center>
+    <div class="list-group">
+        <?php $pages = NULL;
+        $pages = $db->query('SELECT * FROM pages ORDER by id DESC');
+        while($p = $pages->fetch()) { ?>
+        <div class="col-md-9">
+            <a href="<?= $link ?>/panel/edit/pages/<?= $p['id'] ?>" class="list-group-item">
+              <h4 class="list-group-item-heading"><?= $p['title'] ?></h4>
+            </a>
+            </div>
+            <div class="col-md-3">
+            <a href="<?= $link ?>/panel/delete/pages/<?= $p['id'] ?>"><button type="button" class="btn btn-danger btn-block"><?= $l_delete ?></button></a>
+            </div>
+<?php } ?>
 </div></div>
-</center>
-</body>
-<?php include_once 'includes/footer.php';?>
+<?php }else{
+    header("Location: /403");
+} 
+}else{
+    header("Location: /login");
+}
+include_once 'includes/footer.php';?>

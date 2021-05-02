@@ -1,0 +1,77 @@
+## UP6
+Hi, it's Friday (ok, i'm two days late) and so update, here is the UP6.
+The way is still very long before reaching the goals I have defined, but the CMS is very well advanced.
+
+Welcome to Italian, Spanish and German languages ! 
+Thank to Eva for a spanish language. Love. <3
+
+### Changelog:
+- Added Italian (it.php), Spanish (es.php) and German (de.php) languages.
+- Cookies are saved correctly (yes, again).
+- The drop-down menu is fixed.
+- FRENCH LANGUAGE: Fixed a bug that made the text "Nom d'utilisateur déjà utilisé" and "Votre page a été mis à jour" not appear (this bug does not exist on other languages).
+- The pages "400.php", "403.php", "404.php" and "500.php" have merged to become the page "error.php".
+- Added error messages for errors: 405, 408, 418, 429, 501, 502, 505 and 510.
+- Addition of the column "visible" (int) on the tables "articles" and "pages" in the database.
+- When you click on "Delete" the articles and pages are no longer deleted from the database but become "visible 0".
+- The pages "a-deletepages.php" and "a-deletearticles.php" have merged to become the page "a-delete.php".
+- Added docs folder for all documents about CMS, changelog.txt is there.
+- Addition of the column "wsversion" (varchar, 10) in the table "config" in the database.
+- Added a new config variable "$version" to call the name of the current version of the site.
+- The site name appears in the footer.
+- Added a shorter and clearer error message in case of database issues.
+- The configuration for the database connection is simpler.
+- In the "configuration" page of the panel, it is no longer possible to put empty data in "name", "link", "language" and "theme".
+- The default theme has been updated.
+
+### Link and name update:
+#### UP5 and above:
+Error 400: /400
+Error 401/403: /403
+Error 404: /404
+Error 500: /500
+
+#### New version:
+Error 400: /error/400
+Error 401/403: /error/401
+Error 404: /error/404
+Error 500/502: /error/500
+
+### New variables in languages:
+// Error
+$l_httpnotsupported = "HTTP Version not supported";
+$l_implmousse = "I'm a Pamplemousse";
+$l_methodnotallowed = "Method not allowed";
+$l_notextended = "Not extented";
+$l_notimplemented = "Not implemented";
+$l_requesttimeout = "Request time out";
+$l_toomrequest = "Too many request";
+
+// Panel
+$l_noarticle = "There are no articles here.";
+$l_nopage = "There are no pages here.";
+
+### Variable language update:
+#### UP5 and above:
+// Footer
+$l_powered = "Powered by";
+
+#### New version:
+- The order of the categories has been redone and the variables are in alphabetical order in their categories.
+- Removed the $l_configuration variable, because $l_config has exactly the same text.
+
+// Footer
+$l_powered = "is powered by";
+
+
+## Plans of the future
+
+- I want to rewrite some features and improve the consistency between some codes.
+- The code of creations and modifications of articles will be improved.
+- I also want to improve personalization with a more efficient theme system.
+- A module system but it will come much later, i’m already thinking about how to include it.
+- The language system should have some changes but very minor, the current system suits me perfectly.
+- Always more customizations, like the system of categories, the customization of menus...
+
+Lucas.
+

@@ -12,7 +12,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
    }else{
 ?>
 <head>
-   <title><?= $title ?>: <?php echo $infop['title']; ?></title>
+   <title><?php echo $infop['title']; ?> | <?= $title ?></title>
 </head>
 <body>   
 <div class="col-md-12">

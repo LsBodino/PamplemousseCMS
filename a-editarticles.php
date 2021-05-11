@@ -19,14 +19,14 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
    height: 50%;
    } </style>
 <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
-<title><?= $title ?>: <?= $l_panel ?> - <?= $l_editarticle ?></title>
+<title><?= $l_panel ?> - <?= $l_editarticle ?> | <?= $title ?></title>
 </head>
 <body>
    <div class="center">
       <div class="container">
          <div class="row">
             <h2><?= $l_editarticle ?></h2>
-            <?php if(isset($mse)) {
+            <?php if(isset($msg)) {
                echo '<div class="alert alert-success" role="alert"><strong>'.$msg.'</strong></div';
                } ?>
                <form method="POST">
@@ -50,7 +50,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                         <input type="checkbox" class="form-check-input" name="article_pin" />
                      <?php } ?>
                   </div>
-                  <input type="submit" class="bouton" value="<?= $l_publish ?>" />
+                  <input type="submit" class="btn btn-danger btn-lg" value="<?= $l_publish ?>" />
                </form>
          </div>
       </div>

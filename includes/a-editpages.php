@@ -8,7 +8,7 @@ if(isset($_SESSION['id'])) {
             $asection = $_POST['page_section'];
             $insertart = $db->prepare("UPDATE pages SET title = ?, section = ? WHERE id = ?");
             $insertart->execute(array($atitle, $asection, $edit_id));
-            $message = "$l_pageupdate!";
+            $msg = "$l_pageupdate!";
          }
       }
    }else{

@@ -9,7 +9,7 @@ header("Location: /error/405");
 break;
 
 case '400':?>
-<title><?= $title ?>: <?= $l_error ?> 400</title>
+<title><?= $l_error ?> 400 | <?= $title ?></title>
 </head>
 <body>
 <div class="center">
@@ -21,7 +21,7 @@ case '400':?>
 <?php break;
 
 case '401':?>
-<title><?= $title ?>: <?= $l_error ?> 401 / 403</title>
+<title><?= $l_error ?> 401 / 403 | <?= $title ?></title>
 </head>
 <body>
 <div class="center">
@@ -33,7 +33,7 @@ case '401':?>
 <?php break;
 
 case '404':?>
-<title><?= $title ?>: <?= $l_error ?> 404</title>
+<title><?= $l_error ?> 404 | <?= $title ?></title>
 </head>
 <body>
 <div class="center">
@@ -45,7 +45,7 @@ case '404':?>
 <?php break;
 
 case '405':?>
-<title><?= $title ?>: <?= $l_error ?> 405</title>
+<title><?= $l_error ?> 405 | <?= $title ?></title>
 </head>
 <body>
 <div class="center">
@@ -57,7 +57,7 @@ case '405':?>
 <?php break;
 
 case '408':?>
-<title><?= $title ?>: <?= $l_error ?> 408</title>
+<title><?= $l_error ?> 408 | <?= $title ?></title>
 </head>
 <body>
 <div class="center">
@@ -69,7 +69,7 @@ case '408':?>
 <?php break;
 
 case '418':?>
-<title><?= $title ?>: <?= $l_error ?> 418</title>
+<title><?= $l_error ?> 418 | <?= $title ?></title>
 </head>
 <body>
 <div class="center">
@@ -81,7 +81,7 @@ case '418':?>
 <?php break;
 
 case '429':?>
-<title><?= $title ?>: <?= $l_error ?> 429</title>
+<title><?= $l_error ?> 429 | <?= $title ?></title>
 </head>
 <body>
 <div class="center">
@@ -93,7 +93,7 @@ case '429':?>
 <?php break;
 
 case '500':?>
-<title><?= $title ?>: <?= $l_error ?> 500 / 502</title>
+<title><?= $l_error ?> 500 / 502 | <?= $title ?></title>
 </head>
 <body>
 <div class="center">
@@ -105,7 +105,7 @@ case '500':?>
 <?php break;
 
 case '501':?>
-<title><?= $title ?>: <?= $l_error ?> 501</title>
+<title><?= $l_error ?> 501 | <?= $title ?></title>
 </head>
 <body>
 <div class="center">
@@ -117,7 +117,7 @@ case '501':?>
 <?php break;
 
 case '505':?>
-<title><?= $title ?>: <?= $l_error ?> 505</title>
+<title><?= $l_error ?> 505 | <?= $title ?></title>
 </head>
 <body>
 <div class="center">
@@ -129,7 +129,7 @@ case '505':?>
 <?php break;
 
 case '510':?>
-<title><?= $title ?>: <?= $l_error ?> 510</title>
+<title><?= $l_error ?> 510 | <?= $title ?></title>
 </head>
 <body>
 <div class="center">

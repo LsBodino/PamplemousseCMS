@@ -10,7 +10,7 @@ textarea.form-control {
 }
 </style>
    <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
-   <title><?= $title ?>: <?= $l_panel ?> - <?= $l_createarticle ?></title>
+   <title><?= $l_panel ?> - <?= $l_createarticle ?> | <?= $title ?></title>
 </head>
 <body>
    <div class="center">

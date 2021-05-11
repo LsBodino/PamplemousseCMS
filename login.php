@@ -4,7 +4,7 @@ include_once 'includes/header.php';
 include_once 'includes/menu.php';
 include_once 'includes/login.php';
 ?>
-<title><?= $title ?>: <?= $l_login ?></title>
+<title><?= $l_login ?> | <?= $title ?></title>
 </head>
 <body>
    <div class="container">

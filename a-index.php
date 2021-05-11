@@ -4,7 +4,7 @@ include_once 'includes/a-menu.php';
 ?>
  <html>
     <head>
-       <title><?= $title ?>: <?= $l_panel ?> - <?= $l_homepage ?></title>
+       <title><?= $l_panel ?> - <?= $l_homepage ?> | <?= $title ?></title>
        <meta charset="utf-8">
     </head>
     <body>

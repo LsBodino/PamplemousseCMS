@@ -16,15 +16,15 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
     height: 50%;
 } </style>
 <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
-<title><?= $title ?>: <?= $l_panel ?> - <?= $l_editpage ?></title>
+<title><?= $l_panel ?> - <?= $l_editpage ?> | <?= $title ?></title>
 </head>
 <body>
 <div class="center">
 <div class="container">
 <div class="row">
 <h2><?= $l_editpage ?></h2>
-<?php if(isset($message)) {
-            echo '<div class="alert alert-success alert-dismissable"><strong>'.$message.'</strong><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>';
+<?php if(isset($msg)) {
+            echo '<div class="alert alert-success alert-dismissable"><strong>'.$msg.'</strong><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>';
          } ?>
 <form method="POST">
 <div class="form-group">
@@ -35,7 +35,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
          CKEDITOR.replace( 'page_section' );
       </script>
       </div>
-      <input type="submit" class="bouton" value="<?= $l_publish ?>" />
+      <input type="submit" class="btn btn-danger btn-lg" value="<?= $l_publish ?>" />
    </form>
 </div></div>
 </div>

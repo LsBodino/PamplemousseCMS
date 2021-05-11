@@ -10,7 +10,7 @@ textarea.form-control {
     height: 50%;
 }
 </style>
-<title><?= $title ?>: <?= $l_panel ?> - <?= $l_createpage ?></title>
+<title><?= $l_panel ?> - <?= $l_createpage ?> | <?= $title ?></title>
 </head>
 <body>
    <div class="center">
@@ -29,7 +29,7 @@ textarea.form-control {
                      CKEDITOR.replace( 'page_section' );
                      </script>
                   </div>
-                  <input type="submit" class="bouton" value="<?= $l_publish ?>" />
+                  <input type="submit" class="btn btn-danger btn-lg" value="<?= $l_publish ?>" />
                </form>
          </div>
       </div>

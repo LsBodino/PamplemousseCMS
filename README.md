@@ -6,7 +6,7 @@ Pamplemousse is above all a community project, all our developer friends can par
 
 Why make complicated? Download the useful, join the Pamplemousse.
 
-Version: UP6.
+Version: UP7.
 
 ### >_ Installation (UP3 and +)
 
@@ -32,9 +32,11 @@ Online demo: https://pamplemousse.go.yj.fr
 
 @LsBodino (me) - Project development and management
 
+Eva - Spanish language (UP6 and +)
+
 Bootstrap - CSS & JS
 
-Bootflat - CSS & JS
+Bootflat - CSS & JS (UP1 => UP6)
 
 Respond.js - JS
 

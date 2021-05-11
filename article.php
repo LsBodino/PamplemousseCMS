@@ -18,22 +18,26 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 ?>
 <html>
    <head>
-      <title><?= $title ?>: <?php echo $infoa['title']; ?></title>
+      <title><?php echo $infoa['title']; ?> | <?= $title ?></title>
    </head>
    <body>
    <div class="col-md-12">
-   <div class="container">
-   <div class="jumbotron">
-	<div class="center">
-   <img class="img-rounded" src="<?php echo $infoa['img']; ?>">
-         <h2><?php echo $infoa['title']; ?></h2>
-         <h6><?php echo $infoa['descr']; ?></h6>
-         <?= $l_published ?> <?php echo date_format($date, 'd-m-Y H:i'); ?> <?= $l_by ?> <?php echo $infou['username']; ?></div>
-         <div class="jumbotron-contents">
-         <p><?php echo $infoa['section']; ?></p>
-         <br>
-         </div></div></div></div>
-   </body>
+      <div class="container">
+         <div class="jumbotron">
+	         <div class="center">
+               <img class="img-rounded" src="<?php echo $infoa['img']; ?>">
+               <h2><?php echo $infoa['title']; ?></h2>
+               <h6><?php echo $infoa['descr']; ?></h6>
+               <?= $l_published ?> <?php echo date_format($date, 'd-m-Y H:i'); ?> <?= $l_by ?> <?php echo $infou['username']; ?>
+            </div>
+            <div class="jumbotron-contents">
+               <p><?php echo $infoa['section']; ?></p>
+               <br>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
 </html>
 <?php   
 } }

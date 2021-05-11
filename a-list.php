@@ -9,7 +9,7 @@ if(isset($_SESSION['id'])){
             header("Location: /error/405");
             break;
             case 'articles':?>
-            <title><?= $title ?>: <?= $l_panel?> - <?= $l_listarticles?></title>
+            <title><?= $l_panel?> - <?= $l_listarticles?> | <?= $title ?></title>
             <div class="container">
                 <div class="center"> 
                     <h2><?= $l_listarticles?></h2>
@@ -32,7 +32,7 @@ if(isset($_SESSION['id'])){
             </div>
             <?php break;
             case 'pages':?>
-            <title><?= $title ?>: <?= $l_panel?> - <?= $l_listpages?></title>
+            <title><?= $l_panel?> - <?= $l_listpages?> | <?= $title ?></title>
             <div class="container">
                 <div class="center">
                     <h2><?= $l_listpages?></h2>

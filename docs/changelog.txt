@@ -15,6 +15,7 @@ Major update of the CMS, PamplemousseCMS which was under Bootstrap 3.3 passes un
 - Added the column "wstimezone" (text) in the table "config" on the database.
 - Added config variable "$timezone" to call the current timezone.
 - Added the column "pinned" (tinyint, 0 by default) on the page "articles" in the database.
+- Added the date of registration and the date of last login on the spaces.
 - Adding metas to the header.
 - Fixed a bug that had to double click on "Edit" to save the language change in the "Configuration" page.
 - Removed all <center> tags, they are replaced by <div class="center">.
@@ -28,6 +29,14 @@ Major update of the CMS, PamplemousseCMS which was under Bootstrap 3.3 passes un
 - The footer displays the page load time.
 - No more css files are managed by the "assets" folder but directly by the theme.
 
+### UP7Fixed
+- Fixed a bug that caused the home page to not display properly.
+- Fixed a bug that caused the "Configuration" page button to not display properly.
+- Fixed a bug that caused the "Create page" page button to not display properly.
+- Fixed a bug that caused the "Edit article" page button to not display properly.
+- Fixed a bug that caused the "Edit page" page button to not display properly.
+- Fixed a bug that caused the article edit validation message to not display.
+- The format of the tab name has been changed.
 
 ### New variables in languages:
 

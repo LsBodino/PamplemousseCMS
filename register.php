@@ -4,7 +4,7 @@ include_once 'includes/header.php';
 include_once 'includes/menu.php';
 include_once 'includes/register.php';
 ?>
-<title><?= $title ?>: <?= $l_register ?></title>
+<title><?= $l_register ?> | <?=$title?></title>
 </head>
 <body>
    <div class="center">

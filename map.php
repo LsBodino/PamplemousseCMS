@@ -1,7 +1,7 @@
 <head>
 <?php include_once 'includes/header.php';
 include_once "includes/menu.php";?>
-<title><?= $title ?>: <?= $l_map ?></title>
+<title><?= $l_map ?> | <?= $title ?></title>
 </head>
 <body>
     <div class="center">

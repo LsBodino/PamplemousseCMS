@@ -19,7 +19,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 <title><?= $title ?>: <?= $l_panel ?> - <?= $l_editpage ?></title>
 </head>
 <body>
-<center>
+<div class="center">
 <div class="container">
 <div class="row">
 <h2><?= $l_editpage ?></h2>
@@ -38,7 +38,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
       <input type="submit" class="bouton" value="<?= $l_publish ?>" />
    </form>
 </div></div>
-</center>
+</div>
 </body>
 <?php } }
 include_once 'includes/footer.php';?>

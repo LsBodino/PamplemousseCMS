@@ -1,35 +1,53 @@
 <head>
-<?php include_once 'includes/header.php';
-include_once "includes/menu.php";?>
+<?php
+include_once 'includes/header.php';
+include_once "includes/menu.php";
+?>
 <title><?= $title ?>: <?= $l_homepage ?></title>
-<div class="container">
-<?php if(!isset($_SESSION['id'])) { ?>
-<div class="alert alert-info">
-<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-<h4><?= $l_notregistered ?></h4>
-<p><?= $l_notregistered2 ?> <?=$title?>. <?= $l_notregistered3 ?>! :)</p><br>
-<a class="btn btn-primary" href="<?=$link?>/register"><?= $l_register ?></a>
-</div>
-<?php } ?>
 </head>
 <body>
-<center><h2><?= $l_homepage ?></h2>
-<div class="row">
-<h3><?= $l_mostrecenta ?></h3></center>
-<?php 
-$articles = NULL;
-$articles = $db->query('SELECT * FROM articles ORDER by id DESC LIMIT 8');
-while($a = $articles->fetch()) { ?>
-<div class="col-sm-6 col-md-3">
-<div class="thumbnail">
-                <img class="img-rounded" src="<?= $a['img'] ?>">
-                <div class="caption text-center">
-                  <h3><?= $a['title'] ?></h3>
-                  <p><?= $a['descr'] ?></p>
-                  <p><a href="<?=$link?>/article/<?= $a['id'] ?>" class="btn btn-warning" role="button"><?= $l_read ?> >></a></p>
-                </div></div></div>
-                <?php } ?>
+<div class="container">
+  <?php if(!isset($_SESSION['id'])) { ?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong><?= $l_notregistered ?></strong>
+      <p><?= $l_notregistered2 ?> <?=$title?>. <?= $l_notregistered3 ?>! 😁</p>
+    </div>
+  <?php } ?>
+  <div class="center">
+    <h2><?= $l_homepage ?></h2>
+    <h3><?= $l_mostrecenta ?></h3>
+    
+    <?php 
+    $articlespin = NULL;
+    $articlespin = $db->query('SELECT * FROM articles WHERE visible = 1 AND pin = 1 ORDER by id DESC LIMIT 4');
+    while($ap = $articlespin->fetch()) { ?>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <img class="img-thumbnail" src="<?= $ap['img'] ?>">
+          <div class="caption text-center">
+            <h4><?= $ap['title'] ?> 📌</h4>
+            <p><?= $ap['descr'] ?></p>
+            <a href="<?=$link?>/article/<?= $ap['id'] ?>" class="btn btn-primary" role="button"><?= $l_read ?> >></a>
+          </div>
+        </div>
+      </div>
 
-</div></div>
+    <?php }
+    $articles = NULL;
+    $articles = $db->query('SELECT * FROM articles WHERE visible = 1 AND pin = 0 ORDER by id DESC LIMIT 8');
+    while($a = $articles->fetch()) { ?>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <img class="img-thumbnail" src="<?= $a['img'] ?>">
+          <div class="caption text-center">
+            <h4><?= $a['title'] ?></h4>
+            <p><?= $a['descr'] ?></p>
+            <p><a href="<?=$link?>/article/<?= $a['id'] ?>" class="btn btn-primary" role="button"><?= $l_read ?> >></a></p>
+          </div>
+      </div>
+    </div>
+    <?php } ?>
+  </div>
+</div>
 </body>
 <?php include_once 'includes/footer.php';?>

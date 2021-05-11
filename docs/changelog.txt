@@ -1,0 +1,45 @@
+## UP7
+
+Hi, it's NOT Friday and so update, here is the UP7.
+Major update of the CMS, PamplemousseCMS which was under Bootstrap 3.3 passes under Bootstrap 5.
+
+### Changelog:
+
+- PamplemousseCMS is on Bootstrap 5.
+- Redesign of the default theme.
+- Removal of Bootflat which is outdated.
+- Added the configuration of the connection port to the database in the config.php file. 
+- Added the column "id_author" (int) on the "pages" table in the database.
+- Added the possibility to pin an article on the homepage, they are displayed with an icon 📌.
+- Added "register" (int) and "lastlogin" (int) columns in the "users" table in the database.
+- Added the column "wstimezone" (text) in the table "config" on the database.
+- Added config variable "$timezone" to call the current timezone.
+- Added the column "pinned" (tinyint, 0 by default) on the page "articles" in the database.
+- Adding metas to the header.
+- Fixed a bug that had to double click on "Edit" to save the language change in the "Configuration" page.
+- Removed all <center> tags, they are replaced by <div class="center">.
+- The author id is saved when a page is added.
+- Technical changes of the "a-delete.php" and "logout.php" pages.
+- The a-articles.php and a-pages.php pages merge to become a-list.php.
+- Technical redesign of an account logout.
+- All dates are now saved in timestamp.
+- Fixed a bug that caused the footer to not appear on the "Login" page.
+- The .htaccess file is sorted alphabetically and numerically.
+- The footer displays the page load time.
+- No more css files are managed by the "assets" folder but directly by the theme.
+
+
+### New variables in languages:
+
+// Footer
+$l_pageloaded = "Page loaded in";
+$l_seconds = "second(s)";
+
+// Panel
+$l_articlepin = "Pin the article";
+$l_yes = "Yes";
+$l_no = "No";
+
+// Space
+$l_lastlogin = "Last login";
+$l_registrationdate = "Registration date";

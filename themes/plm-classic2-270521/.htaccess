@@ -1,0 +1,13 @@
+RewriteEngine On
+ErrorDocument 403 /error/401
+ErrorDocument 404 /error/401
+
+<FilesMatch "\.tpl$">
+Deny from all
+</FilesMatch>
+
+RewriteCond %{HTTP_REFERER} !^/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^/$ [NC]
+RewriteCond %{HTTP_REFERER} !^/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^$ [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp|swf|tpl|css)$ / [R,NC]

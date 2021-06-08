@@ -7,8 +7,8 @@ PamplemousseCMS ST is primarily a community project, you can contribute to the d
 
 Why complicate, when you can have simplicity? Join the Pamplemousses.
 
-Available in English, French, Spanish, Italian and German.
-Version: ST1.
+Available in English, French, Spanish, Italian, German, Dutch and Portuguese.
+Version: ST2.
 
 ### >_ Installation
 
@@ -43,7 +43,7 @@ Bootstrap: https://getbootstrap.com
 
 Smarty (3.1.39) by New Digital Group, Inc.
 Bootstrap (5.0) by Bootstrap Team.
-PamplemousseCMS (ST1) by @LsBodino.
+PamplemousseCMS (ST2) by @LsBodino.
 
 
 #### >_ Special Thanks

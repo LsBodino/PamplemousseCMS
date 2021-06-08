@@ -1,0 +1,28 @@
+<head>
+    <title>{$l_panel} - {$l_listusers} | {$title}</title>
+</head>
+<body>
+    <div class="container">
+        <div class="center"> 
+            <h2 class="display-6">{$l_listusers}</h2>
+        </div>
+        <div class="row">
+            {foreach $users as $u}
+                <div class="col-md-9">
+                    <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">{$u.username} ({$l_id}: {$u.id}) {if $u.ban == 1} - <strong>{$l_banned}</strong>{/if}</h4>
+                    <p class="list-group-item-text">{$u.mail}</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                {if $u.ban == 0 AND $u.rank == 0}
+                    <a href="{$link}/panel/ban/users/{$u.id}" role="button" class="btn btn-danger btn-sm">{$l_ban}</a>
+                {/if}
+                {if $u.ban == 1}
+                    <a href="{$link}/panel/unban/users/{$u.id}" role="button" class="btn btn-danger btn-sm">{$l_unban}</a>
+                {/if}
+                </div>
+            {/foreach}
+        </div>
+    </div>
+</body>

@@ -1,0 +1,78 @@
+## ST2
+Improved spaces, added new options, fixed ST1.
+
+### Changelog:
+- The p-config.php/.tpl files are renamed to p-configuration.php/.tpl
+- By default, the lifetime of the caches has changed from 1 hour to 15 minutes. You can change this value in the includes/config.php file, on the line $smarty->cache_lifetime (in seconds).
+- The "pw" column in the "users" table is passed from varchar to text.
+- The separation between the page and the footer is better.
+- Putting an image in an article is now optional.
+- It is not possible to ban a user who is an administrator or editor, you must first remove the rank.
+- Update the default theme.
+- The p-delete.php file is also used to ban users.
+- The "plan" page has been updated.
+
+### Additions:
+- Adding the form.php file, it will support data editing outside the panel.
+- Added a "Read" button next to each article in the "List of articles" page on the panel in order to access the article more quickly.
+- Added "profilepicture" (varchar, 255) and "ban" (int, default 0) columns to the "users" table.
+- Added profile photos, they appear on the profiles and can be modified in the settings.
+- Added the "List of users" page on the panel for admins.
+- Added the ability to ban a user for admins.
+- Adding a config.php file in the folder of your theme, it will be very useful for updating the panel at the level of theme selections.
+- Added the "register" column (int, default 1) in the "config" table of the database.
+- Added Recycle Bin (p-trash.php), it allows to see deleted articles/ pages.
+- Added the p-recover.php file, it serves for recovering files from Recycle Bin and to unblock users.
+- Added a "Registration" button below the "Login" button in the page of the same name.
+- Added the possibility to block registrations on the site from the "General" page of the "Configuration" category of the panel.
+
+### Fixes:
+- Fixed a bug that when there were errors 501, 505 and 510, the redirection to error pages did not occur.
+- Fixed a bug that sometimes css did not load.
+- Fixed a bug that caused the drop-down menu of the choice of languages in the "configuration" page of the Panel, systematically displaying German as language.
+- Fixed a bug that made the burger menu for mobile users not working.
+- Fixed a bug that sometimes there was an error message when validating the settings of an account.
+
+### Updating of languages:
+-  Addition of Dutch (nl) and Portuguese (pt) languages.
+
+#### New language columns:
+Format: column => text
+
+l_ban => Ban
+l_banned => Banned
+l_edituser => Edit a user
+l_general => General
+l_id => ID
+l_listusers => List of users
+l_newprofilepic => New profile pic
+l_recover => Recover
+l_registrationwebsite => Registration on the website
+l_registrationsclosed => Registrations are closed on this site
+l_trash => Trash
+l_unban => Unban
+l_users => Users
+l_userupdated => User has been updated
+l_youarebanned => You are banned from the site
+
+#### Update name of language columns:
+- The purpose of name changes is to make the different names more consistent and understandable.
+Format: old name => new name
+
+l_accessd => l_accessdenied
+l_backws => l_backwebsite
+l_articleupdate => l_articleupdated
+l_lg => l_letsgo
+l_mostrecenta => l_mostrecentarticles
+l_notregistered2 => l_notregisteredsection1
+l_notreregistered3 => l_notregisteredsection2
+l_pageupdate => l_pageupdated
+l_pw2 => l_pwc
+l_minusername => l_usernamemin
+l_maxusername => l_usernamemax
+l_toomrequest => l_toomanyrequest
+
+### Credits:
+Smarty (3.1.39) by New Digital Group, Inc.
+Bootstrap (5.0) by Bootstrap Team.
+PamplemousseCMS (ST2) by @LsBodino.

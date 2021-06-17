@@ -1,23 +1,29 @@
 <?php
-require_once 'includes/header.php';
+require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
-$l_homepage = $lg['l_homepage'];
-$smarty->assign("l_homepage", $l_homepage);
 
-$l_panel = $lg['l_panel'];
-$smarty->assign("l_panel", $l_panel);
+// Database call
+$articles = $db->prepare('SELECT * FROM articles WHERE visible = 1 ORDER by id DESC LIMIT 10');
+$articles->execute();
+$smarty->assign('articles',$articles);
 
-$l_soon = $lg['l_soon'];
-$smarty->assign("l_soon", $l_soon);
+$pages = $db->prepare('SELECT * FROM pages WHERE visible = 1 ORDER by id DESC LIMIT 10');
+$pages->execute();
+$smarty->assign('pages',$pages);
 
+$users = $db->prepare('SELECT * FROM users ORDER by id DESC LIMIT 10');
+$users->execute();
+$smarty->assign('users',$users);
+
+// Template call
 if(isset($_SESSION['id'])) {
     if($user['rank'] >= 1){
-        $smarty->display("themes/$theme/p-index.tpl");
+        $smarty->display("themes/$paneltheme/p-index.tpl");
     }else{
-        header("Location: /error/403");
+        header("Location: $link/error/403");
     }
 }else{
-    header("Location: /login");
+    header("Location: $link/login");
 }
 
-require_once 'includes/footer.php'; ?>
+require_once 'includes/p-footer.php'; ?>

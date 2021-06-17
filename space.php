@@ -1,45 +1,31 @@
 <?php
 require_once 'includes/header.php';
 require_once 'includes/menu.php';
-$page = "space";
 
-$l_admin = $lg['l_admin'];
-$smarty->assign("l_admin", $l_admin);
-
-$l_editor = $lg['l_editor'];
-$smarty->assign("l_editor", $l_editor);
-
-$l_lastlogin = $lg['l_lastlogin'];
-$smarty->assign("l_lastlogin", $l_lastlogin);
-
-$l_member = $lg['l_member'];
-$smarty->assign("l_member", $l_member);
-
-$l_rank = $lg['l_rank'];
-$smarty->assign("l_rank", $l_rank);
-
-$l_registrationdate = $lg['l_registrationdate'];
-$smarty->assign("l_registrationdate", $l_registrationdate);
-
-$l_settings = $lg['l_settings'];
-$smarty->assign("l_settings", $l_settings);
-
-$l_spaceof = $lg['l_spaceof'];
-$smarty->assign("l_spaceof", $l_spaceof);
-
-$l_username = $lg['l_username'];
-$smarty->assign("l_username", $l_username);
-
-if(isset($_GET['id']) AND $_GET['id'] > 0) {
-   $getid = intval($_GET['id']);
-   $requser = $db->prepare('SELECT * FROM users WHERE id = ?');
-   $requser->execute(array($getid));
-   $idexist = $requser->rowCount();
-   $smarty->assign('requser', $requser);
-   if($idexist == 0){
-      header("Location: $link/error/404");
-   }else{
-      $smarty->display("themes/$theme/space.tpl"); 
+// Database call
+if(isset($_GET['id']) || isset($_GET['username'])){
+   if(isset($_GET['id'])){
+      $id_get = intval($_GET['id']);
+      $user_req = $db->prepare('SELECT * FROM users WHERE id = ?');
+      $user_req->execute(array($id_get));
+      $user_exist = $user_req->rowCount();
+      $smarty->assign('user_req', $user_req);
    }
+   if(isset($_GET['username'])){
+      $id_get = $_GET['username'];
+      $user_req = $db->prepare('SELECT * FROM users WHERE username = ?');
+      $user_req->execute(array($id_get));
+      $user_exist = $user_req->rowCount();
+      $smarty->assign('user_req', $user_req);
+   }
+
+// Template call
+   if($user_exist == 0){
+      $smarty->display("themes/$theme/error404.tpl");
+   }else{
+      $smarty->display("themes/$theme/space.tpl");
+   }
+}else{
+   $smarty->display("themes/$theme/error405.tpl");
 }
 require_once 'includes/footer.php';?>

@@ -1,5 +1,7 @@
 <?php
-require_once 'includes/header.php';
+require_once 'includes/p-header.php';
+
+// Switch
 if(isset($_SESSION['id'])){
     if($user['rank'] >= 1){
         if(isset($_GET['id']) AND !empty($_GET['id'])){
@@ -9,25 +11,36 @@ if(isset($_SESSION['id'])){
                     header("Location: $link/error/405");
                 break;
 
+                // Articles
                 case 'articles':
-                    $del_id = htmlspecialchars($_GET['id']);
-                    $del = $db->prepare('UPDATE articles SET visible = 0 WHERE id = ?');
-                    $del->execute(array($del_id));
+                    $visible_id = htmlspecialchars($_GET['id']);
+                    $visible = $db->prepare('UPDATE articles SET visible = 0 WHERE id = ?');
+                    $visible->execute(array($visible_id));
                     header("Location: $link/panel/articles");
                 break;
+
+                // Categories
+                case 'categories':
+                    $visible_id = htmlspecialchars($_GET['id']);
+                    $visible = $db->prepare('UPDATE articles_categories SET visible = 0 WHERE id = ?');
+                    $visible->execute(array($visible_id));
+                    header("Location: $link/panel/categories/articles/");
+                break;
                 
+                // Pages
                 case 'pages':
-                    $del_id = htmlspecialchars($_GET['id']);
-                    $del = $db->prepare('UPDATE pages SET visible = 0 WHERE id = ?');
-                    $del->execute(array($del_id));
+                    $visible_id = htmlspecialchars($_GET['id']);
+                    $visible = $db->prepare('UPDATE pages SET visible = 0 WHERE id = ?');
+                    $visible->execute(array($visible_id));
                     header("Location: $link/panel/pages");
                 break;
 
+                // Users
                 case 'users':
                     if($user['rank'] == 2){
-                        $del_id = htmlspecialchars($_GET['id']);
-                        $del = $db->prepare('UPDATE users SET ban = 1 WHERE id = ?');
-                        $del->execute(array($del_id));
+                        $ban_id = htmlspecialchars($_GET['id']);
+                        $ban = $db->prepare('UPDATE users SET ban = 1 WHERE id = ?');
+                        $ban->execute(array($ban_id));
                         header("Location: $link/panel/users");
                     }else{
                         header("Location: $link/error/403");

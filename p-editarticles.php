@@ -1,56 +1,34 @@
 <?php
-require_once 'includes/header.php';
+require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
-$l_articlepin = $lg['l_articlepin'];
-$smarty->assign("l_articlepin", $l_articlepin);
 
-$l_articleupdated = $lg['l_articleupdated'];
-$smarty->assign("l_articleupdated", $l_articleupdated);
-
-$l_editarticle = $lg['l_editarticle'];
-$smarty->assign("l_editarticle", $l_editarticle);
-
-$l_descr = $lg['l_descr'];
-$smarty->assign("l_descr", $l_descr);
-
-$l_image = $lg['l_image'];
-$smarty->assign("l_image", $l_image);
-
-$l_name = $lg['l_name'];
-$smarty->assign("l_name", $l_name);
-
-$l_no = $lg['l_no'];
-$smarty->assign("l_no", $l_no);
-
-$l_panel = $lg['l_panel'];
-$smarty->assign("l_panel", $l_panel);
-
-$l_publish = $lg['l_publish'];
-$smarty->assign("l_publish", $l_publish);
-
-$l_section = $lg['l_section'];
-$smarty->assign("l_section", $l_section);
-
-$l_yes = $lg['l_yes'];
-$smarty->assign("l_yes", $l_yes);
+// Database call
+$category = $db->prepare("SELECT * FROM articles_categories WHERE visible = 1 ORDER by id");
+$category->execute();
+$smarty->assign("category", $category);
 
 if(isset($_SESSION['id'])){
    if($user['rank'] >= 1){
-      if(isset($_GET['id']) AND $_GET['id'] > 0) {
-         $getid = intval($_GET['id']);
-         $reqarticle = $db->prepare('SELECT * FROM articles WHERE id = ? AND visible = 1');
-         $reqarticle->execute(array($getid));
-         $idexist = $reqarticle->rowCount();
-         $smarty->assign('reqarticle', $reqarticle);
-         if($idexist == 0){ 
-            header("Location: /404");
+      if(isset($_GET['id']) AND $_GET['id'] > 0){
+         $id_get = intval($_GET['id']);
+         $article_req = $db->prepare('SELECT * FROM articles WHERE id = ? AND visible = 1');
+         $article_req->execute(array($id_get));
+         $article_exist = $article_req->rowCount();
+         $smarty->assign('article_req', $article_req);
+
+// Template call
+         if($article_exist == 0){
+            $smarty->display("themes/$theme/error404.tpl");
+         }else{
+            $smarty->display("themes/$paneltheme/p-editarticles.tpl");
          }
+      }else{
+         $smarty->display("themes/$theme/error405.tpl");
       }
-      $smarty->display("themes/$theme/p-editarticles.tpl");
    }else{
-      header("Location: /error/403");
-  }
+      $smarty->display("themes/$theme/error403.tpl");
+   }
 }else{
-  header("Location: /login");
+  header("Location: $link/login");
 }
-require_once 'includes/footer.php';?>
+require_once 'includes/p-footer.php';?>

@@ -1,19 +1,14 @@
 <?php
 require_once 'includes/header.php';
 require_once 'includes/menu.php';
-$l_articles = $lg['l_articles'];
-$smarty->assign("l_articles", $l_articles);
 
-$l_noarticle = $lg['l_noarticle'];
-$smarty->assign("l_noarticle", $l_noarticle);
-
-$l_read = $lg['l_read'];
-$smarty->assign("l_read", $l_read);
-
+// Database call
 $articles = $db->prepare('SELECT * FROM articles WHERE visible = 1 ORDER by id DESC');
 $articles->execute();
-$nbarticles = $articles->rowcount();
-$smarty->assign('nbarticles',$nbarticles);
+$articles_nb = $articles->rowcount();
+$smarty->assign('articles_nb',$articles_nb);
 $smarty->assign('articles',$articles);
+
+// Template call
 $smarty->display("themes/$theme/articles.tpl");
 require_once 'includes/footer.php';

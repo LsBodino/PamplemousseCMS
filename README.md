@@ -8,7 +8,8 @@ PamplemousseCMS ST is primarily a community project, you can contribute to the d
 Why complicate, when you can have simplicity? Join the Pamplemousses.
 
 Available in English, French, Spanish, Italian, German, Dutch and Portuguese.
-Version: ST2.
+
+Version: ST3.
 
 ### >_ Installation
 
@@ -17,6 +18,7 @@ Version: ST2.
 3. Open the "config.php" file in the "includes" folder and change the credentials to your database.
 4. Go to the "config" table of your database and change the information.
 5. Then go to the site, which should be displayed and log in with the Admin account, (email address: admin@pamplemoussecms.com and password: admin).
+
 Very important: Immediately change the settings of the account from the "Settings" page.
 
 
@@ -35,20 +37,27 @@ Online demo: https://demo.pamplemoussecms.com
 ### >_ Docs
 
 PamplemousseCMS: https://pamplemoussecms.com
+
 Smarty: https://smarty.net
+
 Bootstrap: https://getbootstrap.com
 
 
 ### >_ Credits
 
 Smarty (3.1.39) by New Digital Group, Inc.
+
 Bootstrap (5.0) by Bootstrap Team.
+
 PamplemousseCMS (ST2) by @LsBodino.
 
 
 #### >_ Special Thanks
 
 Eva (Aliénor): for support and love in everyday life and help with Spanish and Italian translation.
+
 Marie: for advice.
+
 ICS: for giving me knowledge.
+
 Pamplemousses: for everything.

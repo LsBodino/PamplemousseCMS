@@ -12,12 +12,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 // Template call
    if($article_exist == 0){
-      header("Location: $link/error/404");
+      $smarty->display("themes/$theme/error404.tpl");
    }else{
-      $smarty->display("themes/$theme/article.tpl");  
+      $smarty->display("themes/$theme/article.tpl");
    }
 }else{
-   header("Location: $link/error/405");
+   $smarty->display("themes/$theme/error405.tpl");
 }
 require_once 'includes/footer.php';
 ?>

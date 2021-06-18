@@ -5,7 +5,7 @@ require_once "includes/menu.php";
 switch($_GET['id'])
 {
 default:
-    header("Location: $link/error/405");
+    $smarty->display("themes/$theme/error405.tpl");
 break;
 
 // ERROR 400

@@ -4,10 +4,12 @@ require_once "includes/p-menu.php";
 
 // Database call
 if(isset($_SESSION['id'])){
-    $user_req = $db->prepare('SELECT * FROM users WHERE id = ?');
-    $user_req->execute(array($_SESSION['id']));
-    $smarty->assign('user_req', $user_req);
+    if($user['rank'] >= 1){
+        $smarty->display("themes/$paneltheme/p-map.tpl");
+    }else{
+        $smarty->display("themes/$theme/error401.tpl");
+    }
+}else{
+    header("Location: $link/login");
 }
-
-$smarty->display("themes/$paneltheme/p-map.tpl");
 require_once 'includes/p-footer.php';?>

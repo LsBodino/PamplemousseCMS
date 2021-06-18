@@ -20,7 +20,7 @@ if(isset($_SESSION['id'])) {
     if($user['rank'] >= 1){
         $smarty->display("themes/$paneltheme/p-index.tpl");
     }else{
-        header("Location: $link/error/403");
+        $smarty->display("themes/$theme/error401.tpl");
     }
 }else{
     header("Location: $link/login");

@@ -17,25 +17,34 @@ if(isset($_SESSION['id'])){
             $username_req = $db->prepare("SELECT * FROM users WHERE username = ?");
             $username_req->execute(array($username));
             $username_exist = $username_req->rowCount();
-            if($username_exist == 0) {
-               if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
-                  $mail_req = $db->prepare("SELECT * FROM users WHERE mail = ?");
-                  $mail_req->execute(array($mail));
-                  $mail_exist = $mail_req->rowCount();
-                  if($mail_exist == 0){
-                     if($pw == $pw2){
-                        $user_insert = $db->prepare("INSERT INTO users(username, mail, pw, rank, register, lastlogin) VALUES(?, ?, ?, ?, ?, ?)");
-                        $user_insert->execute(array($username, $mail, password_hash($pw, PASSWORD_DEFAULT), 0, time(), time()));
-                        $success = "$l_ok. <a href=\"$link/login\">$l_login</a>";
-                        $smarty->assign("success", $success);
+            if($username_exist == 0){
+               if(ctype_alnum($username)){
+                  if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
+                     $mail_req = $db->prepare("SELECT * FROM users WHERE mail = ?");
+                     $mail_req->execute(array($mail));
+                     $mail_exist = $mail_req->rowCount();
+                     if($mail_exist == 0){
+                        if($pw == $pw2){
+                           $pw_long = strlen($pw);
+                           if($pw_long >= 8){
+                              $user_insert = $db->prepare("INSERT INTO users(username, mail, pw, rank, register, lastlogin, profilepicture, ban) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+                              $user_insert->execute(array($username, $mail, password_hash($pw, PASSWORD_DEFAULT), 0, time(), time(), "/img/picture.png", 0));
+                              $success = "$l_ok. <a href=\"$link/login\">$l_login</a>";
+                              $smarty->assign("success", $success);
+                           }else{
+                              $smarty->assign("error", $l_pwmin);
+                           }
+                        }else{
+                           $smarty->assign("error", $l_pwerror);
+                        }
                      }else{
-                        $smarty->assign("error", $l_pwerror);
+                        $smarty->assign("error", $l_emailused);
                      }
                   }else{
-                     $smarty->assign("error", $l_emailused);
+                     $smarty->assign("error", $l_emailerror);
                   }
                }else{
-                  $smarty->assign("error", $l_emailerror);
+                  $smarty->assign("error", $l_usernameunauthorized);
                }
             }else{
                $smarty->assign("error", $l_usernameused);

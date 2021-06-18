@@ -12,13 +12,13 @@ if(isset($_SESSION['id'])){
          $page_exist = $page_req->rowCount();
          $smarty->assign("page_req", $page_req);
          if($page_exist == 0){ 
-            header("Location: $link/error/404");
+            $smarty->display("themes/$theme/error404.tpl");
          } 
       }
       // Template call
       $smarty->display("themes/$paneltheme/p-editpages.tpl");
    }else{
-      header("Location: $link/error/403");
+      $smarty->display("themes/$theme/error401.tpl");
    }
 }else{
   header("Location: $link/login");

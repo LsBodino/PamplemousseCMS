@@ -9,8 +9,14 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="{$link}/index">{$l_homepage}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{$link}/articles">{$l_articles}</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="menu_articles" role="button" data-bs-toggle="dropdown" aria-expanded="false">{$l_articles}</a>
+                    <ul class="dropdown-menu" aria-labelledby="menu_articles">
+                        <li><a class="dropdown-item" href="{$link}/articles">{$l_articles}</a></li>
+                        {foreach $categories as $c}
+                        <li><a class="dropdown-item" href="{$link}/category/{$c.name}">{$c.name}</a></li>
+                        {/foreach}
+                    </ul>
                 </li>
                 {foreach $pages as $p} 
                     <li class="nav-item">

@@ -62,6 +62,9 @@ $smarty->assign("l_createcategory", $l_createcategory);
 $l_createpage = $lg['l_createpage'];
 $smarty->assign("l_createpage", $l_createpage);
 
+$l_delete = $lg['l_delete'];
+$smarty->assign("l_delete", $l_delete);
+
 $l_descr = $lg['l_descr'];
 $smarty->assign("l_descr", $l_descr);
 
@@ -269,6 +272,9 @@ $smarty->assign("l_pwc", $l_pwc);
 $l_pwerror = $lg['l_pwerror'];
 $smarty->assign("l_pwerror", $l_pwerror);
 
+$l_pwmin = $lg['l_pwmin'];
+$smarty->assign("l_pwmin", $l_pwmin);
+
 $l_rank = $lg['l_rank'];
 $smarty->assign("l_rank", $l_rank);
 
@@ -334,6 +340,9 @@ $smarty->assign("l_usernamemax", $l_usernamemax);
 
 $l_usernamemin = $lg['l_usernamemin'];
 $smarty->assign("l_usernamemin", $l_usernamemin);
+
+$l_usernameunauthorized = $lg['l_usernameunauthorized'];
+$smarty->assign("l_usernameunauthorized", $l_usernameunauthorized); 
 
 $l_usernameused = $lg['l_usernameused'];
 $smarty->assign("l_usernameused", $l_usernameused);

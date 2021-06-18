@@ -12,15 +12,15 @@ if(isset($_SESSION['id'])){
          $category_exist = $category_req->rowCount();
          $smarty->assign('category_req', $category_req);
          if($category_exist == 0){
-            header("Location: $link/error/404");
+            $smarty->display("themes/$theme/error404.tpl");
          }
       }
 
 // Template call
       $smarty->display("themes/$paneltheme/p-editcategories.tpl");
    }else{
-      header("Location: $link/error/403");
-  }
+      $smarty->display("themes/$theme/error401.tpl");
+   }
 }else{
   header("Location: $link/login");
 }

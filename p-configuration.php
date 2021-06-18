@@ -12,7 +12,7 @@ if(isset($_SESSION['id'])){
   if($user['rank'] == 2){
     $smarty->display("themes/$paneltheme/p-configuration.tpl");
   }else{
-    header("Location: $link/error/403");
+    $smarty->display("themes/$theme/error401.tpl");
   }
 }else{
   header("Location: $link/login");

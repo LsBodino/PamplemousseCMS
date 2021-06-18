@@ -22,7 +22,7 @@
                     </a>
                     <p class="list-group-item-text">{$c.tag}</p>
                     <a href="{$link}/panel/edit/categories/articles/{$c.id}" role="button" class="btn btn-success btn-sm">{$l_edit}</a>
-                    {if $c.default == 0}
+                    {if $c.def == 0}
                     <a href="{$link}/panel/delete/categories/articles/{$c.id}" role="button" class="btn btn-danger btn-sm">{$l_delete}</a>
                     {/if}
                 </div>

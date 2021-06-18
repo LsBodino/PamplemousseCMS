@@ -1,11 +1,11 @@
+{foreach $category_req as $c}
 <head>
-    <title>{$l_articles} | {$title}</title>
+    <title>{$l_category}: {$c.name} | {$title}</title>
 </head>
 <body>
     <div class="container">
         <div class="center">
-            {foreach $category_req as $c}
-                <h2 class="display-6">{$l_category}: {$c.name}</h2>
+            <h2 class="display-6">{$l_category}: {$c.name}</h2>
             {/foreach}
             <div class="row">
                 {if $articles_nb == 0}

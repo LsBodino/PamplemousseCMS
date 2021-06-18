@@ -26,7 +26,7 @@ if(isset($_SESSION['id'])){
          $smarty->display("themes/$theme/error405.tpl");
       }
    }else{
-      $smarty->display("themes/$theme/error403.tpl");
+      $smarty->display("themes/$theme/error401.tpl");
    }
 }else{
   header("Location: $link/login");

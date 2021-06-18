@@ -3,7 +3,7 @@ require_once 'includes/p-header.php';
 switch($_GET['act'])
 {
 default:
-  header("Location: $link/error/405");
+  $smarty->display("themes/$theme/error405.tpl");
 break;
 
 // EDIT CATEGORY
@@ -22,7 +22,7 @@ case 'editcategories':
         }
       }
     }else{
-      header("Location: $link/error/403");
+      $smarty->display("themes/$theme/error401.tpl");
     }
   }else{
     header("Location: $link/login");
@@ -46,7 +46,7 @@ case 'editpages':
         }
       }
     }else{
-      header("Location: $link/error/403");
+      $smarty->display("themes/$theme/error401.tpl");
     }
   }else{
     header("Location: $link/login");
@@ -73,7 +73,7 @@ case 'editarticles':
         }
       }
     }else{
-      header("Location: $link/error/403");
+      $smarty->display("themes/$theme/error401.tpl");
     }
   }else{
     header("Location: $link/login");
@@ -99,7 +99,7 @@ case 'configuration':
         }
       }
     }else{
-        header("Location: $link/error/403");
+      $smarty->display("themes/$theme/error401.tpl");
     }
   }else{
       header("Location: $link/login");

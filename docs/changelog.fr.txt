@@ -1,89 +1,33 @@
-## ST3:
-Arrivé du système des catégories pour les articles, refonte des colonnes dans la base de données et amélioration du panel, c'est le menu du ST3.
-Bon appétit.
+## ST3B:
+La ST3B inclut la ST3 et une mise à jour fixant plusieurs bugs et problèmes de la ST3, la mise à jour contient aussi de nouvelles options et une meilleure sécurité.
 
 ### Changelog:
-- Le thème du site et le thème du panel sont à présent deux thèmes différents et non plus un seul thème.
-- Refonte du footer, il fait appel maintenant aux fichiers config.php des thèmes.
-- Refonte de l'index du panel.
-- Amélioration des pages "Liste des articles", "Liste des pages", "Liste des utilisateurs", "Corbeille - Liste des articles", "Corbeille - Liste des pages".
-- La colonne "wsname" de la table "config" passe de maximum 50 caractères à 30.
-- La colonne "wsdescr" de la table "config" passe de maximum 100 caractères à 75.
-- La colonne "wslink" de la table "config" passe de maximum 50 caractères à 100.
-- La colonne "wslang" de la table "config" passe de maximum 3 caractères à 2.
-- La colonne "register" de la table "config" passe de maximum 11 caractères à 1.
-- La colonne "wstimezone" de la table "config" passe de text à varchar, 75.
-- Les colonnes "title" des tables "articles" et "pages" passe de maximum 75 à 50.
-- La colonne "descr" de la table "config" passe de maximum 50 caractères à 100.
-- Les colonnes "datep" des tables "articles" et "pages" passe de text à varchar, 20.
-- Les colonnes "visible" des tables "articles" et "pages passe de maximum 11 caractères à 1.
-- La colonne "menu" de la table "pages" passe de maximum 11 caractères à 1.
-- Les colonnes "register" et "lastlogin" de la table "users" passe de text à varchar, 20.
-- La colonne "rank" de la table "users" passe de maximum 11 caractères à 2.
-- La colonne "ban" de la table "users" passe de maximum de 11 caractères à 1.
-- La colonne "id" de la table "lang" passe de maximum de 20 à 2.
-- La colonne "name" de la table "lang" passe de text à varchar, 20.
-- Suppression du bouton "Github" dans le footer.
-- Les thèmes par défaut fonctionnent mieux sur mobile.
-- Les pages du panel ne sont plus répertoriés sur les moteurs de recherches.
-- Refonte du dessin dans le code des pages "header.php" et "p-header.php" (je suis sûr que vous n'aviez jamais remarqué, qu'il y avait un dessin).
-- Refonte du système de la gestion des pages d'erreurs, maintenant il n'y a plus de redirection, la page d'erreur s'affiche directement.
-- Le code de la page login.php rejoint la page form.php, pour rappel cette page sur le long terme va contenir le code de tous les formulaires.
-- Modification concernant l'URL des espaces, maintenant c'est au niveau du nom d'utilisateur le lien et non de l'id (ex: /space/Admin).
+- La colonne "default" de la table "articles_categories" est renommée en "def".
+- Beaucoup de variables ont été renommées dans le code source afin de faciliter la compréhension.
+- Il n'est plus possible de s'inscrire si votre mot de passe fait moins de 8 caractères.
+- Il n'est plus possible de s'inscrire si le nom d'utilisateur contient des caractères spéciaux ou des espaces.
 
 #### Ajouts:
-- Ajout du système de catégorie d'articles, il est obligé d'exister au moins une catégorie, par défaut c'est la catégorie id = 1 et toutes les catégories en default = 1, ne peuvent pas supprimées.
-- Ajout de la colonne "category" (varchar, 25) dans la table "articles".
-- Ajout de la table "articles_categories" (id (int), name (varchar, 25), tag (varchar, 25), visible (int, 1), default (int, 1)).
-- Ajout de la jointure entre "name" de la table "articles_categories" et "category" de la table "articles".
-- Ajout d'un bouton "Accueil" sur le panel qui redirige vers l'accueil du panel.
-- Ajout de la page "Catégories" dans le menu "Articles" du panel (Editeur et Administrateur).
-- Ajout de la colonne "wspaneltheme" (varchar, 50) dans la table "config".
-- Ajout de la variable "$paneltheme" qui fait appel au thème du panel.
-- Ajout du fichier "p-header.php", c'est l'équivalent de "header.php" mais pour le panel.
-- Ajout du fichier "p-footer.php" (et de son fichier template p-footer.tpl), c'est l'équivalent de "footer.php" mais pour le panel.
-- Ajout de la possibilitée de changer le chemin vers le panel thème à partir de la page "Configuration - Général" du panel (Administrateur seulement).
-- Ajout de la possibilitée d'effacer une catégorie (Editeur et Administrateur).
-- Ajout des changelogs en français, bonjour.
-- Ajout de la page "Plan" sur le panel.
-- Ajout du fichier includes/lang.php, qui inclut l'intégralité des appels aux textes.
-- Ajout des metas "generator" et "language" dans les headers.
+- Lorsque vous lisez un article, il affiche à présent le nom de sa catégorie et vous pouvez cliquez dessus pour accéder à sa page catégorie.
+- Lorsque vous lisez un article, vous pouvez cliquez sur le nom de l'auteur pour accéder à son espace.
+- Ajout d'un menu déroulant avec toutes les catégories. 
 
 #### Corrections:
-- Correction d'un bug qui faisait que la redirection vers la page erreur 404 ne marchait pas correctement si on tentait d'éditer un article qui n'existe pas/plus.
-- Correction d'un bug qui faisait que le fichier .htaccess utilisait des pages inexistantes.
-- Correction d'un bug qui faisait qu'il était possible d'accéder aux pages "Espace", "Article" et "Page" sans la moindre id.
-- Correction d'un bug qui faisait que lorsqu'on était d'éditer un article avec un id vide ou id incorrect, alors la redirection vers la page d'erreur 405 ou 404 ne s'effectuait pas correctement.
-- Correction d'un bug qui faisait que lorsqu'on essayait d'accéder à un espace en entrant aucune id, la redirection vers la page d'erreur 405 ne s'effectuait pas.
-- Correction d'un bug qui faisait qu'il était possible d'accéder à la page "Paramètres" sans être connecté.
-- Correction d'un bug qui faisait qu'il était possible à partir de manipulation de modifier des photos de profil. 
+- Correction d'un bug qui faisait que le texte "Effacer" ne s'affichait plus depuis la dernière mise à jour.
+- Correction d'un bug qui faisait qu'il était impossible de créer une catégorie normalement.
+- Correction d'un bug qui faisait que la mise à jour concernant la refonte du système d'erreurs, n'a pas été correctement déployé.
+- Correction d'un bug qui faisait qu'il était possible à partir de certaines manipulation d'afficher la page "Plan du panel", la page "Créer une catégorie", la page "Créer une page", la page "Créer un article".
+- Correction d'un bug qui faisait que si on tentait d'accéder à la majoritée des pages du panel sans en avoir la permission, le mauvais message d'erreur s'affichait.
+- Correction d'un bug qui faisait que parfois l'inscription ne fonctionnait pas.
+- Correction d'un bug qui faisait que le nom des pages "Catégorie" n'étaient pas correctes.
 
-#### Mise à jour des languages:
-Format: ancien nom => nouveau nom
+#### Ajout des nouvelles colonnes de languages:
+Format: Position dans la table: nom de la colonne => texte
 
-l_implmousse => l_impamplemousse
-
-##### Nouvelles colonnes de languages:
-Format: colonne => texte
-
-l_and => et
-l_categories => Catégories
-l_category => Catégorie
-l_categoryposted => Votre catégorie a bien été postée
-l_categoryupdated => Votre catégorie a bien été mis à jour
-l_createcategory => Créer une catégorie
-l_editcategory => Éditer une catégorie
-l_in => dans
-l_listcategories => Liste des catégories
-l_mostrecentpages => Pages les plus récentes
-l_mostrecentusers => Utilisateurs les plus récents
-l_nocategory => Il n'y a aucune catégorie ici
-l_pamplemoussecms => PamplemousseCMS
-l_paneltheme => Thème du panel
-l_smarty => Smarty
-l_tag => Tag
+94: l_pwmin => Votre mot de passe doit contenir au moins 8 caractères
+119: l_usernameunauthorized => Nom d'utilisateur non-autorisé car il contient des caractères spéciaux ou interdits
 
 #### Crédits:
 Smarty (3.1.39) par New Digital Group, Inc.
 Bootstrap (5.0) par Bootstrap Team.
-PamplemousseCMS (ST3) par @LsBodino.
+PamplemousseCMS (ST3B) par @LsBodino.

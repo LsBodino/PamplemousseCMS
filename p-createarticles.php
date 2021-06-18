@@ -22,13 +22,13 @@ if(isset($_SESSION['id'])){
             $smarty->assign('success',$l_articleposted);
          }
       }
+      // Template call
+      $smarty->display("themes/$paneltheme/p-createarticles.tpl");
    }else{
-       header("Location: $link/error/403");
+      $smarty->display("themes/$theme/error403.tpl");
    }
 }else{
    header("Location: $link/login");
 }
 
-// Template call
-$smarty->display("themes/$paneltheme/p-createarticles.tpl");
 require_once 'includes/p-footer.php';?>

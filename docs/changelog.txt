@@ -1,86 +1,33 @@
-## ST3
+## ST3B:
+The ST3B includes the ST3 and an update fixing several bugs and problems of the ST3, the update also contains new options and better security.
 
 ### Changelog:
-- The theme of the site and the theme of the admin panel, are now two different themes and no longer a single theme.
-- Redesigning the footer, it now calls the variables of the config.php file of the theme folder, which was added to the previous update.
-- Redesign of the panel index.
-- Improved pages of the panel "List of articles", "List of pages", "List of users", "Trash - List of articles", "Trash - List of pages".
-- The "wsname" column of the "config" table changes from a maximum of 50 characters to 30.
-- The "wsdescr" column of the "config" table changes from a maximum of 100 characters to 75.
-- The "wslink" column of the "config" table changes from a maximum of 50 characters to 100.
-- The "wslang" column of the "config" table changes from a maximum of 3 characters to 2.
-- The "register" column of the "config" table changes from a maximum of 11 characters to 1.
-- The "wstimezone" column of the "config" table changes from text to varchar, 75.
-- The "title" column of the "articles" and "pages" tables changes from a maximum of 75 characters to 50.
-- The "descr" column of the "articles" table changes from a maximum of 50 characters to 75.
-- The "datep" column of the "articles" and "pages" tables changes from text to int, 20.
-- The "visible" column of the "articles" and "pages" tables changes from a maximum of 11 characters to 1.
-- The "menu" column of the "pages" table changes from a maximum of 11 characters to 1.
-- The "register" and "lastlogin" columns of the "users" table changes from text to int, 20.
-- The "rank" column of the "users" table changes from a maximum of 11 characters to 2.
-- The "ban" column of the "users" table changes from a maximum of 11 characters to 1.
-- The "id" column of the "lang" table changes from a maximum of 20 to 2.
-- The "name" column of the "lang" table changes from text to varchar, 20.
-- Removal of the "Github" button in the footer.
-- Default themes works best on mobile.
-- The pages of the panel are no longer repertorised on the search engines.
-- Reworking of the drawing in the code of the pages "header.php" and "p-header.php" (i’m sure you never noticed, that there was a drawing).
-- System redesign of how to handle error pages, now there is no redirection, the error page is displayed directly.
-- The code of the login.php page joins the form.php page, for a reminder this page on the long term will contain the code of all forms.
-- Modification concerning the URL of spaces, now it is at the level of the username the link and not of the id (ex: /space/Admin).
+- The "default" column of the "articles_categories" table is renamed "def".
+- Many variables have been renamed in the source code to facilitate understanding.
+- It is no longer possible to register if your password is less than 8 characters long.
+- It is no longer possible to register if the username contains special characters or spaces.
 
 #### Additions:
-- Adding the category system, there must always exist a category, by default it is the category id = 1 and all categories in default = 1, cannot be deleted.
-- Added the column "category" (varchar, 25) in the table "articles" of the database.
-- Added the table "articles_categories" (id (int), name (varchar, 25), tag (varchar, 25), visible (int, 1), default (int, 1)) to the database.
-- Addition of the join between "name" of the table "articles_categories" and "category" of the table "articles".
-- Added a "Homepage" button in the panel that redirects to the panel homepage.
-- Added the "Categories" page in the "Articles" menu of the panel (Editor and Administrator).
-- Added a column "wspaneltheme" (varchar, 50) on the table "config" in the database.
-- Added variable "$paneltheme" which calls the panel theme.
-- Added the file "p-header.php",  it is the equivalent of "header.php" but is now used for the panel.
-- Added the file "p-footer.php" (and its template file "p-footer.tpl"), the equivalent of "footer.php" but for the panel.
-- Added the possibility to change the path to the theme folder of the panel in the "Configuration - General" page of the panel (Administrator only).
-- Added the ability to delete a category (Editor and Administrator).
-- Adding changelogs in french, bonjour.
-- Addition of the "Plan" page on the panel.
-- Added includes/lang.php file, which includes all text calls.
+- When you read an article, it now displays the name of its category and you can click on it to access its category page.
+- When reading an article, you can click on the author’s name to access their space.
+- Added a drop-down menu with all categories.
 
-#### Fixes:
-- Fixed the bug that the redirection to the 404 error page did not work properly if trying to edit a non-existent article.
-- Fixed a bug that caused the .htaccess file to use non-existent pages.
-- Fixed a bug that made it possible to access the "Space", "Article" and "Page" pages without the slightest id.
-- Fixed a bug that when you were editing an article with an empty id or incorrect id, then the redirection to the 405 or 404 error page was not done correctly.
-- Fixed a bug that when trying to access a space by entering no id, redirecting to the 405 error page was not done.
-- Fixed a bug that made it possible to access the "Settings" page without being connected.
-- Fixed a bug that made it possible from manipulation to edit profile photos.
+#### Corrections:
+- Fixed a bug that the "Delete" text was no longer displayed since the last update.
+- Fixed a bug that made it impossible to create a category normally.
+- Fixed a bug that caused the update concerning the revision of the error system, was not correctly deployed.
+- Fixed a bug that made it possible from certain manipulations to display the "Panel plan" page, the "Create a category" page, the "Create a page" page, the "Create an article" page.
+- Fixed a bug that if you tried to access most of the pages of the panel without permission, the wrong error message was displayed.
+- Fixed a bug that sometimes the registration did not work.
+- Fixed a bug that the names of the "Category" pages were not correct.
 
-#### Updating of languages:
-Format: old name => new name
+#### Adding new language columns:
+Format: Position in the table: column name => text
 
-l_implmousse => l_impamplemousse
-
-##### New language columns:
-Format: column => text
-
-l_and => and
-l_categories => Categories
-l_category => Category
-l_categoryposted => Your category has been posted
-l_categoryupdated => Your category has been updated
-l_createcategory => Create a category
-l_editcategory => Edit a category
-l_in => in
-l_listcategories => List of categories
-l_mostrecentpages => Most recent pages
-l_mostrecentusers => Most recent users
-l_nocategory => There are no categories here
-l_pamplemoussecms => PamplemousseCMS
-l_paneltheme => Panel theme
-l_smarty => Smarty
-l_tag => Tag
+94: l_pwmin => Your password must be at least 8 characters long
+119: l_usernameunauthorized => Unauthorized username because it contains special or forbidden characters
 
 #### Credits:
 Smarty (3.1.39) by New Digital Group, Inc.
 Bootstrap (5.0) by Bootstrap Team.
-PamplemousseCMS (ST3) by @LsBodino.
+PamplemousseCMS (ST3B) by @LsBodino.

@@ -8,7 +8,7 @@ if(isset($_SESSION['id'])){
         switch($_GET['type'])
         {
             default:
-                header("Location: $link/error/405");
+                $smarty->display("themes/$theme/error405.tpl");
             break;
 
 // Articles
@@ -32,7 +32,7 @@ if(isset($_SESSION['id'])){
             break;
         }
     }else{
-        header("Location: $link/error/403");
+        $smarty->display("themes/$theme/error401.tpl");
     }
 }else{
     header("Location: $link/login");

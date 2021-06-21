@@ -9,7 +9,8 @@ Why complicate, when you can have simplicity? Join the Pamplemousses.
 
 Available in English, French, Spanish, Italian, German, Dutch and Portuguese.
 
-Version: ST3.
+Stable version: ST3.
+Dev version: ST4.
 
 ### >_ Installation
 
@@ -31,12 +32,12 @@ Very important: Immediately change the settings of the account from the "Setting
 
 ### >_ Demo
 
-Online demo: https://demo.pamplemoussecms.com
+Online demo: http://demo.pamplemoussecms.com
 
 
 ### >_ Docs
 
-PamplemousseCMS: https://pamplemoussecms.com
+PamplemousseCMS: http://pamplemoussecms.com
 
 Smarty: https://smarty.net
 
@@ -49,15 +50,13 @@ Smarty (3.1.39) by New Digital Group, Inc.
 
 Bootstrap (5.0) by Bootstrap Team.
 
-PamplemousseCMS (ST2) by @LsBodino.
+PamplemousseCMS (ST3, ST4) by @LsBodino.
 
 
 #### >_ Special Thanks
 
-Eva (Aliénor): for support and love in everyday life and help with Spanish and Italian translation.
+Evaa (Aliénor): for support and love in everyday life and help with Spanish and Italian translation.
 
-Marie: for advice.
-
-ICS: for giving me knowledge.
+Marie (MaryPomme): for advice.
 
 Pamplemousses: for everything.

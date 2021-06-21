@@ -5,9 +5,9 @@ require_once "includes/lang.php";
 require_once "themes/$paneltheme/config.php";
 
 $smarty->assign("paneltheme_author", $theme_author);
-$smarty->assign("paneltheme_authorlink", $theme_authorlink);
+$smarty->assign("paneltheme_authorurl", $theme_authorurl);
 $smarty->assign("paneltheme_description", $theme_description);
-$smarty->assign("paneltheme_title", $theme_title);
+$smarty->assign("paneltheme_name", $theme_name);
 $smarty->assign("paneltheme_version", $theme_version);
 ?>
 <!--

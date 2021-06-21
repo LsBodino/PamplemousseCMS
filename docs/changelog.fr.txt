@@ -1,33 +1,5 @@
-## ST3B:
-La ST3B inclut la ST3 et une mise à jour fixant plusieurs bugs et problèmes de la ST3, la mise à jour contient aussi de nouvelles options et une meilleure sécurité.
+## ST4:
 
 ### Changelog:
-- La colonne "default" de la table "articles_categories" est renommée en "def".
-- Beaucoup de variables ont été renommées dans le code source afin de faciliter la compréhension.
-- Il n'est plus possible de s'inscrire si votre mot de passe fait moins de 8 caractères.
-- Il n'est plus possible de s'inscrire si le nom d'utilisateur contient des caractères spéciaux ou des espaces.
 
-#### Ajouts:
-- Lorsque vous lisez un article, il affiche à présent le nom de sa catégorie et vous pouvez cliquez dessus pour accéder à sa page catégorie.
-- Lorsque vous lisez un article, vous pouvez cliquez sur le nom de l'auteur pour accéder à son espace.
-- Ajout d'un menu déroulant avec toutes les catégories. 
-
-#### Corrections:
-- Correction d'un bug qui faisait que le texte "Effacer" ne s'affichait plus depuis la dernière mise à jour.
-- Correction d'un bug qui faisait qu'il était impossible de créer une catégorie normalement.
-- Correction d'un bug qui faisait que la mise à jour concernant la refonte du système d'erreurs, n'a pas été correctement déployé.
-- Correction d'un bug qui faisait qu'il était possible à partir de certaines manipulation d'afficher la page "Plan du panel", la page "Créer une catégorie", la page "Créer une page", la page "Créer un article".
-- Correction d'un bug qui faisait que si on tentait d'accéder à la majoritée des pages du panel sans en avoir la permission, le mauvais message d'erreur s'affichait.
-- Correction d'un bug qui faisait que parfois l'inscription ne fonctionnait pas.
-- Correction d'un bug qui faisait que le nom des pages "Catégorie" n'étaient pas correctes.
-
-#### Ajout des nouvelles colonnes de languages:
-Format: Position dans la table: nom de la colonne => texte
-
-94: l_pwmin => Votre mot de passe doit contenir au moins 8 caractères
-119: l_usernameunauthorized => Nom d'utilisateur non-autorisé car il contient des caractères spéciaux ou interdits
-
-#### Crédits:
-Smarty (3.1.39) par New Digital Group, Inc.
-Bootstrap (5.0) par Bootstrap Team.
-PamplemousseCMS (ST3B) par @LsBodino.
+- Les variables thèmes $theme_title est renommée en $theme_name et $theme_authorlink est renommée en $theme_authorurl.

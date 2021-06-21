@@ -5,9 +5,9 @@ require_once "includes/lang.php";
 require_once "themes/$theme/config.php";
 
 $smarty->assign("theme_author", $theme_author);
-$smarty->assign("theme_authorlink", $theme_authorlink);
+$smarty->assign("theme_authorurl", $theme_authorurl);
 $smarty->assign("theme_description", $theme_description);
-$smarty->assign("theme_title", $theme_title);
+$smarty->assign("theme_name", $theme_name);
 $smarty->assign("theme_version", $theme_version);
 ?>
 <!--

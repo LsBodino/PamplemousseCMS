@@ -10,9 +10,10 @@ Why complicate, when you can have simplicity? Join the Pamplemousses.
 Available in English, French, Spanish, Italian, German, Dutch and Portuguese.
 
 Stable version: ST3.
+
 Dev version: ST4.
 
-### >_ Installation
+### >_Installation
 
 1. Download the CMS and its database on PamplemousseCMS.com or on Github.
 2. Upload the CMS to your server or to your host and database (the .sql file is in the "docs" folder).
@@ -23,19 +24,19 @@ Dev version: ST4.
 Very important: Immediately change the settings of the account from the "Settings" page.
 
 
-### >_ Add Language
+### >_Add Language
 
 1. Install the CMS and its database (by reading the installation tutorial).
 2. Log in to your database and go to your "lang" table.
 3. Insert a new data, in id you put the initials of your language (example: fr for French) and in each of the other columns you put the translation in your language (you can base yourself on English to have the texts by default).
 
 
-### >_ Demo
+### >_Demo
 
 Online demo: http://demo.pamplemoussecms.com
 
 
-### >_ Docs
+### >_Docs
 
 PamplemousseCMS: http://pamplemoussecms.com
 
@@ -44,7 +45,7 @@ Smarty: https://smarty.net
 Bootstrap: https://getbootstrap.com
 
 
-### >_ Credits
+### >_Credits
 
 Smarty (3.1.39) by New Digital Group, Inc.
 
@@ -53,7 +54,7 @@ Bootstrap (5.0) by Bootstrap Team.
 PamplemousseCMS (ST3, ST4) by @LsBodino.
 
 
-#### >_ Special Thanks
+#### >_Special Thanks
 
 Evaa (Aliénor): for support and love in everyday life and help with Spanish and Italian translation.
 

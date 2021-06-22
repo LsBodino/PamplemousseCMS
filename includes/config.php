@@ -77,7 +77,7 @@ $lang = $config['wslang'];
 $smarty->assign('lang', $lang);
 
 // CMS version.
-$version = $config['wsversion'];
+$version = $config['cmsversion'];
 $smarty->assign('version', $version);
 
 // Website timezone.

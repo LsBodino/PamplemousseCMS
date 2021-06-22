@@ -14,7 +14,7 @@
                     {foreach $articles_req as $a} 
                         <div class="col-sm-6 col-md-3">
                             <div class="card">
-                                <img class="card-img-top" src="{$a.img}">
+                                <img class="card-img-top mx-auto d-block rounded" src="{$a.img}">
                                 <h5 class="card-title">{$a.title}</h5>
                                 <p class="card-text">{$a.descr}</p>
                                 <a href="{$link}/article/{$a.id}" class="btn btn-primary">{$l_read} »</a>

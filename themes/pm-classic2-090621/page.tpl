@@ -12,7 +12,7 @@
                 <br>
                 <div class="col-12">
                     <div class="p-2 border">
-                        <p>{$pr.section}</p>
+                        {$pr.section}
                     </div>
                 </div>
             </div>

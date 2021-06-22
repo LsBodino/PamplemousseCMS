@@ -21,6 +21,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{$a.title}</h5>
                                     <p class="card-text">{$a.descr}</p>
+                                    <p class="card-text"><small class="text-muted">{$l_published} {$a.datep|date_format:"%d/%m/%y"} {$l_by} {$a.author}</small></p>
                                     <a href="{$link}/article/{$a.id}" class="btn btn-primary">{$l_read} »</a>
                                 </div>
                             </div>

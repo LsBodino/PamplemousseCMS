@@ -223,15 +223,6 @@ class Smarty_Internal_Template extends Smarty_Internal_TemplateBase
                     $this,
                     isset($content) ? $content : ob_get_clean()
                 );
-            } else {
-                if ((!$this->caching || $this->cached->has_nocache_code || $this->source->handler->recompiled)
-                    && !$no_output_filter && (isset($this->smarty->autoload_filters[ 'output' ])
-                                              || isset($this->smarty->registered_filters[ 'output' ]))
-                ) {
-                    echo $this->smarty->ext->_filterHandler->runFilter('output', ob_get_clean(), $this);
-                } else {
-                    echo ob_get_clean();
-                }
             }
             if ($this->smarty->debugging) {
                 $this->smarty->_debug->end_template($this);

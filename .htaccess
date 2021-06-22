@@ -56,6 +56,8 @@ RewriteRule ^includes/cookies.php - [F,L]
 RewriteRule ^includes/footer.php - [F,L]
 RewriteRule ^includes/header.php - [F,L]
 RewriteRule ^includes/menu.php - [F,L]
+RewriteRule ^includes/p-footer.php - [F,L]
+RewriteRule ^includes/p-header.php - [F,L]
 RewriteRule ^includes/p-menu.php - [F,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f

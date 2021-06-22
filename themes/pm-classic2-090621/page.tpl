@@ -9,9 +9,11 @@
                 <div class="center">
                     <h2 class="display-6">{$pr.title}</2>
                 </div>
-                <div class="jumbotron-contents">
-                    <p>{$pr.section}</p>
-                    <br>
+                <br>
+                <div class="col-12">
+                    <div class="p-2 border">
+                        <p>{$pr.section}</p>
+                    </div>
                 </div>
             </div>
         </div>

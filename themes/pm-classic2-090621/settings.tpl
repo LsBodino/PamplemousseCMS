@@ -11,7 +11,7 @@
                     <div class="alert alert-danger" role="alert"><strong>{$error}!</strong></div>
                 {/if}
                 <div class="form-group">
-                    <form method="POST" action="{$link}/form/settings" enctype="multipart/form-data">
+                    <form method="POST" enctype="multipart/form-data">
                     <img class="rounded" style="width: 240px; height: 240px;" src="{$ur.profilepicture}">
                     <br><br>
                     <div class="form-floating">

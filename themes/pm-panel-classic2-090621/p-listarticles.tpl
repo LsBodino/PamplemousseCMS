@@ -24,7 +24,7 @@
                         <p class="list-group-item-text">{$a.descr}</p>
                         <a href="{$link}/article/{$a.id}" target="_blank" role="button" class="btn btn-primary btn-sm">{$l_read}</a>
                         <a href="{$link}/panel/edit/articles/{$a.id}" role="button" class="btn btn-success btn-sm">{$l_edit}</a>
-                        <a href="{$link}/panel/delete/articles/{$a.id}" target="_blank" role="button" class="btn btn-danger btn-sm">{$l_delete}</a>
+                        <a href="{$link}/panel/delete/articles/{$a.id}" role="button" class="btn btn-danger btn-sm">{$l_delete}</a>
                     </div>
                 </div>
                 {/foreach}

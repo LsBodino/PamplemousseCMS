@@ -29,4 +29,5 @@ if(isset($_SESSION['id'])){
 }else{
    header("Location: $link/login");
 }
+
 require_once 'includes/p-footer.php';?>

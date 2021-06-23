@@ -1,3 +1,3 @@
 <?php
-header("Location: /error/401");
+header("Location: ../error/401");
 ?>

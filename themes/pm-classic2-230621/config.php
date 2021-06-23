@@ -18,5 +18,5 @@ $theme_authorurl = "http://pamplemoussecms.com";
 $theme_description = "Default theme for PamplemousseCMS ST.";
 
 // Version
-$theme_version = "090621";
+$theme_version = "230621";
 ?>

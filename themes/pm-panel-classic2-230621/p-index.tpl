@@ -17,7 +17,7 @@
                   {foreach $articles as $a}
                   <strong>{$a.id}</strong>: <a href="{$link}/article/{$a.id}" target="_blank">{$a.title}</a>
                   <br>
-                  <span style="font-size:12px">{$l_published} {$a.datep|date_format:"%d/%m/%y"} {$l_by} {$a.author}</span>
+                  <span style="font-size:12px">{$l_published} {$a.datep|date_format:"%d/%m/%y"} {$l_by} <a href="{$link}/space/{$a.author}" target="_blank">{$a.author}</a> {$l_in} <a href="{$link}/category/{$a.category}" target="_blank">{$a.category}</a></span>
                   <hr>
                   {/foreach}
                   </p>
@@ -34,7 +34,7 @@
                   {foreach $pages as $p}
                   <strong>{$p.id}</strong>: <a href="{$link}/page/{$p.id}" target="_blank">{$p.title}</a>
                   <br>
-                  <span style="font-size:12px">{$l_published} {$p.datep|date_format:"%d/%m/%y"} {$l_by} {$p.author}</span>
+                  <span style="font-size:12px">{$l_published} {$p.datep|date_format:"%d/%m/%y"} {$l_by} <a href="{$link}/space/{$p.author}" target="_blank">{$p.author}</a></span>
                   <hr>
                   {/foreach}
                   </p>

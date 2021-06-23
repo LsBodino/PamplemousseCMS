@@ -5,6 +5,9 @@ $smarty->assign("l_accessdenied", $l_accessdenied);
 $l_admin = $lg['l_admin'];
 $smarty->assign("l_admin", $l_admin);
 
+$l_allarticles = $lg['l_allarticles'];
+$smarty->assign("l_allarticles", $l_allarticles);
+
 $l_and = $lg['l_and'];
 $smarty->assign("l_and", $l_and);
 
@@ -43,6 +46,9 @@ $smarty->assign("l_category", $l_category);
 
 $l_categoryposted = $lg['l_categoryposted'];
 $smarty->assign("l_categoryposted", $l_categoryposted);
+
+$l_categorysametag = $lg['l_categorysametag'];
+$smarty->assign("l_categorysametag", $l_categorysametag);
 
 $l_categoryupdated = $lg['l_categoryupdated'];
 $smarty->assign("l_categoryupdated", $l_categoryupdated);

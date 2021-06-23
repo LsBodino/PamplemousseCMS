@@ -9,6 +9,9 @@
                 {if isset($success)}
                     <div class="alert alert-success" role="alert"><strong>{$success}!</strong></div>
                 {/if}
+                {if isset($error)}
+                    <div class="alert alert-danger" role="alert"><strong>{$error}!</strong></div>
+                {/if}
                 <form method="POST">
                     <div class="form-group">
                         <div class="form-floating">

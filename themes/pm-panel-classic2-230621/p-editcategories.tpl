@@ -10,9 +10,11 @@
                 {if isset($success)}
                     <div class="alert alert-success" role="alert"><strong>{$success}!</strong></div>
                 {/if}
-                <form method="POST" action="{$link}/panel/form/editcategories">
+                {if isset($error)}
+                    <div class="alert alert-danger" role="alert"><strong>{$error}!</strong></div>
+                {/if}
+                <form method="POST">
                     <div class="form-group">
-                        <input type="hidden" name="category_id" id="category_id" value="{$cr.id}">
                         <div class="form-floating">
                             <input type="text" name="category_name" id="category_name" class="form-control" value="{$cr.name}" required/><br>
                             <label>{$l_name} :</label>
@@ -21,7 +23,6 @@
                             <input type="text" name="category_tag" id="category_tag" class="form-control" value="{$cr.tag}" required/><br>
                             <label>{$l_tag} :</label>
                         </div>
-                        <br>
                     </div>
                     <input type="submit" class="btn btn-primary btn-lg" value="{$l_publish}" />
                 </form>

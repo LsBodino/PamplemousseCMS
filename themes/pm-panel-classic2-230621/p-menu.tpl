@@ -33,6 +33,8 @@
                     <a class="nav-link dropdown-toggle" href="#" id="menu_users" role="button" data-bs-toggle="dropdown" aria-expanded="false">{$l_users}</a>
                     <ul class="dropdown-menu" aria-labelledby="menu_users">
                         <li><a class="dropdown-item" href="{$link}/panel/users">{$l_list}</a></li>
+                        <li><a class="dropdown-item" href="{$link}/panel/permissions/users">{$l_permissions}</a></li>
+                        <li><a class="dropdown-item" href="{$link}/panel/rank/users">{$l_rank}</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

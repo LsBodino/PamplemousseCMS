@@ -12,7 +12,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="menu_articles" role="button" data-bs-toggle="dropdown" aria-expanded="false">{$l_articles}</a>
                     <ul class="dropdown-menu" aria-labelledby="menu_articles">
-                        <li><a class="dropdown-item" href="{$link}/articles">{$l_articles}</a></li>
+                        <li><a class="dropdown-item" href="{$link}/articles">{$l_allarticles}</a></li>
                         {foreach $categories as $c}
                         <li><a class="dropdown-item" href="{$link}/category/{$c.name}">{$c.name}</a></li>
                         {/foreach}

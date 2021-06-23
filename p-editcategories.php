@@ -13,15 +13,25 @@ if(isset($_SESSION['id'])){
          $smarty->assign('category_req', $category_req);
          if($category_exist == 0){
             $smarty->display("themes/$theme/error404.tpl");
+         }else{
+            // Template call
+            $smarty->display("themes/$paneltheme/p-editcategories.tpl");
          }
       }
-
-// Template call
-      $smarty->display("themes/$paneltheme/p-editcategories.tpl");
+      if(isset($_POST['category_name'], $_POST['category_tag'])){
+         if(!empty($_POST['category_name']) AND !empty($_POST['category_tag'])){
+            $category_name = htmlspecialchars($_POST['category_name']);
+            $category_tag = htmlspecialchars($_POST['category_tag']);
+            $category_insert = $db->prepare("UPDATE articles_categories SET name = ?, tag = ? WHERE id = ?");
+            $category_insert->execute(array($category_name, $category_tag, $id_get));
+            $smarty->assign("success", $l_categoryupdated);
+            header("Location: $link/panel/categories/articles/$id_get");
+         }
+      }
    }else{
       $smarty->display("themes/$theme/error401.tpl");
    }
 }else{
-  header("Location: $link/login");
+   header("Location: $link/login");
 }
 require_once 'includes/p-footer.php';?>

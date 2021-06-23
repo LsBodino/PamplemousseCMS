@@ -12,9 +12,8 @@
                 {if isset($success)}
                     <div class="alert alert-success" role="alert"><strong>{$success}!</strong></div>
                 {/if}
-                <form method="POST" action="{$link}/panel/form/editarticles">
+                <form method="POST">
                     <div class="form-group">
-                        <input type="hidden" name="article_id" id="article_id" value="{$ar.id}">
                         <div class="form-floating">
                             <input type="text" name="article_title" id="article_title" class="form-control" value="{$ar.title}" required/><br>
                             <label>{$l_name} :</label>

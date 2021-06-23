@@ -15,4 +15,5 @@ if(isset($_SESSION['id'])) {
 
 // Template call
 $smarty->display("themes/$theme/map.tpl");
+
 require_once 'includes/footer.php';?>

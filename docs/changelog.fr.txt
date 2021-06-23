@@ -1,5 +1,42 @@
 ## ST4:
+blabla
 
 ### Changelog:
+- Les variables thèmes "$theme_title" est renommée en "$theme_name" et "$theme_authorlink" est renommée en "$theme_authorurl".
+- La colonne "wsversion" de la table "config" sur la base de données est renommée en "cmsversion".
+- Sur la page d'accueil du panel, il est maintenant possible de cliquer sur l'auteur pour ouvrir un nouvel onglet vers son espace.
+- Refonte de la page d'accueil, de la page "Liste des articles" et des pages "Catégories".
+- Il n'est plus possible d'avoir plusieurs catégories avec le même tag.
+- Les thèmes par défaut sont à présent sous Bootstrap 5.0.2.
 
-- Les variables thèmes $theme_title est renommée en $theme_name et $theme_authorlink est renommée en $theme_authorurl.
+### Ajouts:
+- Ajout des variables thèmes "$theme_url" pour l'URL vers le thème et "$theme_tags" pour les tags du thème séparés par une virgule.
+- Ajout du nom des catégories des articles sur la page d'accueil du panel.
+- Ajout du fichier "layout.tpl", il n'est pas censé être utilisé sur le site, il sert de fichier de base ou de test pour ceux qui veulent customisé le thème.
+
+### Suppressions: 
+- Suppression du fichier "form.php" qui était temporaire, le code qui s'y trouvait se trouve maintenant dans "settings.php" et "login.php".
+- Suppression du fichier "p-form.php" qui était temporaire, le code qui s'y trouvait se trouve maintenant dans "p-editarticles.php", "p-editpages.php", "p-editcategories.php" et "p-configuration.php".
+
+### Corrections:
+- Correction d'un bug qui faisait que les fichiers p-header.php et p-footer.php n'étaient pas correctement protégés comme les autres fichiers dans le dossier /includes.
+- Correction d'un bug qui faisait que lors d'une inscription, c'était une mauvaise photo de profil qui se chargeait.
+- Correction d'un bug qui faisait que la page se rechargeait dans deux onglets lorsqu'on cliquait sur le bouton "Effacer" sur la page "Liste des articles" dans le panel.
+- Correction d'un bug qui faisait que les messages d'erreur de "login.php" et "settings.php", ne s'affichaient pas.
+- Correction d'un bug qui faisait que l'image d'illustration d'un article n'était jamais recadré sur la page article et donc pouvait être trop grande.
+- Correction d'un bug qui faisait que si l'image d'illustration d'un article était trop grande alors elle n'était pas correctement arrondi sur les pages "Accueil", "Liste des articles" et "Catégories".
+- Correction d'un bug qui faisait que les fichier "article.tpl" et "page.tpl" utilisaient du code de Bootstrap 4, alors que le thème par défaut est en Bootstrap 5.
+- Correction d'un bug qui faisait que Smarty ne prenait pas en compte la fonction PHP header sous certaines conditions.
+- Correction d'un bug qui faisait que il n'y avait pas de message de succès lors de la réussite d'une modification.
+
+### Ajouts colonnes de langages:
+Format: position dans la table: nom de la colonne => texte
+
+5: l_allarticles => Tous les articles
+19: l_categorysametag => Il est impossible d'avoir plusieurs catégories avec le même tag
+90: l_permissions => Permissions
+
+### Crédits:
+Smarty (3.1.39) par New Digital Group, Inc.
+Bootstrap (5.0.2) par Bootstrap Team.
+PamplemousseCMS (ST4) par @LsBodino.

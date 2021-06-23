@@ -1,8 +1,6 @@
 {foreach $page_req as $pr}
 <head>
-    <style> textarea.form-control {
-        height: 50%;
-    } </style>
+    <style> textarea.form-control { height: 50%; } </style>
     <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
     <title>{$l_panel} - {$l_editpage} | {$title}</title>
 </head>
@@ -11,12 +9,11 @@
         <div class="container">
             <div class="row">
                 <h2 class="display-6">{$l_editpage}</h2>
-                {* {if isset($success)}
+                {if isset($success)}
                     <div class="alert alert-success" role="alert"><strong>{$success}!</strong></div>
-                {/if} *}
-                <form method="POST" action="{$link}/panel/form/editpages">
+                {/if}
+                <form method="POST">
                     <div class="form-group">
-                        <input type="hidden" name="page_id" id="page_id" value="{$pr.id}">
                         <div class="form-floating">
                             <input type="text" name="page_title" id="page_title" class="form-control" value="{$pr.title}" required/><br>
                             <label>{$l_name} :</label>

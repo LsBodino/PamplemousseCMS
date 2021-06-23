@@ -13,10 +13,9 @@ if(isset($_SESSION['id'])){
          $smarty->assign("page_req", $page_req);
          if($page_exist == 0){ 
             $smarty->display("themes/$theme/error404.tpl");
-         }else{
-            // Template call
-            $smarty->display("themes/$paneltheme/p-editpages.tpl");
          }
+      }else{
+         $smarty->display("themes/$theme/error405.tpl");
       }
       if(isset($_POST['page_title'], $_POST['page_section'])){
          if(!empty($_POST['page_title']) AND !empty($_POST['page_section'])){
@@ -29,6 +28,8 @@ if(isset($_SESSION['id'])){
             header("Location: $link/panel/edit/pages/$id_get");
          }
       }
+      // Template call
+      $smarty->display("themes/$paneltheme/p-editpages.tpl");
    }else{
       $smarty->display("themes/$theme/error401.tpl");
    }

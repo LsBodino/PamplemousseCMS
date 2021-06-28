@@ -4,7 +4,7 @@ require_once 'includes/p-menu.php';
 
 // Database call
 if(isset($_SESSION['id'])){
-   if($user['rank'] >= 1){
+   if($rank['p_categories'] == 1){
       if(isset($_POST['category_name'], $_POST['category_tag'])){
          if(!empty($_POST['category_name']) AND !empty($_POST['category_tag'])){
             $category_name = htmlspecialchars($_POST['category_name']);

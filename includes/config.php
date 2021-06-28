@@ -26,31 +26,36 @@ catch(PDOException $e){
     exit;
 }
 
-// Install
-$install = "../install.php";
-
-if(file_exists($install)){
-    unlink("$install");
-}
-
-// User call.
 if(isset($_SESSION['id'])){ 
+
+    // Last login call.
     $lastlogin = $db->prepare("UPDATE users SET lastlogin = ? WHERE id = ?");
     $lastlogin->execute(array(time(), $_SESSION['id']));
+
+    // User call.
     $user_req = $db->prepare("SELECT * FROM users WHERE id = ?");
     $user_req->execute(array($_SESSION['id']));
     $smarty->assign('user_req', $user_req);
     $user = $user_req->fetch();
     $user_id = $user['id'];
+
+    // Rank call.
+    $rank_req = $db->prepare("SELECT * FROM users_ranks WHERE id = ?");
+    $rank_req->execute(array($user['rank']));
+    $smarty->assign('rank_req', $rank_req);
+    $rank = $rank_req->fetch();
+
+    // Ban call.
     if($user['ban'] == 1){
-        header("Location: /logout");
+        header("Location: $link/logout");
     }
+
 }
 
 // Config call.
-$reqconfig = $db->prepare("SELECT * FROM config WHERE id = ?");
-$reqconfig->execute(array(1));
-$config = $reqconfig->fetch();
+$config_req = $db->prepare("SELECT * FROM config WHERE id = ?");
+$config_req->execute(array(1));
+$config = $config_req->fetch();
 
 // Website name.
 $title = $config['wsname'];
@@ -86,9 +91,9 @@ $smarty->assign('timezone', $timezone);
 date_default_timezone_set("$timezone");
 
 // Lang call.
-$reqlang = $db->prepare("SELECT * FROM lang WHERE id = ?");
-$reqlang->execute(array("$lang"));
-$lg = $reqlang->fetch();
+$lang_req = $db->prepare("SELECT * FROM langs WHERE id = ?");
+$lang_req->execute(array("$lang"));
+$lg = $lang_req->fetch();
 
 // Register call.
 $register = $config['register'];

@@ -14,11 +14,11 @@
                     <ul class="dropdown-menu" aria-labelledby="menu_articles">
                         <li><a class="dropdown-item" href="{$link}/articles">{$l_allarticles}</a></li>
                         {foreach $categories as $c}
-                        <li><a class="dropdown-item" href="{$link}/category/{$c.name}">{$c.name}</a></li>
+                            <li><a class="dropdown-item" href="{$link}/category/{$c.name}">{$c.name}</a></li>
                         {/foreach}
                     </ul>
                 </li>
-                {foreach $pages as $p} 
+                {foreach $pages as $p}
                     <li class="nav-item">
                         <a class="nav-link" href="{$link}/page/{$p.id}">{$p.title}</a>
                     </li>
@@ -35,11 +35,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{$link}/space/{$ur.username}">{$l_myspace}</a>
                     </li>
-                    {if $ur.rank >= 1}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{$link}/panel/index">{$l_panel}</a>
-                        </li>
-                    {/if}
+                    {/foreach}
+                    {foreach $rank_req as $rr}
+                        {if $rr.p_panelaccess == 1}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$link}/panel/index">{$l_panel}</a>
+                            </li>
+                        {/if}
                     {/foreach}
                     <li class="nav-item">
                         <a class="nav-link" href="{$link}/logout">{$l_logout}</a>

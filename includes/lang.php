@@ -14,6 +14,9 @@ $smarty->assign("l_and", $l_and);
 $l_articlepin = $lg['l_articlepin'];
 $smarty->assign("l_articlepin", $l_articlepin);
 
+$l_articlepinned = $lg['l_articlepinned'];
+$smarty->assign("l_articlepinned", $l_articlepinned);
+
 $l_articleposted = $lg['l_articleposted'];
 $smarty->assign("l_articleposted", $l_articleposted);
 
@@ -37,6 +40,9 @@ $smarty->assign("l_banned", $l_banned);
 
 $l_by = $lg['l_by'];
 $smarty->assign("l_by", $l_by);
+
+$l_cannotchangesuperadmin = $lg['l_cannotchangesuperadmin'];
+$smarty->assign("l_cannotchangesuperadmin", $l_cannotchangesuperadmin);
 
 $l_categories = $lg['l_categories'];
 $smarty->assign("l_categories", $l_categories);
@@ -83,14 +89,14 @@ $smarty->assign("l_editarticle", $l_editarticle);
 $l_editcategory = $lg['l_editcategory'];
 $smarty->assign("l_editcategory", $l_editcategory);
 
-$l_edit = $lg['l_edit'];
-$smarty->assign("l_edit", $l_edit);
+$l_editor = $lg['l_editor'];
+$smarty->assign("l_editor", $l_editor);
 
 $l_editpage = $lg['l_editpage'];
 $smarty->assign("l_editpage", $l_editpage);
 
-$l_editor = $lg['l_editor'];
-$smarty->assign("l_editor", $l_editor);
+$l_editrank = $lg['l_editrank'];
+$smarty->assign("l_editrank", $l_editrank);
 
 $l_email = $lg['l_email'];
 $smarty->assign("l_email", $l_email);
@@ -113,20 +119,14 @@ $smarty->assign("l_general", $l_general);
 $l_homepage = $lg['l_homepage'];
 $smarty->assign("l_homepage", $l_homepage);
 
+$l_httpnotsupported = $lg['l_httpnotsupported'];
+$smarty->assign("l_httpnotsupported", $l_httpnotsupported);
+
 $l_id = $lg['l_id'];
 $smarty->assign("l_id", $l_id);
 
 $l_image = $lg['l_image'];
 $smarty->assign("l_image", $l_image);
-
-$l_general = $lg['l_general'];
-$smarty->assign("l_general", $l_general);
-
-$l_homepage = $lg['l_homepage'];
-$smarty->assign("l_homepage", $l_homepage);
-
-$l_httpnotsupported = $lg['l_httpnotsupported'];
-$smarty->assign("l_httpnotsupported", $l_httpnotsupported);
 
 $l_impamplemousse = $lg['l_impamplemousse'];
 $smarty->assign("l_impamplemousse", $l_impamplemousse);
@@ -157,6 +157,9 @@ $smarty->assign("l_listcategories", $l_listcategories);
 
 $l_listpages = $lg['l_listpages'];
 $smarty->assign("l_listpages", $l_listpages);
+
+$l_listranks = $lg['l_listranks'];
+$smarty->assign("l_listranks", $l_listranks);
 
 $l_listusers = $lg['l_listusers'];
 $smarty->assign("l_listusers", $l_listusers);
@@ -260,6 +263,9 @@ $smarty->assign("l_panel", $l_panel);
 $l_paneltheme = $lg['l_paneltheme'];
 $smarty->assign("l_paneltheme", $l_paneltheme);
 
+$l_permissions = $lg['l_permissions'];
+$smarty->assign("l_permissions", $l_permissions);
+
 $l_powered = $lg['l_powered'];
 $smarty->assign("l_powered", $l_powered);
 
@@ -283,6 +289,9 @@ $smarty->assign("l_pwmin", $l_pwmin);
 
 $l_rank = $lg['l_rank'];
 $smarty->assign("l_rank", $l_rank);
+
+$l_ranks = $lg['l_ranks'];
+$smarty->assign("l_ranks", $l_ranks);
 
 $l_read = $lg['l_read'];
 $smarty->assign("l_read", $l_read);

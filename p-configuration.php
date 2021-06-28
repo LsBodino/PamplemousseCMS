@@ -3,14 +3,13 @@ require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
 
 // Database call
-$config_lang = $db->prepare("SELECT id, name FROM lang ORDER by id");
+$config_lang = $db->prepare("SELECT id, name FROM langs ORDER by id");
 $config_lang->execute();
 $smarty->assign("config_lang", $config_lang);
 
 // Template call
 if(isset($_SESSION['id'])){
-  if($user['rank'] == 2){
-    $smarty->display("themes/$paneltheme/p-configuration.tpl");
+  if($rank['p_configuration'] == 1){
     if(isset($_POST['config_wsname'], $_POST['config_wsdescr'], $_POST['config_wslink'], $_POST['config_wslang'], $_POST['config_wstheme'], $_POST['config_wspaneltheme'], $_POST['config_register'])){
       if(!empty($_POST['config_wsname']) AND !empty($_POST['config_wsdescr']) AND !empty($_POST['config_wslink']) AND !empty($_POST['config_wslang']) AND !empty($_POST['config_wstheme']) AND !empty($_POST['config_wspaneltheme']) AND !empty($_POST['config_register'])){
         $config_wsname = htmlspecialchars($_POST['config_wsname']);
@@ -25,10 +24,11 @@ if(isset($_SESSION['id'])){
         header("Location: $link/panel/configuration/");
       }
     }
+    $smarty->display("themes/$paneltheme/p-configuration.tpl");
   }else{
     $smarty->display("themes/$theme/error401.tpl");
   }
 }else{
-    header("Location: $link/login");
+  header("Location: $link/login");
 }
 require_once 'includes/p-footer.php'; ?>

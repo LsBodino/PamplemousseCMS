@@ -14,10 +14,9 @@
                         <h4 class="list-group-item-heading">{$u.username} ({$l_id}: {$u.id}) {if $u.ban == 1} - <strong>{$l_banned}</strong>{/if}</h4>
                     </a>
                     <p class="list-group-item-text">{$u.mail}</p>
-                    {if $u.ban == 0 AND $u.rank == 0}
+                    {if $u.ban == 0}
                         <a href="{$link}/panel/ban/users/{$u.id}" role="button" class="btn btn-danger btn-sm">{$l_ban}</a>
-                    {/if}
-                    {if $u.ban == 1}
+                    {else}
                         <a href="{$link}/panel/unban/users/{$u.id}" role="button" class="btn btn-danger btn-sm">{$l_unban}</a>
                     {/if}
                 </div>

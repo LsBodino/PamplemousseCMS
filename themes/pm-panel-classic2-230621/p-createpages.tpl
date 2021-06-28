@@ -1,10 +1,5 @@
 <head>
     <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
-    <style>
-    textarea.form-control {
-        height: 50%;
-    }
-    </style>
     <title>{$l_panel} - {$l_createpage} | {$title}</title>
 </head>
 <body>

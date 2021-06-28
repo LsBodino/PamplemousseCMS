@@ -8,7 +8,7 @@ $category->execute();
 $smarty->assign("category", $category);
 
 if(isset($_SESSION['id'])){
-   if($user['rank'] >= 1){
+   if($rank['p_articles'] == 1){
       if(isset($_GET['id']) AND $_GET['id'] > 0){
          $id_get = intval($_GET['id']);
          $article_req = $db->prepare('SELECT * FROM articles WHERE id = ? AND visible = 1');

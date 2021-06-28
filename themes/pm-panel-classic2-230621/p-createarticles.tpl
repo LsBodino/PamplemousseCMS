@@ -1,9 +1,4 @@
 <head>
-    <style>
-        textarea.form-control {
-        height: 50%;
-        }
-    </style>
     <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
     <title>{$l_panel} - {$l_createarticle} | {$title}</title>
 </head>
@@ -41,7 +36,6 @@
                         <label for="article_category">{$l_category} :</label>
                     </div>
                     <br>
-                    <label for="article_section">{$l_section} :</label> 
                     <textarea name="article_section" id="article_section" class="form-control" row="25" cols="100" required></textarea>
                     <script>
                         CKEDITOR.replace( 'article_section' );

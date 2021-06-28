@@ -4,7 +4,7 @@ require_once 'includes/p-menu.php';
 
 // Database call
 if(isset($_SESSION['id'])){
-   if($user['rank'] >= 1){
+   if($rank['p_categories'] == 1){
       if(isset($_GET['id']) AND $_GET['id'] > 0){
          $id_get = intval($_GET['id']);
          $category_req = $db->prepare('SELECT * FROM articles_categories WHERE id = ? AND visible = 1');

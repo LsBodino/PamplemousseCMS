@@ -8,7 +8,7 @@ $category->execute();
 $smarty->assign("category", $category);
 
 if(isset($_SESSION['id'])){
-   if($user['rank'] >= 1){
+   if($rank['p_articles'] == 1){
       if(isset($_POST['article_title'], $_POST['article_section'])){
          if(!empty($_POST['article_title']) AND !empty($_POST['article_section'])){
             $article_title = htmlspecialchars($_POST['article_title']);

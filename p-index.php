@@ -17,7 +17,7 @@ $smarty->assign('users',$users);
 
 // Template call
 if(isset($_SESSION['id'])) {
-    if($user['rank'] >= 1){
+    if($rank['p_panelaccess'] == 1){
         $smarty->display("themes/$paneltheme/p-index.tpl");
     }else{
         $smarty->display("themes/$theme/error401.tpl");

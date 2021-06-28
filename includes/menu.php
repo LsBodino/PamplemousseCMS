@@ -6,6 +6,9 @@ if(isset($_SESSION['id'])){
     $user_req = $db->prepare("SELECT * FROM users WHERE id = ?");
     $user_req->execute(array($_SESSION['id']));
     $smarty->assign('user_req', $user_req);
+    $rank_req = $db->prepare("SELECT * FROM users_ranks WHERE id = ?");
+    $rank_req->execute(array($user['rank']));
+    $smarty->assign('rank_req', $rank_req);
 }
 
 $categories = $db->prepare('SELECT * FROM articles_categories WHERE visible = 1 ORDER by id DESC');

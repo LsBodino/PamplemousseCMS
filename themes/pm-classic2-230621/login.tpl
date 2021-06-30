@@ -7,7 +7,17 @@
          <div class="center">
             <h2 class="display-6">{$l_login}</h2>
             {if isset($error)}
-               <div class="alert alert-danger" role="alert"><strong>{$error}!</strong></div>
+               <script>
+               Swal.fire({
+               icon: 'error',
+               title: "{$l_error}",
+               text: "{$error}!",
+               showConfirmButton: false,
+               footer: '<a href="" class="btn btn-primary">OK</a>',
+               allowOutsideClick: false,
+               allowEscapeKey: false
+               })
+               </script>
             {/if}
             <div class="form-group">
                <form method="POST">

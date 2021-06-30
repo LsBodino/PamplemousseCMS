@@ -6,8 +6,21 @@
         <div class="row">
             <div class="center">
                 <h2 class="display-6">{$l_config} - {$l_general}</h2>
+                {if isset($success)}
+                    <script>
+                    Swal.fire({
+                    icon: 'success',
+                    title: "{$l_success}",
+                    text: "{$success}!",
+                    showConfirmButton: false,
+                    footer: '<a href="{$link}/panel/configuration" class="btn btn-primary">OK</a>',
+                    allowOutsideClick: false,
+                    allowEscapeKey: false
+                    })
+                    </script>
+                {/if}
                 <div class="form-group">
-                    <form method="POST" action="{$link}/panel/form/configuration" enctype="multipart/form-data">
+                    <form method="POST" enctype="multipart/form-data">
                         <div class="form-floating">
                             <input type="text" name="config_wsname" id="config_wsname" class="form-control" value="{$title}" required/><br>
                             <label>{$l_name} :</label>

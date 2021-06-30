@@ -34,3 +34,4 @@ $smarty->assign("paneltheme_version", $theme_version);
 <link href="<?= $link?>/themes/<?= $paneltheme?>/css/bootstrap.css" rel="stylesheet" media="all" type="text/css">
 <script src="<?= $link?>/themes/<?= $paneltheme?>/js/bootstrap.js"></script>
 <link rel="shortcut icon" href="<?= $link?>/img/favicon.png" type="image/x-icon"/>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

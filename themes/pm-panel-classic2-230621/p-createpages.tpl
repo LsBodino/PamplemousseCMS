@@ -8,7 +8,17 @@
             <div class="row">
                 <h2 class="display-6">{$l_createpage}</h2>
                 {if isset($success)}
-                    <div class="alert alert-success" role="alert"><strong>{$success}!</strong></div>
+                    <script>
+                    Swal.fire({
+                    icon: 'success',
+                    title: "{$l_success}",
+                    text: "{$success}!",
+                    showConfirmButton: false,
+                    footer: '<a href="{$link}/panel/pages" class="btn btn-primary">OK</a>',
+                    allowOutsideClick: false,
+                    allowEscapeKey: false
+                    })
+                    </script>
                 {/if}
                 <form method="POST">
                     <div class="form-group">

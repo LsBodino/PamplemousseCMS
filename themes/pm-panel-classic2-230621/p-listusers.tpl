@@ -15,7 +15,11 @@
                     </a>
                     <p class="list-group-item-text">{$u.mail}</p>
                     {if $u.ban == 0}
-                        <a href="{$link}/panel/ban/users/{$u.id}" role="button" class="btn btn-danger btn-sm">{$l_ban}</a>
+                        {if $u.id != $smarty.session.id}
+                            <a href="{$link}/panel/ban/users/{$u.id}" role="button" class="btn btn-danger btn-sm">{$l_ban}</a>
+                        {else}
+                            <p>{$l_banishoneself}.</p>
+                        {/if}
                     {else}
                         <a href="{$link}/panel/unban/users/{$u.id}" role="button" class="btn btn-danger btn-sm">{$l_unban}</a>
                     {/if}

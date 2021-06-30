@@ -1,2 +1,77 @@
-## ST4:
+# ST4 (English):
+Very big update with the arrival of the system of permissions (finally) and an update on the design of default themes.
 
+## Changelog:
+- The theme variables "$theme_title" is renamed "$theme_name" and "$theme_authorlink" is renamed "$theme_authorurl".
+- The "wsversion" column of the "config" table on the database is renamed to "cmsversion".
+- On the panel home page, you can now click on the author to open a new tab to his/her space.
+- Redesign of the home page, the "List of articles" page and the "Categories" pages.
+- It is no longer possible to have several categories with the same tag.
+- The default themes are now under Bootstrap 5.0.2, we invite you to read the Bootstrap changelogs.
+- When the mouse is passed over the pinned icon then a message is displayed.
+- Improvement of the German language.
+- The "lang" table is renamed in "langs".
+- Redesign of the technical operation of permissions, each page of the panel requires permission to access them.
+- Rank IDs change from 0 (Member), 1 (Editor), 2 (Administrator) to 1 (Member), 2 (Editor), 3 (Administrator).
+- It is no longer possible to banish oneself.
+- PamplemousseCMS now uses SweetAlert 2, PopperJS and Tippy.js.
+- Smarty’s PamplemousseCMS version is now available as a standalone version on behalf of PamplemousseSmarty.
+
+
+## Additions:
+- Added theme variables "$theme_url" for the URL to the theme and "$theme_tags" for theme tags separated by a comma.
+- Added the name of the categories of the articles on the home page of the panel.
+- Addition of the "layout.tpl" file, it is not supposed to be used on the site, it serves as a basic file or test for those who want to customize the theme.
+- Added the "ranks" table with as columns id (int, 11, ai), name (varchar, 35), p_articles (int, 1), p_categories (int, 1), p_configuration (int, 1), p_pages (int, 1), p_panelaccess (int, 1), p_ranks (int, 1), p_users (int, 1), superadmin (int, 1, default 0).
+- Addition of the data corresponding to the permissions of the grades in the "rank" table.
+- Added the system of permissions and the possibility of editing a grade and its permissions, it is not yet possible to delete or add a grade by the panel, it will soon be available.
+- Addition of the "List of grades" and "Edit a grade" pages in the "Users" menu of the panel.
+- Addition of the grade which has the id 4, the "Super-Admin", it is an impossible grade to modify, impossible to give to someone else and it is impossible to ban, only the owner of the site has this rank.
+- Added a success message when a user settings update is successful.
+- Added a success message upon successful completion of a configuration update on the panel.
+
+## Deletions:
+- Deletion of the "form.php" file which was temporary, the code which was there is now found in "settings.php" and "login.php".
+- Deletion of the "p-form.php" file which was temporary, the code which was there is now found in "p-editarticles.php", "p-editpages.php", "p-editcategories.php" and "p-configuration.php".
+- Deletions of the css lines that were in the "Create an article" and "Create a page" pages that are useless from several versions.
+
+## Corrections:
+- Fixed a bug where p-header.php and p-footer.php files were not properly protected like other files in the /includes folder.
+- Fixed a bug that when registering, a bad profile photo was loaded.
+- Fixed a bug that caused the page to reload in two tabs when clicking on the "Clear" button on the "List of articles" page in the panel.
+- Fixed a bug that caused "login.php" and "settings.php" error messages not to be displayed.
+- Fixed a bug that caused the illustration image of an article to never be cropped on the article page and therefore could be too large.
+- Fixed a bug that if the illustration image of an article was too large then it was not properly rounded on the "Home", "List of articles" and "Categories" pages.
+- Fixed a bug that causes the "article.tpl" and "page.tpl" files to use Bootstrap 4 code, while the default theme is Bootstrap 5.
+- Fixed a bug that caused Smarty to ignore the PHP header function under certain conditions.
+- Fixed a bug that caused there to be no more success messages when a change was successful.
+- Fixed a bug where there were lines of code normally reserved for testing in the includes/config.php.
+- Fixed a bug that made it impossible to recover an article or page from the trash if you were an editor.
+- Fixed a bug that caused the menu and panel plan to display pages you do not have access to.
+- Fixed a bug that caused the language columns l_edit, l_general, l_homepage to be called twice and not once by the site.
+- Fixed a bug that included/config.php and space.php variables had the same names causing a risk of conflict.
+
+## Added language columns:
+Format: position in the table: column name => text
+
+5: l_allarticles => All articles
+8: l_articlepinned => This article is pinned
+15: l_banishoneself => It is impossible to banish oneself
+18: l_cannotchangesuperadmin => It is impossible to modify the super-admin grade
+22: l_categorysametag => It is impossible to have several categories with the same tag
+37: l_editrank => Edit a grade
+59: l_listranks => List of grades
+95: l_permissions => Permissions
+104: l_ranks => Grades
+105: l_rankupdated => The grade has been updated
+117: l_settingsupdated => Your settings have been updated.
+122: l_success => Success
+
+## Modifications colonnes de langages :
+Format : nom de la colonne : ancienne position => nouvelle position
+
+l_image : 49 => 48
+l_in : 48 => 50
+l_impamplemousse : 50 => 49
+l_registrationsclosed : 111 => 110
+l_registrationwebsite : 110 => 111

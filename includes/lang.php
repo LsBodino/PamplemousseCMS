@@ -35,6 +35,9 @@ $smarty->assign("l_badrequest", $l_badrequest);
 $l_ban = $lg['l_ban'];
 $smarty->assign("l_ban", $l_ban);
 
+$l_banishoneself = $lg['l_banishoneself'];
+$smarty->assign("l_banishoneself", $l_banishoneself);
+
 $l_banned = $lg['l_banned'];
 $smarty->assign("l_banned", $l_banned);
 
@@ -323,6 +326,9 @@ $smarty->assign("l_section", $l_section);
 $l_settings = $lg['l_settings'];
 $smarty->assign("l_settings", $l_settings);
 
+$l_settingsupdated = $lg['l_settingsupdated'];
+$smarty->assign("l_settingsupdated", $l_settingsupdated);
+
 $l_smarty = $lg['l_smarty'];
 $smarty->assign("l_smarty", $l_smarty);
 
@@ -331,6 +337,9 @@ $smarty->assign("l_space", $l_space);
 
 $l_spaceof = $lg['l_spaceof'];
 $smarty->assign("l_spaceof", $l_spaceof);
+
+$l_success = $lg['l_success'];
+$smarty->assign("l_success", $l_success);
 
 $l_tag = $lg['l_tag'];
 $smarty->assign("l_tag", $l_tag);

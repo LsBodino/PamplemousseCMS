@@ -47,4 +47,5 @@ $smarty->assign("theme_version", $theme_version);
 <script src="<?= $link?>/themes/<?= $theme?>/js/bootstrap.js"></script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="shortcut icon" href="<?= $link?>/img/favicon.png" type="image/x-icon"/>

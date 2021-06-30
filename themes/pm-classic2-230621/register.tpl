@@ -7,13 +7,43 @@
          <div class="row">
             <h2 class="display-6">{$l_register}</h2>
             {if $register == 0}
-               <div class="alert alert-danger" role="alert"><strong>{$l_registrationsclosed}!</strong></div>
+               <script>
+               Swal.fire({
+               icon: 'error',
+               title: "{$l_error}",
+               text: "{$l_registrationsclosed}",
+               showConfirmButton: false,
+               footer: '<a href="{$link}/index" class="btn btn-primary">OK</a>',
+               allowOutsideClick: false,
+               allowEscapeKey: false
+               })
+               </script>
             {else}
                {if isset($error)}
-                  <div class="alert alert-danger" role="alert"><strong>{$error}!</strong></div>
+                  <script>
+                  Swal.fire({
+                  icon: 'error',
+                  title: "{$l_error}",
+                  text: "{$error}!",
+                  showConfirmButton: false,
+                  footer: '<a href="" class="btn btn-primary">OK</a>',
+                  allowOutsideClick: false,
+                  allowEscapeKey: false
+                  })
+                  </script>
                {/if}
                {if isset($success)}
-                  <div class="alert alert-success" role="alert"><strong>{$success}!</strong></div>
+                  <script>
+                  Swal.fire({
+                  icon: 'success',
+                  title: "{$l_success}",
+                  text: "{$success}!",
+                  showConfirmButton: false,
+                  footer: '<a href="{$link}/login" class="btn btn-primary">OK</a>',
+                  allowOutsideClick: false,
+                  allowEscapeKey: false
+                  })
+                  </script>
                {/if}
                <div class="form-group">
                   <form method="POST" action="">

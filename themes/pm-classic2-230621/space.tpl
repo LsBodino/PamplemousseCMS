@@ -1,5 +1,5 @@
 
-{foreach $user_req as $ur}
+{foreach $userspace_req as $ur}
     <head>
         <title>{$l_spaceof} {$ur.username} | {$title}</title>
     </head>
@@ -11,17 +11,14 @@
                     <img class="rounded" style="width: 120px; height: 120px;" src="{$ur.profilepicture}">
                     <br>
                     <br>
-                    <strong>{$l_username}:</strong> {$ur.username}
+                    <strong>{$l_username}</strong> : {$ur.username}
                     <br>
-                    <strong>{$l_rank}:</strong>
-                    {if $ur.rank == 0} {$l_member} {/if}
-                    {if $ur.rank == 1} {$l_editor} {/if}
-                    {if $ur.rank == 2} {$l_admin} {/if}
+                    {* <strong>{$l_rank}</strong> : 
+                    <br> *}
                     <br>
+                    <strong>{$l_registrationdate}</strong> : {$ur.register|date_format:"%d/%m/%y"}
                     <br>
-                    <strong>{$l_registrationdate}</strong>: {$ur.register|date_format:"%d/%m/%y"}
-                    <br>
-                    <strong>{$l_lastlogin}</strong>: {$ur.lastlogin|date_format:"%d/%m/%y"}
+                    <strong>{$l_lastlogin}</strong> : {$ur.lastlogin|date_format:"%d/%m/%y"}
                     <br>
                     {if isset($smarty.session.id) && $ur.id == $smarty.session.id}
                         <br>

@@ -8,12 +8,22 @@
             <div class="row">
                 <h2 class="display-6">{$l_editrank}</h2>
                 {if isset($success)}
-                    <div class="alert alert-success" role="alert"><strong>{$success}!</strong></div>
+                <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: "{$l_success}",
+                    text: "{$success}!",
+                    showConfirmButton: false,
+                    footer: '<a href="{$link}/panel/ranks/users" class="btn btn-primary">OK</a>',
+                    allowOutsideClick: false,
+                    allowEscapeKey: false
+                })
+                </script>
                 {/if}
                 <form method="POST">
                     <div class="form-group">
                         <div class="form-floating">
-                            <input type="text" name="rank_name" id="rank_name" class="form-control" value="{$rr.name}" required/><br>
+                            <input type="text" name="rank_title" id="rank_title" class="form-control" value="{$rr.title}" required/><br>
                             <label>{$l_name} :</label>
                             <br>
                         </div>

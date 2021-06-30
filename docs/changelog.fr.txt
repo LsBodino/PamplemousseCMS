@@ -1,72 +1,14 @@
-## ST4:
-Très grosse mise à jour avec l'arrivée du système de permissions (enfin) et une mise à jour au niveau du design des thèmes par défauts.
+# ST4B (Français):
+Mise à jour de correction, comme toujours.
 
-### Changelog:
-- Les variables thèmes "$theme_title" est renommée en "$theme_name" et "$theme_authorlink" est renommée en "$theme_authorurl".
-- La colonne "wsversion" de la table "config" sur la base de données est renommée en "cmsversion".
-- Sur la page d'accueil du panel, il est maintenant possible de cliquer sur l'auteur pour ouvrir un nouvel onglet vers son espace.
-- Refonte de la page d'accueil, de la page "Liste des articles" et des pages "Catégories".
-- Il n'est plus possible d'avoir plusieurs catégories avec le même tag.
-- Les thèmes par défaut sont à présent sous Bootstrap 5.0.2, nous vous invitons à lire les changelog de Bootstrap.
-- Quand la souris est passée sur l'icone épinglé ou sur certains parties du textes du footer alors un message s'affiche.
-- Amélioration de l'Allemand.
-- La table "lang" est renommée en "langs".
-- Refonte du fonctionnement technique des permissions, chaque page du panel nécessite une permission pour y accéder.
-- Les id des grades passent de 0 (Membre), 1 (Editeur), 2 (Administrateur) à 1 (Membre), 2 (Editeur), 3 (Administrateur).
+## Changelog:
+- La colonne "name" de la table "users_ranks" est renommée en "title".
+- Refonte des alertes.
 
-### Ajouts:
-- Ajout des variables thèmes "$theme_url" pour l'URL vers le thème et "$theme_tags" pour les tags du thème séparés par une virgule.
-- Ajout du nom des catégories des articles sur la page d'accueil du panel.
-- Ajout du fichier "layout.tpl", il n'est pas censé être utilisé sur le site, il sert de fichier de base ou de test pour ceux qui veulent customisé le thème.
-- Ajout de la table "ranks" avec comme colonnes: id (int, 11, ai), name (varchar, 35), p_articles (int, 1), p_categories (int, 1), p_configuration (int, 1), p_pages (int, 1), p_panelaccess (int, 1), p_ranks (int, 1), p_users (int, 1), superadmin (int, 1, par défaut 0).
-- Ajout des données correspondant aux permissions des grades dans la table "rank".
-- Ajout du système de permissions et de la possibilité d'éditer un grade et ses permissions, il n'est pas encore possible de supprimer ou d'ajouter un grade par le panel, ça sera bientôt disponible.
-- Ajout des pages "Liste des grades" et "Editer un grade" dans le menu "Utilisateurs" du panel.
-- Ajout du grade qui possède l'id 4, le "Super-Admin", c'est un grade impossible à modifier, impossible à donner à quelqu'un d'autre et il est impossible à bannir, seul le propriétaire du site possède ce grade.
+## Corrections:
+- Correction d'un bug qui faisait qu'il était possible de modifier un grade "superadmin" en produisant certaines manipulations.
+- Correction d'un bug qui faisait qu'il était impossible de modifier un grade sauf le nom.
+- Correction d'un bug qui faisait que certaines fois les alertes ne se produisaient pas.
+- Correction d'un bug qui faisait que la colonne "l_rankupdated" de la table langs avait été oubliée d'être déclarée dans la page lang.php. 
 
-### Suppressions: 
-- Suppression du fichier "form.php" qui était temporaire, le code qui s'y trouvait se trouve maintenant dans "settings.php" et "login.php".
-- Suppression du fichier "p-form.php" qui était temporaire, le code qui s'y trouvait se trouve maintenant dans "p-editarticles.php", "p-editpages.php", "p-editcategories.php" et "p-configuration.php".
-- Suppressions des lignes de css qui se trouvaient dans les pages "Créer un article" et "Créer une page" qui sont inutiles depuis plusieurs versions.
 
-### Corrections:
-- Correction d'un bug qui faisait que les fichiers p-header.php et p-footer.php n'étaient pas correctement protégés comme les autres fichiers dans le dossier /includes.
-- Correction d'un bug qui faisait que lors d'une inscription, c'était une mauvaise photo de profil qui se chargeait.
-- Correction d'un bug qui faisait que la page se rechargeait dans deux onglets lorsqu'on cliquait sur le bouton "Effacer" sur la page "Liste des articles" dans le panel.
-- Correction d'un bug qui faisait que les messages d'erreur de "login.php" et "settings.php", ne s'affichaient pas.
-- Correction d'un bug qui faisait que l'image d'illustration d'un article n'était jamais recadré sur la page article et donc pouvait être trop grande.
-- Correction d'un bug qui faisait que si l'image d'illustration d'un article était trop grande alors elle n'était pas correctement arrondi sur les pages "Accueil", "Liste des articles" et "Catégories".
-- Correction d'un bug qui faisait que les fichier "article.tpl" et "page.tpl" utilisaient du code de Bootstrap 4, alors que le thème par défaut est en Bootstrap 5.
-- Correction d'un bug qui faisait que Smarty ne prenait pas en compte la fonction PHP header sous certaines conditions.
-- Correction d'un bug qui faisait qu'il n'y avait pas de message de succès lors de la réussite d'une modification.
-- Correction d'un bug qui faisait qu'il existait des lignes de code normalement réservés aux tests.
-- Correction d'un bug qui faisait qu'il était impossible de récupérer de la corbeille un article ou une page si vous étiez éditeur.
-- Correction d'un bug qui faisait que le menu et le plan du panel affichaient les pages que vous n'avez pas accès.
-- Correction d'un bug qui faisait que la colonne de langage l_edit était appelée deux fois et non une fois par le site.
-
-### Ajouts colonnes de langages:
-Format: position dans la table: nom de la colonne => texte
-
-5: l_allarticles => Tous les articles
-8: l_articlepinned => Cet article est épinglé
-17: l_cannotchangesuperadmin => Il est impossible de modifier le grade superadmin
-21: l_categorysametag => Il est impossible d'avoir plusieurs catégories avec le même tag
-36: l_editrank => Éditer un grade
-58: l_listranks => Liste des grades
-94: l_permissions => Permissions
-103: l_ranks => Grades
-104: l_rankupdated => Le grade a bien été mis à jour
-
-### Modifications positions colonnes de langages:
-Format: nom de la colonne: ancienne position => nouvelle position
-
-l_image: 48 => 47
-l_in: 47 => 49
-l_impamplemousse: 49 => 48
-l_registrationsclosed: 110 => 109
-l_registrationwebsite: 109 => 110 
-
-### Crédits:
-Smarty (3.1.39) par New Digital Group, Inc.
-Bootstrap (5.0.2) par Bootstrap Team.
-PamplemousseCMS (ST4) par @LsBodino.

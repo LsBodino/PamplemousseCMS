@@ -49,7 +49,6 @@ if(isset($_SESSION['id'])){
     if($user['ban'] == 1){
         header("Location: $link/logout");
     }
-
 }
 
 // Config call.

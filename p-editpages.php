@@ -25,7 +25,6 @@ if(isset($_SESSION['id'])){
             $page_insert = $db->prepare("UPDATE pages SET title = ?, section = ?, menu = ? WHERE id = ?");
             $page_insert->execute(array($page_title, $page_section, $page_menu, $id_get));
             $smarty->assign("success", $l_pageupdated);
-            header("Location: $link/panel/edit/pages/$id_get");
          }
       }
       // Template call

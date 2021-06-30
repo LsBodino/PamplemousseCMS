@@ -32,7 +32,6 @@ if(isset($_SESSION['id'])){
             $article_insert = $db->prepare("UPDATE articles SET title = ?, descr = ?, img = ?, category = ?, section = ?, pin = ? WHERE id = ?");
             $article_insert->execute(array($article_title, $article_descr, $article_img, $article_category, $article_section, $article_pin, $id_get));
             $smarty->assign("success", $l_articleupdated);
-            header("Location: $link/panel/configuration/");
          }
       }
       $smarty->display("themes/$paneltheme/p-editarticles.tpl");

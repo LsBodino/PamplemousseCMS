@@ -21,7 +21,7 @@ if(isset($_SESSION['id'])){
         $config_register = htmlspecialchars($_POST['config_register']);
         $config_insert = $db->prepare("UPDATE config SET wsname = ?, wsdescr = ?, wslink = ?, wslang = ?, wstheme = ?, wspaneltheme = ?, register = ? WHERE id = ?");
         $config_insert->execute(array($config_wsname, $config_wsdescr, $config_wslink, $config_wslang, $config_wstheme, $config_wspaneltheme, $config_register, 1));
-        header("Location: $link/panel/configuration/");
+        $smarty->assign("success", $l_settingsupdated);
       }
     }
     $smarty->display("themes/$paneltheme/p-configuration.tpl");

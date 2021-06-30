@@ -1,6 +1,6 @@
 RewriteEngine On
 ErrorDocument 403 /error/401
-ErrorDocument 404 /error/401
+ErrorDocument 404 /error/404
 
 <FilesMatch "\.tpl$">
 Deny from all

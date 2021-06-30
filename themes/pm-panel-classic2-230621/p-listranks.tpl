@@ -12,11 +12,11 @@
                 <div class="list-group-item">
                 {if $r.superadmin == 0}
                     <a href="{$link}/panel/edit/ranks/users/{$r.id}">
-                        <h4 class="list-group-item-heading">{$r.name} ({$l_id}: {$r.id})</h4>
+                        <h4 class="list-group-item-heading">{$r.title} ({$l_id}: {$r.id})</h4>
                     </a>
                     <a href="{$link}/panel/edit/ranks/users/{$r.id}" role="button" class="btn btn-primary btn-sm">{$l_edit}</a>
                 {else}
-                    <h4 class="list-group-item-heading">{$r.name} ({$l_id}: {$r.id})</h4>
+                    <h4 class="list-group-item-heading">{$r.title} ({$l_id}: {$r.id})</h4>
                     <p>{$l_cannotchangesuperadmin}.</p>
                 {/if}
                 </div>

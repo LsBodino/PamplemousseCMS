@@ -1,0 +1,12 @@
+# ST4B (English):
+Correction update, as always.
+
+## Changelog:
+- The "name" column of the "users_ranks" table is renamed to "title".
+- Redesign of alerts.
+
+## Corrections:
+- Fixed a bug that made it possible to modify a "superadmin" grade by producing certain manipulations.
+- Fixed a bug that made it impossible to change a grade except the name.
+- Fixed a bug that sometimes alerts did not occur.
+- Fixed a bug that caused the "l_rankupdated" column of the langs table to be forgotten to be declared in the lang.php.

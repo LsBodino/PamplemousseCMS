@@ -2,7 +2,7 @@
 require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
 
-// Database call
+// Database
 if(isset($_SESSION['id'])){
    if($rank['p_ranks'] == 1){
       if(isset($_GET['id']) AND $_GET['id'] > 0){

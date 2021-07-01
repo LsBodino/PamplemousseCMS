@@ -2,7 +2,7 @@
 require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
 
-// Database call
+// Database
 if(isset($_SESSION['id'])){
    if($rank['p_categories'] == 1){
       if(isset($_GET['id']) AND $_GET['id'] > 0){
@@ -12,9 +12,11 @@ if(isset($_SESSION['id'])){
          $category_exist = $category_req->rowCount();
          $smarty->assign('category_req', $category_req);
          if($category_exist == 0){
+            // Error
             $smarty->display("themes/$theme/error404.tpl");
          }
       }else{
+         // Error
          $smarty->display("themes/$theme/error405.tpl");
       }
       if(isset($_POST['category_name'], $_POST['category_tag'])){
@@ -33,12 +35,14 @@ if(isset($_SESSION['id'])){
             }
          }
       }
-      // Template call
+      // Template
       $smarty->display("themes/$paneltheme/p-editcategories.tpl");
    }else{
+      // Error
       $smarty->display("themes/$theme/error401.tpl");
    }
 }else{
+   // Login
    header("Location: $link/login");
 }
 require_once 'includes/p-footer.php';?>

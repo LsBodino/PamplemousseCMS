@@ -2,7 +2,7 @@
 require_once 'includes/header.php';
 require_once 'includes/menu.php';
 
-// Database call
+// Database
 if(isset($_GET['id']) || isset($_GET['username'])){
    if(isset($_GET['id'])){
       $id_get = intval($_GET['id']);
@@ -17,13 +17,15 @@ if(isset($_GET['id']) || isset($_GET['username'])){
    $userspace_exist = $userspace_req->rowCount();
    $smarty->assign('userspace_req', $userspace_req);
    
-   // Template call
    if($userspace_exist == 0){
+      // Error
       $smarty->display("themes/$theme/error404.tpl");
    }else{
+      // Template
       $smarty->display("themes/$theme/space.tpl");
    }
 }else{
+   // Error
    $smarty->display("themes/$theme/error405.tpl");
 }
 require_once 'includes/footer.php';?>

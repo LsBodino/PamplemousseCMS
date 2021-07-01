@@ -6,6 +6,7 @@ if(isset($_SESSION['id'])){
     if(isset($_GET['id']) AND !empty($_GET['id'])){
         switch($_GET['type']){
             default:
+            // Error default
                 $smarty->display("themes/$theme/error405.tpl");
             break;
 

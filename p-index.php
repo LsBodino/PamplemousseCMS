@@ -2,7 +2,7 @@
 require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
 
-// Database call
+// Database
 $articles = $db->prepare('SELECT * FROM articles WHERE visible = 1 ORDER by id DESC LIMIT 10');
 $articles->execute();
 $smarty->assign('articles',$articles);
@@ -15,14 +15,16 @@ $users = $db->prepare('SELECT * FROM users ORDER by id DESC LIMIT 10');
 $users->execute();
 $smarty->assign('users',$users);
 
-// Template call
 if(isset($_SESSION['id'])) {
     if($rank['p_panelaccess'] == 1){
+        // Template
         $smarty->display("themes/$paneltheme/p-index.tpl");
     }else{
+        // Error
         $smarty->display("themes/$theme/error401.tpl");
     }
 }else{
+    // Login
     header("Location: $link/login");
 }
 

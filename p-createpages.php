@@ -2,7 +2,7 @@
 require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
 
-// Database call
+// Database
 if(isset($_SESSION['id'])){
     if($rank['p_pages'] == 1){
         if(isset($_POST['page_title'], $_POST['page_section'])){
@@ -15,12 +15,14 @@ if(isset($_SESSION['id'])){
                 $smarty->assign('success',$l_pageposted);
             }
         }
-        // Template call
+        // Template
         $smarty->display("themes/$paneltheme/p-createpages.tpl");
     }else{
+        // Error
         $smarty->display("themes/$theme/error401.tpl");
     }
 }else{
+    // Login
    header("Location: $link/login");
 }
 

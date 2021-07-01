@@ -41,11 +41,5 @@ $smarty->assign("theme_version", $theme_version);
 <meta property="twitter:description" content="<?= $descr?>">
 <meta property="twitter:image" content="<?= $link?>/img/favicon.png">
 
-<!-- Link & Script -->
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css">
-<link href="<?= $link?>/themes/<?= $theme?>/css/bootstrap.css" rel="stylesheet" media="all" type="text/css">
-<script src="<?= $link?>/themes/<?= $theme?>/js/bootstrap.js"></script>
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script src="https://unpkg.com/tippy.js@6"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Favicon -->
 <link rel="shortcut icon" href="<?= $link?>/img/favicon.png" type="image/x-icon"/>

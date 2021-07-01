@@ -2,7 +2,7 @@
 require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
 
-// Database call
+// Database
 $category = $db->prepare("SELECT * FROM articles_categories WHERE visible = 1 ORDER by id");
 $category->execute();
 $smarty->assign("category", $category);
@@ -15,6 +15,7 @@ if(isset($_SESSION['id'])){
          $article_req->execute(array($id_get));
          $article_exist = $article_req->rowCount();
          $smarty->assign('article_req', $article_req);
+         // Error 404 & 405
          if($article_exist == 0){
             $smarty->display("themes/$theme/error404.tpl");
          }
@@ -34,11 +35,14 @@ if(isset($_SESSION['id'])){
             $smarty->assign("success", $l_articleupdated);
          }
       }
+      // Template
       $smarty->display("themes/$paneltheme/p-editarticles.tpl");
    }else{
+      // Error 401
       $smarty->display("themes/$theme/error401.tpl");
    }
 }else{
-  header("Location: $link/login");
+   // Login
+   header("Location: $link/login");
 }
 require_once 'includes/p-footer.php';?>

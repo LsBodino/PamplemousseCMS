@@ -2,8 +2,9 @@
 require_once 'includes/header.php';
 require_once 'includes/menu.php';
 
-// Database call
+// Database
 if(isset($_SESSION['id'])){
+   // Username
    if(isset($_POST['username_new']) AND !empty($_POST['username_new']) AND $_POST['username_new'] != $user['username']){
       $username_new = htmlspecialchars($_POST['username_new']);
       $username_long = strlen($username_new);
@@ -26,7 +27,7 @@ if(isset($_SESSION['id'])){
          $smarty->assign("error", $l_usernamemax);
       }
    }
-
+   // Mail
    if(isset($_POST['mail_new']) AND !empty($_POST['mail_new']) AND $_POST['mail_new'] != $user['mail']){
       if(filter_var($_POST['mail_new'], FILTER_VALIDATE_EMAIL)){
          $mail_new = htmlspecialchars($_POST['mail_new']);
@@ -44,7 +45,7 @@ if(isset($_SESSION['id'])){
          $smarty->assign("error", $l_emailerror);
       }
    }
-
+   // Password
    if(isset($_POST['pw_new']) AND !empty($_POST['pw_new']) AND isset($_POST['pw_new2']) AND !empty($_POST['pw_new2'])){
       $pw_new = $_POST['pw_new'];
       $pw_new2 = $_POST['pw_new2'];
@@ -56,7 +57,7 @@ if(isset($_SESSION['id'])){
          $smarty->assign("error", $l_pwerror);
       }
    }
-
+   // Profilepicture
    if(isset($_POST['profilepic_new']) AND !empty($_POST['profilepic_new'])){
       $profilepic_new = $_POST['profilepic_new'];
       $profilepic_insert = $db->prepare("UPDATE users SET profilepicture = ? WHERE id = ?");
@@ -64,9 +65,11 @@ if(isset($_SESSION['id'])){
       $smarty->assign("success", $l_settingsupdated);
    }
 }else{
+   // Login
    header("Location: $link/login");
 }
 if(!isset($_SESSION['id'])){
+   // Error
    $smarty->display("themes/$theme/error401.tpl");
    exit;
 }else{
@@ -74,7 +77,7 @@ if(!isset($_SESSION['id'])){
    $user_req->execute(array($_SESSION['id']));
    $smarty->assign('user_req', $user_req);
     
-// Template call
+// Template
    $smarty->display("themes/$theme/settings.tpl");
 }
 

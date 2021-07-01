@@ -2,7 +2,7 @@
 require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
 
-// Database call
+// Database
 if(isset($_SESSION['id'])){
    if($rank['p_categories'] == 1){
       if(isset($_POST['category_name'], $_POST['category_tag'])){
@@ -21,12 +21,14 @@ if(isset($_SESSION['id'])){
             }
          }
       }
-      // Template call
+      // Template
       $smarty->display("themes/$paneltheme/p-createcategories.tpl");
    }else{
+      // Error
       $smarty->display("themes/$theme/error401.tpl");
    }
 }else{
+   // Login
    header("Location: $link/login");
 }
 

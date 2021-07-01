@@ -28,73 +28,73 @@ catch(PDOException $e){
 
 if(isset($_SESSION['id'])){ 
 
-    // Last login call.
+    // Last login
     $lastlogin = $db->prepare("UPDATE users SET lastlogin = ? WHERE id = ?");
     $lastlogin->execute(array(time(), $_SESSION['id']));
 
-    // User call.
+    // User
     $user_req = $db->prepare("SELECT * FROM users WHERE id = ?");
     $user_req->execute(array($_SESSION['id']));
     $smarty->assign('user_req', $user_req);
     $user = $user_req->fetch();
     $user_id = $user['id'];
 
-    // Rank call.
+    // Rank
     $rank_req = $db->prepare("SELECT * FROM users_ranks WHERE id = ?");
     $rank_req->execute(array($user['rank']));
     $smarty->assign('rank_req', $rank_req);
     $rank = $rank_req->fetch();
 
-    // Ban call.
+    // Ban
     if($user['ban'] == 1){
         header("Location: $link/logout");
     }
 }
 
-// Config call.
+// Config
 $config_req = $db->prepare("SELECT * FROM config WHERE id = ?");
 $config_req->execute(array(1));
 $config = $config_req->fetch();
 
-// Website name.
+// Website name
 $title = $config['wsname'];
 $smarty->assign('title', $title);
 
-// Website description.
+// Website description
 $descr = $config['wsdescr'];
 $smarty->assign('descr', $descr);
 
-// Website link.
+// Website link
 $link = $config['wslink'];
 $smarty->assign('link', $link);
 
-// Website theme.
+// Website theme
 $theme = $config['wstheme'];
 $smarty->assign('theme', $theme);
 
-// Panel theme.
+// Panel theme
 $paneltheme = $config['wspaneltheme'];
 $smarty->assign('paneltheme', $paneltheme);
 
-// Website language.
+// Website language
 $lang = $config['wslang'];
 $smarty->assign('lang', $lang);
 
-// CMS version.
+// CMS version
 $version = $config['cmsversion'];
 $smarty->assign('version', $version);
 
-// Website timezone.
+// Website timezone
 $timezone = $config['wstimezone'];
 $smarty->assign('timezone', $timezone);
 date_default_timezone_set("$timezone");
 
-// Lang call.
+// Lang call
 $lang_req = $db->prepare("SELECT * FROM langs WHERE id = ?");
 $lang_req->execute(array("$lang"));
 $lg = $lang_req->fetch();
 
-// Register call.
+// Register call
 $register = $config['register'];
 $smarty->assign('register', $register);
 ?>

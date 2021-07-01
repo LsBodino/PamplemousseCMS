@@ -2,7 +2,7 @@
 require_once 'includes/header.php';
 require_once 'includes/menu.php';
 
-// Errors call
+// Database
 if(isset($_POST['login'])){
    $login_mail = htmlspecialchars($_POST['login_mail']);
    $login_pw = $_POST['login_pw'];
@@ -35,12 +35,12 @@ if(isset($_POST['login'])){
    }
 }
 
-// Session call
+// Session
 if(isset($_SESSION['id'])){
    header("Location: $link/index");
 }else{
    
-// Template call
+// Template
    $smarty->display("themes/$theme/login.tpl");
 }
 require_once 'includes/footer.php'; ?>

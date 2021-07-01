@@ -2,12 +2,11 @@
 require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
 
-// Database call
+// Database
 $config_lang = $db->prepare("SELECT id, name FROM langs ORDER by id");
 $config_lang->execute();
 $smarty->assign("config_lang", $config_lang);
 
-// Template call
 if(isset($_SESSION['id'])){
   if($rank['p_configuration'] == 1){
     if(isset($_POST['config_wsname'], $_POST['config_wsdescr'], $_POST['config_wslink'], $_POST['config_wslang'], $_POST['config_wstheme'], $_POST['config_wspaneltheme'], $_POST['config_register'])){
@@ -24,11 +23,14 @@ if(isset($_SESSION['id'])){
         $smarty->assign("success", $l_settingsupdated);
       }
     }
+    // Template
     $smarty->display("themes/$paneltheme/p-configuration.tpl");
   }else{
+    // Error
     $smarty->display("themes/$theme/error401.tpl");
   }
 }else{
+  // Login
   header("Location: $link/login");
 }
 require_once 'includes/p-footer.php'; ?>

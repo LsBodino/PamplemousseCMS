@@ -2,7 +2,7 @@
 require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
 
-// Database call
+// Database
 if(isset($_SESSION['id'])){
    if($rank['p_pages'] == 1){
       if(isset($_GET['id']) AND $_GET['id'] > 0){
@@ -11,10 +11,12 @@ if(isset($_SESSION['id'])){
          $page_req->execute(array($id_get));
          $page_exist = $page_req->rowCount();
          $smarty->assign("page_req", $page_req);
-         if($page_exist == 0){ 
+         if($page_exist == 0){
+            // Error
             $smarty->display("themes/$theme/error404.tpl");
          }
       }else{
+         // Error
          $smarty->display("themes/$theme/error405.tpl");
       }
       if(isset($_POST['page_title'], $_POST['page_section'])){
@@ -27,12 +29,14 @@ if(isset($_SESSION['id'])){
             $smarty->assign("success", $l_pageupdated);
          }
       }
-      // Template call
+      // Template
       $smarty->display("themes/$paneltheme/p-editpages.tpl");
    }else{
+      // Error
       $smarty->display("themes/$theme/error401.tpl");
    }
 }else{
+   // Login
    header("Location: $link/login");
 }
 require_once 'includes/p-footer.php';?>

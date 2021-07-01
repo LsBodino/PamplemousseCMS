@@ -2,10 +2,11 @@
 require_once 'includes/header.php';
 require_once 'includes/menu.php';
 
-// Database call
+// Session
 if(isset($_SESSION['id'])){
    header("Location: $link/space/".$_SESSION['username']);
 }else{
+   // Database
    if(isset($_POST['register'])){
       $username = htmlspecialchars($_POST['username']);
       $mail = htmlspecialchars($_POST['mail']);
@@ -57,7 +58,7 @@ if(isset($_SESSION['id'])){
    }
 }
 
-// Template call
+// Template
 $smarty->display("themes/$theme/register.tpl");
 
 require_once 'includes/footer.php';?>

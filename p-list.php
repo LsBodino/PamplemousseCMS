@@ -7,6 +7,7 @@ if(isset($_SESSION['id'])){
     switch($_GET['type'])
     {
         default:
+        // Error default
             $smarty->display("themes/$theme/error405.tpl");
         break;
 
@@ -20,6 +21,7 @@ if(isset($_SESSION['id'])){
                 $smarty->assign('articles',$articles);
                 $smarty->display("themes/$paneltheme/p-listarticles.tpl");
             }else{
+                // Error
                 $smarty->display("themes/$theme/error401.tpl");
             }
         break;
@@ -34,6 +36,7 @@ if(isset($_SESSION['id'])){
                 $smarty->assign('categories',$categories);
                 $smarty->display("themes/$paneltheme/p-listcategories.tpl");
             }else{
+                // Error
                 $smarty->display("themes/$theme/error401.tpl");
             }
         break;
@@ -48,6 +51,7 @@ if(isset($_SESSION['id'])){
                 $smarty->assign('pages',$pages);
                 $smarty->display("themes/$paneltheme/p-listpages.tpl");
             }else{
+                // Error
                 $smarty->display("themes/$theme/error401.tpl");
             }
         break;
@@ -60,6 +64,7 @@ if(isset($_SESSION['id'])){
                 $smarty->assign('ranks',$ranks);
                 $smarty->display("themes/$paneltheme/p-listranks.tpl");
             }else{
+                // Error
                 $smarty->display("themes/$theme/error401.tpl");
             }
         break;
@@ -75,11 +80,13 @@ if(isset($_SESSION['id'])){
                 $smarty->assign('rank_req', $rank_req);
                 $smarty->display("themes/$paneltheme/p-listusers.tpl");
             }else{
+                // Error
                 $smarty->display("themes/$theme/error401.tpl");
             }
         break;
     } 
 }else{
+    // Login
     header("Location: $link/login");
 }
 require_once 'includes/p-footer.php';?>

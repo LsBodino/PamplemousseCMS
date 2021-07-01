@@ -2,7 +2,7 @@
 require_once 'includes/p-header.php';
 require_once 'includes/p-menu.php';
 
-// Database call
+// Database
 $category = $db->prepare("SELECT * FROM articles_categories WHERE visible = 1 ORDER by id");
 $category->execute();
 $smarty->assign("category", $category);
@@ -22,12 +22,14 @@ if(isset($_SESSION['id'])){
             $smarty->assign('success',$l_articleposted);
          }
       }
-      // Template call
+      // Template
       $smarty->display("themes/$paneltheme/p-createarticles.tpl");
    }else{
+      // Error
       $smarty->display("themes/$theme/error403.tpl");
    }
 }else{
+   // Login
    header("Location: $link/login");
 }
 

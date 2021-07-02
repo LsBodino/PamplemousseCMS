@@ -65,7 +65,7 @@ Pourquoi faire complexe, quand on peut choisir simple ? Rejoignez les Pamplemous
 
 Disponible en Français, Anglais, Espagnol, Italien, Allemand, Néerlandais et Portugais.
 
-Version stable: ST4.
+Version stable: ST4B.
 
 Version de dév: Pre-ST5.
 

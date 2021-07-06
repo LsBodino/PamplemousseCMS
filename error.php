@@ -34,6 +34,16 @@ case '408':
     $smarty->display("themes/$theme/error408.tpl");
 break;
 
+case '413':
+    // Error 413
+    $smarty->display("themes/$theme/error413.tpl");
+break;
+
+case '415': 
+    // Error 415
+    $smarty->display("themes/$theme/error415.tpl");
+break;
+
 case '418':
     // Error 418
     $smarty->display("themes/$theme/error418.tpl");

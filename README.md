@@ -30,7 +30,7 @@ Online demo: http://demo.pamplemoussecms.com
 
 PamplemousseCMS: http://pamplemoussecms.com
 
-PamplemousseSmarty: https://github.com/lsbodino/PamplemousseSmarty
+PamplemousseSmarty: https://github.com/PamplemousseTeam/PamplemousseSmarty
 
 
 ### >_ Credits
@@ -85,7 +85,7 @@ Démo en ligne: http://demo.pamplemoussecms.com
 
 PamplemousseCMS: http://pamplemoussecms.com
 
-PamplemousseSmarty: https://github.com/lsbodino/PamplemousseSmarty
+PamplemousseSmarty: https://github.com/PamplemousseTeam/PamplemousseSmarty
 
 
 ### >_ Crédits

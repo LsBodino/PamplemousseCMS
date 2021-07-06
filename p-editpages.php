@@ -14,10 +14,12 @@ if(isset($_SESSION['id'])){
          if($page_exist == 0){
             // Error
             $smarty->display("themes/$theme/error404.tpl");
+            exit;
          }
       }else{
          // Error
          $smarty->display("themes/$theme/error405.tpl");
+         exit;
       }
       if(isset($_POST['page_title'], $_POST['page_section'])){
          if(!empty($_POST['page_title']) AND !empty($_POST['page_section'])){

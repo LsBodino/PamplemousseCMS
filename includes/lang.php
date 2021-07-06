@@ -110,6 +110,9 @@ $smarty->assign("l_emailerror", $l_emailerror);
 $l_emailused = $lg['l_emailused'];
 $smarty->assign("l_emailused", $l_emailused);
 
+$l_entitytoolarge = $lg['l_entitytoolarge'];
+$smarty->assign("l_entitytoolarge", $l_entitytoolarge);
+
 $l_error = $lg['l_error'];
 $smarty->assign("l_error", $l_error);
 

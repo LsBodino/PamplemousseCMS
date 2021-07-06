@@ -14,9 +14,13 @@ if(isset($_SESSION['id'])){
             $username_req->execute(array($username_new));
             $username_exist = $username_req->rowCount();
             if($username_exist == 0){
-               $username_insert = $db->prepare("UPDATE users SET username = ? WHERE id = ?");
-               $username_insert->execute(array($username_new, $_SESSION['id']));
-               $smarty->assign("success", $l_settingsupdated);
+               if(ctype_alnum($username_new)){
+                  $username_insert = $db->prepare("UPDATE users SET username = ? WHERE id = ?");
+                  $username_insert->execute(array($username_new, $_SESSION['id']));
+                  $smarty->assign("success", $l_settingsupdated);
+               }else{
+                  $smarty->assign("error", $l_usernameunauthorized);
+               }
             }else{
                $smarty->assign("error", $l_usernameused);
             }
@@ -49,10 +53,16 @@ if(isset($_SESSION['id'])){
    if(isset($_POST['pw_new']) AND !empty($_POST['pw_new']) AND isset($_POST['pw_new2']) AND !empty($_POST['pw_new2'])){
       $pw_new = $_POST['pw_new'];
       $pw_new2 = $_POST['pw_new2'];
-      if($pw1 == $pw2){
-         $pw_insert = $db->prepare("UPDATE users SET pw = ? WHERE id = ?");
-         $pw_insert->execute(array(password_hash($pw1, PASSWORD_DEFAULT), $_SESSION['id']));
-         $smarty->assign("success", $l_settingsupdated);
+      if($pw_new == $pw_new2){
+         $pw_long = strlen($pw_new);
+         // Password >= 8
+         if($pw_long >= 8){
+            $pw_insert = $db->prepare("UPDATE users SET pw = ? WHERE id = ?");
+            $pw_insert->execute(array(password_hash($pw_new, PASSWORD_DEFAULT), $_SESSION['id']));
+            $smarty->assign("success", $l_settingsupdated);
+         }else{
+            $smarty->assign("error", $l_pwmin);
+         }
       }else{
          $smarty->assign("error", $l_pwerror);
       }

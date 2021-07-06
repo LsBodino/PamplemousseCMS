@@ -5,7 +5,7 @@ $theme_name = "Pamplemousse Classic 2";
 // Author
 $theme_author = "PamplemousseCMS";
 
-// Theme URL
+// URL
 $theme_url = "http://demo.pamplemoussecms.com";
 
 // Tags
@@ -18,7 +18,8 @@ $theme_authorurl = "http://pamplemoussecms.com";
 $theme_description = "Default theme for PamplemousseCMS ST.";
 
 // Version
-$theme_version = "230621"; ?>
+$theme_version = "230621";
+?>
 
 <!-- Loader -->
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css">

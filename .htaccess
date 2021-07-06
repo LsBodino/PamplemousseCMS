@@ -1,11 +1,12 @@
 RewriteEngine On
-RewriteBase /
 ErrorDocument 400 /error/400
 ErrorDocument 401 /error/401
 ErrorDocument 403 /error/401
 ErrorDocument 404 /error/404
 ErrorDocument 405 /error/405
 ErrorDocument 408 /error/408
+ErrorDocument 413 /error/413
+ErrorDocument 415 /error/415
 ErrorDocument 429 /error/429
 ErrorDocument 500 /error/500
 ErrorDocument 501 /error/501
@@ -13,38 +14,38 @@ ErrorDocument 502 /error/500
 ErrorDocument 505 /error/505
 ErrorDocument 510 /error/510
 
-RewriteRule ^article/([0-9]+)$ /article.php?id=$1 [L]
-RewriteRule ^category/([^\.]+)$ /category.php?id=$1 [L]
-RewriteRule ^error/([0-9]+)$ /error.php?id=$1 [L]
-RewriteRule ^page/([0-9]+)$ /page.php?id=$1 [L]
+RewriteRule ^article/([0-9]+)$ ./article.php?id=$1 [L]
+RewriteRule ^category/([^\.]+)$ ./category.php?id=$1 [L]
+RewriteRule ^error/([0-9]+)$ ./error.php?id=$1 [L]
+RewriteRule ^page/([0-9]+)$ ./page.php?id=$1 [L]
 
-RewriteRule ^panel/articles /p-list.php?type=articles [L]
-RewriteRule ^panel/ban/users/([0-9]+)$ /p-delete.php?type=users&id=$1 [L]
-RewriteRule ^panel/categories/articles /p-list.php?type=categories [L]
-RewriteRule ^panel/configuration /p-configuration.php [L]
-RewriteRule ^panel/create/articles /p-createarticles.php [L]
-RewriteRule ^panel/create/categories/articles /p-createcategories.php [L]
-RewriteRule ^panel/create/pages /p-createpages.php [L]
-RewriteRule ^panel/delete/articles/([0-9]+)$ /p-delete.php?type=articles&id=$1 [L]
-RewriteRule ^panel/delete/categories/articles/([0-9]+)$ /p-delete.php?type=categories&id=$1 [L]
-RewriteRule ^panel/delete/pages/([0-9]+)$ /p-delete.php?type=pages&id=$1 [L]
-RewriteRule ^panel/edit/articles/([0-9]+)$ /p-editarticles.php?id=$1 [L]
-RewriteRule ^panel/edit/categories/articles/([0-9]+)$ /p-editcategories.php?id=$1 [L]
-RewriteRule ^panel/edit/pages/([0-9]+)$ /p-editpages.php?id=$1 [L]
-RewriteRule ^panel/edit/ranks/users/([0-9]+)$ /p-editranks.php?id=$1 [L]
-RewriteRule ^panel/index /p-index.php [L]
-RewriteRule ^panel/map /p-map.php [L]
-RewriteRule ^panel/pages /p-list.php?type=pages [L]
-RewriteRule ^panel/ranks/users /p-list.php?type=ranks [L]
-RewriteRule ^panel/recover/articles/([0-9]+)$ /p-recover.php?type=articles&id=$1 [L]
-RewriteRule ^panel/recover/pages/([0-9]+)$ /p-recover.php?type=pages&id=$1 [L]
-RewriteRule ^panel/trash/articles /p-trash.php?type=articles [L]
-RewriteRule ^panel/trash/pages /p-trash.php?type=pages [L]
-RewriteRule ^panel/unban/users/([0-9]+)$ /p-recover.php?type=users&id=$1 [L]
-RewriteRule ^panel/users /p-list.php?type=users [L]
+RewriteRule ^panel/articles ./p-list.php?type=articles [L]
+RewriteRule ^panel/ban/users/([0-9]+)$ ./p-delete.php?type=users&id=$1 [L]
+RewriteRule ^panel/categories/articles ./p-list.php?type=categories [L]
+RewriteRule ^panel/configuration ./p-configuration.php [L]
+RewriteRule ^panel/create/articles ./p-createarticles.php [L]
+RewriteRule ^panel/create/categories/articles ./p-createcategories.php [L]
+RewriteRule ^panel/create/pages ./p-createpages.php [L]
+RewriteRule ^panel/delete/articles/([0-9]+)$ ./p-delete.php?type=articles&id=$1 [L]
+RewriteRule ^panel/delete/categories/articles/([0-9]+)$ ./p-delete.php?type=categories&id=$1 [L]
+RewriteRule ^panel/delete/pages/([0-9]+)$ ./p-delete.php?type=pages&id=$1 [L]
+RewriteRule ^panel/edit/articles/([0-9]+)$ ./p-editarticles.php?id=$1 [L]
+RewriteRule ^panel/edit/categories/articles/([0-9]+)$ ./p-editcategories.php?id=$1 [L]
+RewriteRule ^panel/edit/pages/([0-9]+)$ ./p-editpages.php?id=$1 [L]
+RewriteRule ^panel/edit/ranks/users/([0-9]+)$ ./p-editranks.php?id=$1 [L]
+RewriteRule ^panel/index ./p-index.php [L]
+RewriteRule ^panel/map ./p-map.php [L]
+RewriteRule ^panel/pages ./p-list.php?type=pages [L]
+RewriteRule ^panel/ranks/users ./p-list.php?type=ranks [L]
+RewriteRule ^panel/recover/articles/([0-9]+)$ ./p-recover.php?type=articles&id=$1 [L]
+RewriteRule ^panel/recover/pages/([0-9]+)$ ./p-recover.php?type=pages&id=$1 [L]
+RewriteRule ^panel/trash/articles ./p-trash.php?type=articles [L]
+RewriteRule ^panel/trash/pages ./p-trash.php?type=pages [L]
+RewriteRule ^panel/unban/users/([0-9]+)$ ./p-recover.php?type=users&id=$1 [L]
+RewriteRule ^panel/users ./p-list.php?type=users [L]
 
-RewriteRule ^space/([^\.]+)$ /space.php?username=$1 [L]
-RewriteRule ^space/id/([0-9]+)$ /space.php?id=$1 [L]
+RewriteRule ^space/([^\.]+)$ ./space.php?username=$1 [L]
+RewriteRule ^space/id/([0-9]+)$ ./space.php?id=$1 [L]
 
 RewriteRule ^includes/?$ - [F,L]
 RewriteRule ^includes/config.php - [F,L]

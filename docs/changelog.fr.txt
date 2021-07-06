@@ -1,9 +1,24 @@
-# ST5 (Français):
+# ST5 (Français)
 
 
 ## Changelog:
 - Refonte des commentaires dans le code.
+- Refonte du chargement des fichiers .css et .js, maintenant ça se passe directement dans le fichier config.php des thèmes, ça permet enfin aux thèmes de charger les fichiers qu'ils veulent sans toucher au code du header.php.
+
+## Ajouts:
+- Ajout de la gestion des erreurs HTTP 413 et 415.
 
 ## Corrections:
+- Correction d'un bug qui faisait qu'il était possible d'utiliser un nom d'utilisateur non-autorisée (c'est-à-dire avec des caractères spéciaux) à partir des paramètres du compte.
+- Correction d'un bug qui faisait qu'il était possible d'utiliser un mot de passe avec moins de 8 caractères à partir des paramètres du compte.
+- Correction d'un bug qui faisait qu'il était impossible de modifier son mot de passe depuis quelques mises à jours.
+- Correction d'un bug qui faisait que la page inscription essayait de se chargeait quand on essayait d'y accéder en étant connecté.
+- Correction d'un bug qui faisait que si PamplemousseCMS était installé dans un dossier alors le .htaccess ne fonctionnait pas.
 
+## Langages
 
+### Ajouts:
+Format: position dans la table: nom => texte
+
+42: l_entitytoolarge => Traitement abandonné dû à une requête trop importante
+129: l_unsupportedmediafile =>

@@ -10,12 +10,12 @@
         </div>
         <br>
         <div class="row">
-            {if $articles_nb == 0}
-                <div class="center"> 
-                    <strong>{$l_noarticle}!</strong>
-                </div>
-            {else}
-                {foreach $articles as $a}
+        {if $articles_nb == 0}
+            <div class="center"> 
+                <strong>{$l_noarticle}!</strong>
+            </div>
+        {else}
+            {foreach $articles as $a}
                 <div class="col-sm-6 col-12">
                     <div class="list-group-item">
                         <a href="{$link}/panel/edit/articles/{$a.id}">
@@ -27,8 +27,8 @@
                         <a href="{$link}/panel/delete/articles/{$a.id}" role="button" class="btn btn-danger btn-sm">{$l_delete}</a>
                     </div>
                 </div>
-                {/foreach}
-            {/if}
+            {/foreach}
+        {/if}
         </div>
     </div>
 </body>

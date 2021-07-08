@@ -17,15 +17,27 @@ if(isset($_SESSION['id'])){
             $article_category = $_POST['article_category'];
             $article_section = $_POST['article_section'];
             $article_pin = $_POST['article_pin'];
-            $article_insert = $db->prepare("INSERT INTO articles (title, descr, img, section, pin, datep, author, category, visible) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $article_insert->execute(array($article_title, $article_descr, $article_img, $article_section, $article_pin, time(), $_SESSION['username'], $article_category, 1));
-            $smarty->assign('success',$l_articleposted);
+            if($article_title <= 50){
+               if($article_title >= 3){
+                  if($article_descr <= 75){
+                     $article_insert = $db->prepare("INSERT INTO articles (title, descr, img, section, pin, datep, author, category, visible) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                     $article_insert->execute(array($article_title, $article_descr, $article_img, $article_section, $article_pin, time(), $_SESSION['username'], $article_category, 1));
+                     $smarty->assign('success',$l_articleposted);
+                  }else{
+                     $smarty->assign("error", $l_descrmax);
+                  }
+               }else{
+                  $smarty->assign("error", $l_namemin);
+               }
+            }else{
+               $smarty->assign("error", $l_namemax2);
+            }
          }
       }
       // Template
       $smarty->display("themes/$paneltheme/p-createarticles.tpl");
    }else{
-      // Error
+      // Error 403
       $smarty->display("themes/$theme/error403.tpl");
    }
 }else{

@@ -14,7 +14,7 @@
                     <a href="{$link}/panel/edit/ranks/users/{$r.id}">
                         <h4 class="list-group-item-heading">{$r.title} ({$l_id}: {$r.id})</h4>
                     </a>
-                    <a href="{$link}/panel/edit/ranks/users/{$r.id}" role="button" class="btn btn-primary btn-sm">{$l_edit}</a>
+                    <a href="{$link}/panel/edit/ranks/users/{$r.id}" role="button" class="btn btn-success btn-sm">{$l_edit}</a>
                 {else}
                     <h4 class="list-group-item-heading">{$r.title} ({$l_id}: {$r.id})</h4>
                     <p>{$l_cannotchangesuperadmin}.</p>

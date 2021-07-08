@@ -26,7 +26,7 @@ $smarty->assign("paneltheme_version", $theme_version);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="language" content="<?= $lang?>">
-<meta name="generator" content="PamplemousseCMS">
+<meta name="generator" content="<? $l_pamplemoussecms ?>">
 <meta charset="utf-8">
 
 <!-- Favicon -->

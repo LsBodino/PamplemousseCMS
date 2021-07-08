@@ -10,15 +10,14 @@ if(isset($_GET['id']) AND $_GET['id'] > 0){
    $page_exist = $page_req->rowCount();
    $smarty->assign('page_req', $page_req);
    if($page_exist == 0){
-      // Error
+      // Error 404
       $smarty->display("themes/$theme/error404.tpl");
    }else{
-
-// Template
+      // Template
       $smarty->display("themes/$theme/page.tpl"); 
    }
    }else{
-      // Error
+      // Error 405
       $smarty->display("themes/$theme/error405.tpl");
    }
 require_once 'includes/footer.php'; ?>

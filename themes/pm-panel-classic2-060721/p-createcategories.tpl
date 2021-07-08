@@ -13,7 +13,7 @@
                     title: "{$l_success}",
                     text: "{$success}!",
                     showConfirmButton: false,
-                    footer: '<a href="{$link}/panel/categories/articles" class="btn btn-primary">OK</a>',
+                    footer: '<a href="{$link}/panel/categories/articles" class="btn btn-primary">{$l_ok}</a>',
                     allowOutsideClick: false,
                     allowEscapeKey: false
                     })

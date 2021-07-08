@@ -38,7 +38,7 @@ if(isset($_SESSION['id'])){
                            if($pw_long >= 8){
                               $user_insert = $db->prepare("INSERT INTO users(username, mail, pw, rank, register, lastlogin, profilepicture, ban) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
                               $user_insert->execute(array($username, $mail, password_hash($pw, PASSWORD_DEFAULT), 1, time(), time(), "/img/profile.png", 0));
-                              $smarty->assign("success", $l_ok);
+                              $smarty->assign("success", $l_accountcreated);
                            }else{
                               $smarty->assign("error", $l_pwmin);
                            }

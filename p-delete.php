@@ -6,7 +6,7 @@ if(isset($_SESSION['id'])){
     if(isset($_GET['id']) AND !empty($_GET['id'])){
         switch($_GET['type']){
             default:
-                // Default error
+                // Error 405
                 $smarty->display("themes/$theme/error405.tpl");
             break;
 
@@ -18,7 +18,7 @@ if(isset($_SESSION['id'])){
                     $article->execute(array($article_id));
                     header("Location: $link/panel/articles");
                 }else{
-                    // Error
+                    // Error 401
                     $smarty->display("themes/$theme/error401.tpl");
                 }
             break;
@@ -31,7 +31,7 @@ if(isset($_SESSION['id'])){
                     $category->execute(array($category_id));
                     header("Location: $link/panel/categories/articles/");
                 }else{
-                    // Error
+                    // Error 401
                     $smarty->display("themes/$theme/error401.tpl");
                 }
             break;
@@ -44,7 +44,7 @@ if(isset($_SESSION['id'])){
                     $page->execute(array($page_id));
                     header("Location: $link/panel/pages");
                 }else{
-                    // Error
+                    // Error 401
                     $smarty->display("themes/$theme/error401.tpl");
                 }
             break;
@@ -57,7 +57,7 @@ if(isset($_SESSION['id'])){
                     $user->execute(array($user_id));
                     header("Location: $link/panel/users");
                 }else{
-                    // Error
+                    // Error 401
                     $smarty->display("themes/$theme/error401.tpl");
                 }
             break;

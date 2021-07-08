@@ -2,6 +2,9 @@
 $l_accessdenied = $lg['l_accessdenied'];
 $smarty->assign("l_accessdenied", $l_accessdenied);
 
+$l_accountcreated = $lg['l_accountcreated'];
+$smarty->assign("l_accountcreated", $l_accountcreated);
+
 $l_admin = $lg['l_admin'];
 $smarty->assign("l_admin", $l_admin);
 
@@ -83,6 +86,9 @@ $smarty->assign("l_delete", $l_delete);
 $l_descr = $lg['l_descr'];
 $smarty->assign("l_descr", $l_descr);
 
+$l_descrmax = $lg['l_descrmax'];
+$smarty->assign("l_descrmax", $l_descrmax);
+
 $l_edit = $lg['l_edit'];
 $smarty->assign("l_edit", $l_edit);
 
@@ -100,6 +106,9 @@ $smarty->assign("l_editpage", $l_editpage);
 
 $l_editrank = $lg['l_editrank'];
 $smarty->assign("l_editrank", $l_editrank);
+
+$l_edituser = $lg['l_edituser'];
+$smarty->assign("l_edituser", $l_edituser);
 
 $l_email = $lg['l_email'];
 $smarty->assign("l_email", $l_email);
@@ -200,6 +209,15 @@ $smarty->assign("l_myspace", $l_myspace);
 $l_name = $lg['l_name'];
 $smarty->assign("l_name", $l_name);
 
+$l_namemax = $lg['l_namemax'];
+$smarty->assign("l_namemax", $l_namemax);
+
+$l_namemax2 = $lg['l_namemax2'];
+$smarty->assign("l_namemax2", $l_namemax2);
+
+$l_namemin = $lg['l_namemin'];
+$smarty->assign("l_namemin", $l_namemin);
+
 $l_newemail = $lg['l_newemail'];
 $smarty->assign("l_newemail", $l_newemail);
 
@@ -268,6 +286,9 @@ $smarty->assign("l_panel", $l_panel);
 
 $l_paneltheme = $lg['l_paneltheme'];
 $smarty->assign("l_paneltheme", $l_paneltheme);
+
+$l_panelthemenotfound = $lg['l_panelthemenotfound'];
+$smarty->assign("l_panelthemenotfound", $l_panelthemenotfound);
 
 $l_permissions = $lg['l_permissions'];
 $smarty->assign("l_permissions", $l_permissions);
@@ -353,6 +374,9 @@ $smarty->assign("l_tag", $l_tag);
 $l_theme = $lg['l_theme'];
 $smarty->assign("l_theme", $l_theme);
 
+$l_themenotfound = $lg['l_themenotfound'];
+$smarty->assign("l_themenotfound", $l_themenotfound);
+
 $l_toomanyrequest = $lg['l_toomanyrequest'];
 $smarty->assign("l_toomanyrequest", $l_toomanyrequest);
 
@@ -361,6 +385,9 @@ $smarty->assign("l_trash", $l_trash);
 
 $l_unban = $lg['l_unban'];
 $smarty->assign("l_unban", $l_unban);
+
+$l_unsupportedmediatype = $lg['l_unsupportedmediatype'];
+$smarty->assign("l_unsupportemediatype", $l_unsupportedmediatype);
 
 $l_username = $lg['l_username'];
 $smarty->assign("l_username", $l_username);

@@ -18,14 +18,14 @@ if(isset($_GET['id']) || isset($_GET['username'])){
    $smarty->assign('userspace_req', $userspace_req);
    
    if($userspace_exist == 0){
-      // Error
+      // Error 404
       $smarty->display("themes/$theme/error404.tpl");
    }else{
       // Template
       $smarty->display("themes/$theme/space.tpl");
    }
 }else{
-   // Error
+   // Error 405
    $smarty->display("themes/$theme/error405.tpl");
 }
 require_once 'includes/footer.php';?>

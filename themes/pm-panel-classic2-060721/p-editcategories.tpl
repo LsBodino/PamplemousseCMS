@@ -8,10 +8,30 @@
             <div class="row">
                 <h2 class="display-6">{$l_editcategory}</h2>
                 {if isset($success)}
-                    <div class="alert alert-success" role="alert"><strong>{$success}!</strong></div>
+                    <script>
+                    Swal.fire({
+                    icon: 'success',
+                    title: "{$l_success}",
+                    text: "{$success}!",
+                    showConfirmButton: false,
+                    footer: '<a href="{$link}/panel/categories/articles" class="btn btn-primary">{$l_ok}</a>',
+                    allowOutsideClick: false,
+                    allowEscapeKey: false
+                    })
+                    </script>
                 {/if}
                 {if isset($error)}
-                    <div class="alert alert-danger" role="alert"><strong>{$error}!</strong></div>
+                    <script>
+                    Swal.fire({
+                    icon: 'error',
+                    title: "{$l_error}",
+                    text: "{$error}!",
+                    showConfirmButton: false,
+                    footer: '<a href="" class="btn btn-primary">{$l_ok}</a>',
+                    allowOutsideClick: false,
+                    allowEscapeKey: false
+                    })
+                    </script>
                 {/if}
                 <form method="POST">
                     <div class="form-group">

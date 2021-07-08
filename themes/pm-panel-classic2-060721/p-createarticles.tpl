@@ -7,6 +7,19 @@
       <div class="container">
          <div class="row">
             <h2 class="display-6">{$l_createarticle}</h2>
+            {if isset($error)}
+                <script>
+                Swal.fire({
+                icon: 'error',
+                title: "{$l_error}",
+                text: "{$error}!",
+                showConfirmButton: false,
+                footer: '<a href="{$link}/panel/articles/create" class="btn btn-primary">OK</a>',
+                allowOutsideClick: false,
+                allowEscapeKey: false
+                })
+                </script>
+            {/if}
             {if isset($success)}
                 <script>
                 Swal.fire({

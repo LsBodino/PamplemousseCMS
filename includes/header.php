@@ -28,7 +28,7 @@ $smarty->assign("theme_version", $theme_version);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow">
 <meta name="language" content="<?= $lang?>">
-<meta name="generator" content="PamplemousseCMS">
+<meta name="generator" content="<?= $l_pamplemoussecms ?>">
 <meta charset="utf-8">
 <meta property="og:title" content="<?= $title?>">
 <meta property="og:description" content="<?= $descr?>">

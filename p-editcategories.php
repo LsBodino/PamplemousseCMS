@@ -12,11 +12,11 @@ if(isset($_SESSION['id'])){
          $category_exist = $category_req->rowCount();
          $smarty->assign('category_req', $category_req);
          if($category_exist == 0){
-            // Error
+            // Error 404
             $smarty->display("themes/$theme/error404.tpl");
          }
       }else{
-         // Error
+         // Error 405
          $smarty->display("themes/$theme/error405.tpl");
       }
       if(isset($_POST['category_name'], $_POST['category_tag'])){
@@ -38,7 +38,7 @@ if(isset($_SESSION['id'])){
       // Template
       $smarty->display("themes/$paneltheme/p-editcategories.tpl");
    }else{
-      // Error
+      // Error 401
       $smarty->display("themes/$theme/error401.tpl");
    }
 }else{

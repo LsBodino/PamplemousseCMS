@@ -10,15 +10,25 @@ if(isset($_SESSION['id'])){
                 $page_title = htmlspecialchars($_POST['page_title']);
                 $page_section = $_POST['page_section'];
                 $page_menu = $_POST['page_menu'];
-                $page_insert = $db->prepare("INSERT INTO pages (title, section, datep, author, menu, visible) VALUES (?, ?, ?, ?, ?, ?)");
-                $page_insert->execute(array($page_title, $page_section, time(), $_SESSION['username'], $page_menu, 1));
-                $smarty->assign('success',$l_pageposted);
+                // Title <= 50
+                if($page_title <= 50){
+                    // Title >= 3
+                    if($page_title >= 3){
+                        $page_insert = $db->prepare("INSERT INTO pages (title, section, datep, author, menu, visible) VALUES (?, ?, ?, ?, ?, ?)");
+                        $page_insert->execute(array($page_title, $page_section, time(), $_SESSION['username'], $page_menu, 1));
+                        $smarty->assign('success',$l_pageposted);
+                    }else{
+                        $smarty->assign("error", $l_namemin);
+                    }
+                }else{
+                    $smarty->assign("error", $l_namemax2);
+                }
             }
         }
         // Template
         $smarty->display("themes/$paneltheme/p-createpages.tpl");
     }else{
-        // Error
+        // Error 401
         $smarty->display("themes/$theme/error401.tpl");
     }
 }else{

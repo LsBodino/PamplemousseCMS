@@ -13,7 +13,7 @@
                title: "{$l_error}",
                text: "{$error}!",
                showConfirmButton: false,
-               footer: '<a href="" class="btn btn-primary">OK</a>',
+               footer: '<a href="" class="btn btn-primary">{$l_ok}</a>',
                allowOutsideClick: false,
                allowEscapeKey: false
                })

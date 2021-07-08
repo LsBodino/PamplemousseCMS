@@ -1,24 +1,57 @@
 # ST5 (Français)
+Meilleure gestion des erreurs et encore toujours plus de corrections.
 
 
-## Changelog:
+## Changelog
 - Refonte des commentaires dans le code.
 - Refonte du chargement des fichiers .css et .js, maintenant ça se passe directement dans le fichier config.php des thèmes, ça permet enfin aux thèmes de charger les fichiers qu'ils veulent sans toucher au code du header.php.
+- La colonne "wsname" de la table config passe de maximum 30 caractères à 25.
+- Le nom d'un article, d'une page et du site doivent faire au minimum 3 caractères.
+- Amélioration des commentaires dans le code (encore).
+- Amélioration du nommage des variables dans le code (encore).
 
-## Ajouts:
+
+## Ajouts
 - Ajout de la gestion des erreurs HTTP 413 et 415.
+- Ajout des messages d'erreurs en cas où si le nom de l'article ou de la page dépasse les 50 caractères ou fait moins de 3 caractères lors de la création ou édition.
+- Ajout d'un message d'erreur en cas où si la description de l'article dépasse les 75 caractères lors de la création ou édition.
+- Ajout de la possibilitée d'éditer le nom d'utilisateur, l'adresse mail, le grade et le mot de passe des utilisateurs à partir du panel.
+- Ajout des messages d'erreurs en cas où si le nom du site dépasse les 25 caractères, si la description dépasse les 75 caractères ou si encore le chemin vers le thème / thème du panel est introuvable dans la page "configuration" dans le panel.
 
-## Corrections:
+
+## Corrections
 - Correction d'un bug qui faisait qu'il était possible d'utiliser un nom d'utilisateur non-autorisée (c'est-à-dire avec des caractères spéciaux) à partir des paramètres du compte.
 - Correction d'un bug qui faisait qu'il était possible d'utiliser un mot de passe avec moins de 8 caractères à partir des paramètres du compte.
 - Correction d'un bug qui faisait qu'il était impossible de modifier son mot de passe depuis quelques mises à jours.
 - Correction d'un bug qui faisait que la page inscription essayait de se chargeait quand on essayait d'y accéder en étant connecté.
 - Correction d'un bug qui faisait que si PamplemousseCMS était installé dans un dossier alors le .htaccess ne fonctionnait pas.
+- Correction d'un bug qui faisait que les pages "Editer une catégorie" et "Editer une page" n'avaient pas eu la mise à jour de la refonte des alertes.
+- Correction d'un bug qui faisait que la page "Editer une page" n'avait pas eu la mise à jour de suppression des lignes inutilisées.
+- Correction d'un bug qui faisait que /homepage redirigeait vers une erreur 404 alors qu'elle était censée redirigé vers l'index.
+- Correction d'un bug qui faisait qu'il était possible sur la page "configuration" du panel d'entrer comme configuration des chemins inexistants pour un thème / thème du panel.
+
 
 ## Langages
 
-### Ajouts:
-Format: position dans la table: nom => texte
+### Modifications
+Format: position dans la table: nom de la colonne => nouveau texte
 
-42: l_entitytoolarge => Traitement abandonné dû à une requête trop importante
-129: l_unsupportedmediafile =>
+92: l_ok => OK
+108: l_pwerror => Les mots de passes ne correspondent pas
+109: l_pwmin => Le mot de passe doit contenir au moins 8 caractères
+138: l_usernamemax => Le nom d'utilisateur ne doit pas contenir plus de 25 caractères
+139: l_usernamemin => Le nom d'utilisateur doit contenir au moins 3 caractères
+
+
+### Ajouts
+Format: position dans la table: nom de la colonne => texte
+
+4: l_accountcreated => Votre compte a bien été crée
+32: l_descrmax => La description ne doit pas contenir plus de 75 caractères
+44: l_entitytoolarge => Traitement abandonné dû à une requête trop importante
+74: l_namemax => Le nom ne doit pas contenir plus de 25 caractères
+75: l_namemax2 => Le nom ne doit pas contenir plus de 50 caractères
+76: l_namemin => Le nom doit au moins contenir 3 caractères
+101: l_panelthemenotfound => Le thème panel est introuvable
+132: l_themenotfound => Le thème est introuvable
+136: l_unsupportedmediatype => Format de requête non supporté

@@ -1,5 +1,57 @@
 # ST5 (English):
-blabla
+Better error management and even more corrections.
 
-## Changelog:
-- Reworking of the comments
+
+## Changelog
+- Recast comments in the code.
+- Redesign of the loading of . css and . js, now it happens directly in the config.php file of the themes, it finally allows the themes to load the files they want without touching the code of the header.php.
+- The "wsname" column of the config table changes from a maximum of 30 characters to 25.
+- The name of an article, page and site must be at least 3 characters long.
+- Improved comments in the code (again).
+- Improved variable naming in the code (again).
+
+
+## Additions
+- Added 413 and 415 HTTP error handling.
+- Add error messages in case the article or page name exceeds 50 characters or is less than 3 characters when creating or editing.
+- Add an error message in case the item description exceeds 75 characters when creating or editing.
+- Added the possibility to edit the user name, e-mail address, rank and password from the panel.
+- Added error messages in case if the site name exceeds 25 characters, if the description exceeds 75 characters or if the path to the theme/theme of the panel is not found in the "configuration" page in the panel.
+
+
+## Corrections
+- Fixed a bug that made it possible to use an unauthorized username (i.e. with special characters) from the account settings.
+- Fixed a bug that made it possible to use a password with less than 8 characters from the account settings.
+- Fixed a bug that made it impossible to change its password since a few updates.
+- Fixed a bug that made the registration page try to load when trying to access it while connected.
+- Fixed a bug that if PamplemousseCMS was installed in a folder then the .htaccess was not working.
+- Fixed a bug that caused the "Edit Category" and "Edit Page" pages to not have had the update of the alert overhaul.
+- Fixed a bug that caused the page "Edit a page" to not have the update to delete unused lines.
+- Fixed a bug that caused /homepage to redirect to a 404 error when it was supposed to be redirected to the index.
+- Fixed a bug that made it possible on the "configuration" page of the panel to enter as configuration of non-existent paths for a theme/theme of the panel.
+
+
+## Languages
+
+### Changes
+Format: position in the table: column name => new text
+
+92: l_ok => OK
+108: l_pwerror => Passwords do not match
+109: l_pwmin => Password must contain at least 8 characters
+138: l_usernamemax => The username must not contain more than 25 characters
+139: l_usernamemin => Username must contain at least 3 characters
+
+
+### Additions
+Format: position in the table: column name => text
+
+4: l_accountcreated => Your account has been created
+32: l_descrmax => The description should not contain more than 75 characters
+44: l_entitytoolarge => Processing abandoned due to too large a request
+74: l_namemax => The name must not contain more than 25 characters
+75: l_namemax2 => The name must not contain more than 50 characters
+76: l_namemin => The name must contain at least 3 characters
+101: l_panelthemenotfound => Panel theme not found
+132: l_themenotfound => Theme not found
+136: l_unsupportedmediatype => Request format not supported

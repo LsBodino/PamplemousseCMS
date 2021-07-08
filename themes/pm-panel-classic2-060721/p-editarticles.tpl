@@ -1,6 +1,5 @@
 {foreach $article_req as $ar}
 <head>
-    <style> textarea.form-control { height: 50%; } </style>
     <script src="https://cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
     <title>{$l_panel} - {$l_editarticle} | {$title}</title>
 </head>
@@ -9,6 +8,19 @@
         <div class="container">
             <div class="row">
                 <h2 class="display-6">{$l_editarticle}</h2>
+                {if isset($error)}
+                    <script>
+                    Swal.fire({
+                    icon: 'error',
+                    title: "{$l_error}",
+                    text: "{$error}!",
+                    showConfirmButton: false,
+                    footer: '<a href="" class="btn btn-primary">{$l_ok}</a>',
+                    allowOutsideClick: false,
+                    allowEscapeKey: false
+                    })
+                    </script>
+                {/if}
                 {if isset($success)}
                     <script>
                     Swal.fire({
@@ -16,7 +28,7 @@
                     title: "{$l_success}",
                     text: "{$success}!",
                     showConfirmButton: false,
-                    footer: '<a href="{$link}/panel/articles" class="btn btn-primary">OK</a>',
+                    footer: '<a href="{$link}/panel/articles" class="btn btn-primary">{$l_ok}</a>',
                     allowOutsideClick: false,
                     allowEscapeKey: false
                     })

@@ -15,11 +15,12 @@ if(isset($_SESSION['id'])){
          $article_req->execute(array($id_get));
          $article_exist = $article_req->rowCount();
          $smarty->assign('article_req', $article_req);
-         // Error 404 & 405
+         // Error 404
          if($article_exist == 0){
             $smarty->display("themes/$theme/error404.tpl");
          }
       }else{
+         // Error 405
          $smarty->display("themes/$theme/error405.tpl");
       }
       if(isset($_POST['article_title'], $_POST['article_section'])){
@@ -30,9 +31,21 @@ if(isset($_SESSION['id'])){
             $article_category = $_POST['article_category'];
             $article_section = $_POST['article_section'];
             $article_pin = $_POST['article_pin'];
-            $article_insert = $db->prepare("UPDATE articles SET title = ?, descr = ?, img = ?, category = ?, section = ?, pin = ? WHERE id = ?");
-            $article_insert->execute(array($article_title, $article_descr, $article_img, $article_category, $article_section, $article_pin, $id_get));
-            $smarty->assign("success", $l_articleupdated);
+            if($article_title <= 50){
+               if($article_title >= 3){
+                  if($article_descr <= 75){
+                     $article_insert = $db->prepare("UPDATE articles SET title = ?, descr = ?, img = ?, category = ?, section = ?, pin = ? WHERE id = ?");
+                     $article_insert->execute(array($article_title, $article_descr, $article_img, $article_category, $article_section, $article_pin, $id_get));
+                     $smarty->assign("success", $l_articleupdated);
+                  }else{
+                     $smarty->assign("error", $l_descrmax);
+                  }
+               }else{
+                  $smarty->assign("error", $l_namemin);
+               }
+            }else{
+               $smarty->assign("error", $l_namemax2);
+            }
          }
       }
       // Template

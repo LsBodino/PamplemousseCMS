@@ -20,7 +20,7 @@ if(isset($_SESSION['id'])) {
         // Template
         $smarty->display("themes/$paneltheme/p-index.tpl");
     }else{
-        // Error
+        // Error 401
         $smarty->display("themes/$theme/error401.tpl");
     }
 }else{

@@ -7,22 +7,22 @@ $smarty->debugging = false;
 $smarty->caching = false;
 
 // Database driver (default: mysql).
-$dbdriver="mysql";
+$db_driver="mysql";
 // Database host (default: localhost).
-$dbhost="localhost";
+$db_host="localhost";
 // Database name (default: pcms).
-$dbname="pcms";
+$db_name="pcms";
 // Database user (default: root).
-$dbuser="root";
+$db_user="root";
 // Database password.
-$dbpw="";
+$db_pw="";
 // Database port (default: 3306).
-$dbport="3306";
+$db_port="3306";
 try {
-    $db = new PDO("$dbdriver:host=$dbhost;port=$dbport;dbname=$dbname;charset=utf8", $dbuser, $dbpw);
+    $db = new PDO("$db_driver:host=$db_host;port=$db_port;dbname=$db_name;charset=utf8", $db_user, $db_pw);
 }
-catch(PDOException $e){
-    print("<b>ERROR</b>: ".$e->getMessage());
+catch(PDOException $db_error){
+    print("<b>ERROR</b>: ".$db_error->getMessage());
     exit;
 }
 

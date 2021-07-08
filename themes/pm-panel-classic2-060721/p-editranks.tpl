@@ -8,17 +8,17 @@
             <div class="row">
                 <h2 class="display-6">{$l_editrank}</h2>
                 {if isset($success)}
-                <script>
-                Swal.fire({
-                    icon: 'success',
-                    title: "{$l_success}",
-                    text: "{$success}!",
-                    showConfirmButton: false,
-                    footer: '<a href="{$link}/panel/ranks/users" class="btn btn-primary">OK</a>',
-                    allowOutsideClick: false,
-                    allowEscapeKey: false
-                })
-                </script>
+                    <script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: "{$l_success}",
+                        text: "{$success}!",
+                        showConfirmButton: false,
+                        footer: '<a href="{$link}/panel/ranks/users" class="btn btn-primary">OK</a>',
+                        allowOutsideClick: false,
+                        allowEscapeKey: false
+                    })
+                    </script>
                 {/if}
                 <form method="POST">
                     <div class="form-group">

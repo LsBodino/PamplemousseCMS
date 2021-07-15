@@ -1,0 +1,45 @@
+# ST6 (English)
+New design, corrections, map.
+
+
+## Changelog
+- It is possible to merge the panel theme and the theme into a single theme, in case (like the default theme), the required files are the same and therefore to avoid unnecessary multiplication of files.
+- Some cookies are encrypted.
+- The "name" column is renamed "title" in the "articles_categories" table.
+
+
+## Additions
+- Added categories of articles in the "Map" page.
+- Addition of the "signature" column (varchar, 255) in the "users" table.
+- Added the table "announces" with the columns id (int), link (text), section (varchar, 150) and visible (int, 1).
+
+
+## Corrections
+- Fixed a bug that caused a cookie conflict if two versions of PamplemousseCMS were installed
+- Fixed a bug that made it impossible to choose a category when creating an article since the last update.
+
+
+## Theme
+- Addition of the Pamplemousse Reloaded theme (and therefore a new design for PamplemousseCMS and currently being designed for the panel).
+- The default theme is no longer Grapefruit Classic 2.
+- The default panel theme is no longer Grapefruit Panel Classic 2.
+- The default panel theme and theme is Pamplemousse Reloaded.
+- Articles can be viewed from the authors’ spaces.
+- You can see the latest articles by hovering over the "Articles" button.
+- It is no longer necessary to click on a menu to have the drop down, just pass the mouse.
+- Addition of the "Announcement" part which will soon be customizable.
+- Addition of signatures on spaces that will soon be customizable.
+- Return of the PamplemousseCMS version display in the footer.
+
+
+## Languages
+
+### Additions
+Format: position in the table: column name => text
+
+8: l_announce = Announcement
+31: l_defaultcategory = Default category
+36: l_dontaccount = Don’t have an account? Register now
+50: l_haveaccount = Do you have an account? Log in
+60: l_latestarticlesof = Latest articles of
+151: l_welcometo = Welcome to

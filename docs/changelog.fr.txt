@@ -1,0 +1,25 @@
+# ST6 (Français)
+blablabla
+
+
+## Changelog
+
+
+## Ajouts
+
+
+## Corrections
+- Correction d'un bug qui faisait que le nom de la page "Panel - Map" était incorrect.
+- Correction d'un bug qui faisait que le bouton "Liste" dans la catégorie "Utilisateurs" dans la page "Panel - Map" redirigeait vers une erreur 404.
+- Correction d'un bug qui faisait qu'il manquait la page "Grades" dans la catégorie "Utilisateurs" dans la page "Panel - Map". 
+
+
+## Thème
+
+
+
+## Langages
+
+### Ajouts
+Format: position dans la table: nom de la colonne => texte
+

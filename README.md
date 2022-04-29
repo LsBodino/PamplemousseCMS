@@ -1,65 +1,21 @@
-# PamplemousseCMS joined the game, part 2.
-## English
-PamplemousseCMS ST is a customizable and open-source CMS, designed in PHP and with PamplemousseSmarty, a modified version of Smarty.
+# PamplemousseCMS
+## Informations
 
-Multi-languages, customizable themes, updated, lightweight, fast, PamplemousseCMS ST is designed to suit beginners as well as designers or developers.
+PamplemousseCMS était un projet de formation. Il n'est pas conseillé à l'utilisation aux débutants.
+Il est archivé et n'est plus mis à jour mais un nouveau projet du nom de "PomeloCMS" qui prendra sa relève très prochainement.
+Vive le Pamplemousse, vive le Pomelo.
 
-PamplemousseCMS ST is primarily a community project, you can contribute to the development of the project.
+## Présentation
+PamplemousseCMS est un CMS customisable et open-source, conçu en PHP avec le moteur de template Smarty 3 modifiée
 
-Why complicate, when you can have simplicity? Join the Pamplemousses.
-
-Available in English, French, Spanish, Italian, German, Dutch and Portuguese.
-
-Stable version: ST6.
-
-Dev version: Pre-ST7.
-
-
-### >_ Installation
-1. Download the CMS and its database on PamplemousseCMS.com or on Github.
-2. Upload the CMS and database to your server or to your host (the .sql file is in the "docs" folder).
-3. Open the "config.php" file in the "includes" folder and change the credentials to your database.
-4. Go to the "config" table of your database and change the link from the "wslink" column to the link of your website.
-5. Go to the site, normally it should work, there is a default account with all permissions (email address: admin@pamplemoussecms.com and password: admin).
-
-Very important: When you first log in, change the "admin" account credentials from the "Settings" page accessible from "My Space".
-
-
-### >_ Links
-Online demo: http://demo.pamplemoussecms.com
-
-PamplemousseCMS: http://pamplemoussecms.com
-
-PamplemousseSmarty: https://github.com/PamplemousseTeam/PamplemousseSmarty
-
-Smarty: https://smarty.net
-
-
-### >_ Special Thanks
-Evaa (Aliénor): for support and love in everyday life and help with Spanish and Italian translation.
-
-Marie (MaryPomme): for advice.
-
-Pamplemousses: for everything.
-
-
-## Français
-PamplemousseCMS ST est un CMS customisable et open-source, conçu en PHP avec le moteur de template PamplemousseSmarty, une version modifiée de Smarty.
-
-Multi-langages, thèmes customisables, mis à jour, léger, rapide, PamplemousseCMS ST est conçu pour convenir aux débutants comme aux designers ou développeurs.
-PamplemousseCMS ST c'est surtout un projet communautaire, vous pouvez contribué au développement du projet.
+Multi-langages, thèmes customisables, léger, rapide.
 
 Pourquoi faire complexe, quand on peut choisir simple ? Rejoignez les Pamplemousses.
 
 Disponible en Français, Anglais, Espagnol, Italien, Allemand, Néerlandais et Portugais.
 
-Version stable: ST6.
-
-Version de dév: Pre-ST7.
-
-
 ### >_ Installation
-1. Télécharger le CMS et sa base de données sur Github ou sur PamplemousseCMS.com.
+1. Télécharger le CMS et sa base de données sur Github.
 2. Uploader le CMS et sa base de données sur votre serveur ou sur votre hébergeur (le fichier .sql se trouve dans le dossier "docs").
 3. Ouvrer le fichier "config.php" qui se trouve dans le dossier "includes" et entrer les identifiants vers votre base de données.
 4. Aller vers la table "config" de votre base de données et changer le lien de la colonne "wslink" vers le lien de votre site web.
@@ -67,20 +23,3 @@ Version de dév: Pre-ST7.
 
 Très important: Dès votre première connexion, changer les identifiants du compte "admin" à partir de la page "Paramètres" accessible à partir de "Mon Espace".
 
-
-### >_ Liens (en anglais)
-Démo en ligne: http://demo.pamplemoussecms.com
-
-PamplemousseCMS: http://pamplemoussecms.com
-
-PamplemousseSmarty: https://github.com/PamplemousseTeam/PamplemousseSmarty
-
-Smarty: https://smarty.net
-
-
-### >_ Remerciements spéciaux
-Evaa (Aliénor): pour le support et l'amour tous les jours ainsi que pour l'aide avec les traductions Italiennes et Espagnoles.
-
-Marie (MaryPomme): pour les conseils.
-
-Pamplemousses: pour tout.
